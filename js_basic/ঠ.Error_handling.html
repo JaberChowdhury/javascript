@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+  <script type="text/javascript" charset="utf-8">
+  // Error and Error handling in javascript
+    try {
+      // our actuall code will be here :)
+      console.log("Hello World");
+      console.log("We are working well😇");
+      console.log(x); // Ehh!! x is not defined
+      const msg = "See?? I am not working for a error";
+    }catch(error){
+      console.log (error);
+      console.log (error.name);
+      console.log (error.message);
+    }finally{
+      // In this section we will put that peace of code
+      // that must be compile every time.
+      // for example that msg variable is important for execution 
+      // so we will put that code inside of finally section
+      const msg = "See?? I am not working for a error";
+      console.log (msg);
+    }
+    
+    
+    
+    // 💣💣💣💣💣💣💣💣
+    // try-catch method can handle only run time error
+    // it can't handle SyntaxError 
+    /*
+    for example 
+    console.log("this is a SyntaxError" is a SyntaxError  because i didn't put ) at last
+    but console.log(a) is a runtime error though a isn't defined
+    */
+  </script>
+  </body>
+</html>

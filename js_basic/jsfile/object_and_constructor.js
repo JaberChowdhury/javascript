@@ -1,5 +1,5 @@
     // object 
-    
+    // object
     const mustWork = {
       "wakeUp":"6am",
       "walking":"10km",
