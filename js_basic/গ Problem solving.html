@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript" charset="utf-8">
+  // problem solving form previous  lessons
+  // লুডু খেলায় কিভাবে আমরা ১ থেকে ৬ পর্যন্ত  প্রিন্ট  করতে পারি 
+  
+  function getrandomnumber(max,min) {
+    return Math.floor(Math.random() * (max-min+1))+min;
+  }
+  console.log ("-----------"+getrandomnumber(1,6));
+  
+  // কিভাবে শ্রেণীকক্ষের সকলের নাম সাজানো যায় 
+  
+  const students_Name = ["Rafsan", "Abrar", "Rahik", "Mazed", "Rubayet"];
+  const new_students_Name = students_Name.sort();
+  console.log (new_students_Name);
+  
+  // 
+  // কিভাবে শ্রেণীকক্ষের সকলের Roll সাজানো যায়
+  const roll = [18,5,7,8,9,68,1];
+  console.log (roll.sort(function(a, b){
+    return a-b;
+  }));
+  
+  
+  
+  // leap year or not ???
+  function leapyear (year) {
+    if ((year % 400 === 0) || ((year % 4 === 0) && (year % 100 !== 0))) {
+      console.log ((year) + " is a leap year");
+    }
+    else {
+      console.log ("Nothing");
+    }
+  }
+  leapyear(2016);
+  
+ //  How much vowel in this sentence 
+  const vowel = ["a","e","i","o","u","A","E","I","O","U"];
+  function count_Vowel (sentence) {
+    let count = 0 ;
+    let sentence_array = Array.from(sentence);
+    
+    sentence_array.forEach(function(value) {
+      if (vowel.includes(value)) {
+        count ++ ;
+      }
+    });
+    
+    return count ;
+    // console.log (sentence_array);
+  }
+ console.log (count_Vowel("I love my country very much"));
+  
+  
+  // কোনো Array থেকে Duplicate নম্বর  বের করা
+  const numbers = [1,5,7,3,5,7,8,8];
+  const Duplicate = numbers.filter(function (value, index, array) {
+    return array.indexOf(value) !== index ;
+  });
+  console.log (Duplicate);
+  
+  
+  
+  // কোনো Array থেকে unique নম্বর  বের করা
+  const Duplicates = numbers.filter(function (value, index, array) {
+    return array.indexOf(value) === index ;
+  });
+  console.log (Duplicates);
+  
+  
+  // onek hard lage🥲 
+ </script>
+  </body>
+</html>
+
+

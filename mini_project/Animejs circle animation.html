@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .circlecontainer {
+    width: 80%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+  }
+  .circle {
+    width: 450px;
+    height: 450px;
+    border: 4px double black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .circle2 {
+    width: 410px;
+    height: 410px;
+  }
+  .circle3 {
+    width: 370px;
+    height: 370px;
+  }
+  .circle4 {
+    width: 330px;
+    height: 330px;
+  }
+  .circle5 {
+    width: 290px;
+    height: 290px;
+  }
+  .circle6 {
+    width: 250px;
+    height: 250px;
+  }
+  .circle7 {
+    width: 210px;
+    height: 210px;
+  }
+  .circle8 {
+    width: 170px;
+    height: 170px;
+  }
+  .circle9 {
+    width: 130px;
+    height: 130px;
+  }
+  .circle10 {
+    width: 90px;
+    height: 90px;
+  }
+  .circle11 {
+    width: 50px;
+    height: 50px;
+  }
+  .circle12 {
+    width: 10px;
+    height: 10px;
+  }
+</style>
+  </head>
+  <body>
+    <div class="circlecontainer">
+      <div class="circle circle1">
+        <div class="circle circle2">
+        <div class="circle circle3">
+        <div class="circle circle4">
+        <div class="circle circle5">
+        <div class="circle circle6">
+        <div class="circle circle7">
+        <div class="circle circle8">
+        <div class="circle circle9">
+        <div class="circle circle10">
+        <div class="circle circle11">
+        <div class="circle circle12"></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    
+<script src="Js_file/anime.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+const grid = [1,12]
+const animation = anime 
+.timeline({
+  targets: ".circle",
+  loop: true,
+  autoplay: false,
+  direction: "alternate",
+  duration: 2000,
+  delay: anime.stagger(200,{grid:grid,from:"center"}),
+})
+.add({
+  scale: [
+    {value:0,easing:"easeInOutBack",},
+    {value:1,easing:"easeInOutBack",},
+    {value:0,easing:"easeInOutBack",},
+    {value:1,easing:"easeInOutBack",},
+    ],
+  delay: anime.stagger(200,{grid:grid,from:"center"}),
+})
+.add({
+  translateX:[
+    {value: anime.stagger("450px",{grid:grid,from:"center",axis:"x"})},
+    {value: anime.stagger("-450px",{grid:grid,from:"center",axis:"x"})},
+    {value: anime.stagger("0px",{grid:grid,from:"center",axis:"x"})},
+    ],
+  translateY:[
+    {value: anime.stagger("450px",{grid:grid,from:"center",axis:"y"})},
+    {value: anime.stagger("-450px",{grid:grid,from:"center",axis:"y"})},
+    {value: anime.stagger("0px",{grid:grid,from:"center",axis:"y"})},
+    ],
+  delay: anime.stagger(200,{grid:grid,from:"center"}),
+})
+.add({
+  rotateY: anime.stagger(360,{grid:grid,from:"center"}),
+  delay: anime.stagger(500,{grid:grid,from:"center"}),
+})
+animation.play();
+</script>
+  </body>
+</html>

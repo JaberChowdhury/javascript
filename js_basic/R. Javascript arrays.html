@@ -1,0 +1,132 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="" content="">
+  <title></title>
+</head>
+<body>
+  <p id="demo"></p>
+  <p id="demos"></p>
+  <script type="text/javascript" charset="utf-8">
+  
+    // 🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳
+    // 🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳
+    // 🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳
+    // 🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳❄❄❄❄🔳🔳🔳🔳
+    // Sololearn 😊
+    // Arrays store multiple values in a single variable.
+    var courses = new Array("html", "css", "javascript");
+    var course = courses[0];
+    document.write (course);
+    console.log (typeof(courses)); //object
+
+    // Other way to creat arrays🔆🔆🔆
+    // An array is a special type of object.An array uses numbers to access its elements, and an object uses names to access its members.
+
+    var docs = new Array(3);
+    docs[0] = "HTML";
+    docs[1] = "CSS";
+    docs[2] = "JAVASCRIPT";
+    console.log (docs);
+    console.log(docs.length);
+    //You can then add the elements dynamically.
+    var docsi = new Array();
+    docsi[0] = "HTML";
+    docsi[1] = "CSS";
+    docsi[2] = "JAVASCRIPT";
+    docsi[3] = "c++";
+    docsi[4] = "c#";
+    docsi[5] = "React";
+    docsi[6] = "Python";
+    console.log (docsi);
+    console.log (docsi.length);
+    console.log (docsi[docsi.length-2]); //🎩🎩🎩🎩🎩🎩
+    document.write ("</br>");
+    //For greater simplicity, readability, and execution speed, you can also declare arrays using the array literal syntax.
+    var new_array = ["html", "css", "javascript"];
+    document.write (new_array);
+    // The array literal syntax is the recommended way to declare arrays.
+    console.log ("🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳");
+    let upp = ["Bangladesh", "Pakistan", "Malaysia", "Turkey"];
+    console.log (upp);
+    console.log (upp[upp.length-1]); //🎩🎩🎩🎩🎩🎩🎩
+    // 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+
+
+    const fruitsi = ["Banana", "Orange", "Apple", "Mango"];
+    let fLen = fruitsi.length;
+
+    let text = "<ul>";
+    for (let i = 0; i < fLen; i++) {
+      text += "<li>" + fruitsi[i] + "</li>";
+    }
+    text += "</ul>";
+    document.getElementById("demo").innerHTML = text;
+
+
+
+    function myfunction() {
+      const fruits = ["Apple",
+        "Guavas",
+        "Pineapple",
+        "Jackfruit",
+        "Orange",
+        "Lemons"];
+      let texts = "<ul>";
+      for (i = 0; i < fruits.length; i = i+1) {
+        console.log ("-----  "+ (i));
+        console.log ("-------  "+(fruits[i]));
+        texts = texts + "<li>" + fruits[i] + "</li>";
+      }
+      texts = texts + "</ul>";
+      document.getElementById("demos").innerHTML = texts;
+    }
+    myfunction();
+    console.log("Finished");
+    
+    
+    let test_array = ["hudai", "ggg"];
+ //   test_array[3]="jjjjj";
+     test_array[test_array.length] = "jjjjj";
+    console.log(test_array);
+    
+    
+    let add_new_array = ["one", "two", "three"];
+    add_new_array[5] = "five";
+    console.log(add_new_array);
+    
+    
+    
+    // ##############################################
+    // ##############################################
+    // ##############################################
+    // ###################  must  #################
+    // ##############################################
+    // ##############################################
+    // ##############################################
+    
+    // avoid new array syntax 
+    
+    const new_arrays = new Array (40, 100);
+    console.log (new_arrays);
+    const new_arrayss = new Array (40);
+    console.log (new_arrayss);// so funny 🤣 😆 😂 
+    const new_arraysisis = ["40"];
+    console.log (new_arraysisis);
+    
+    // How to recognise  a  array ?????
+    
+    function namefunction() {
+      document.write ("test function 😴");
+    }
+    namefunction();
+    console.log (Array.isArray(new_arraysisis));// return true
+    console.log (new_arraysisis instanceof Array);
+    console.log (Array.isArray(namefunction));// return false
+    
+    
+    // After 7 days of hard work 🥺🥺💝
+    // Done
+  </script>
+</body>
+</html>

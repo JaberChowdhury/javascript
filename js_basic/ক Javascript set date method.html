@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+  </head>
+  <body>
+    <p><b>Normal Date</b></p>
+    <p id="p1"></p></br>
+    
+    <p><b>setFullYear()</b></p>
+    <p id="p2"></p></br>
+    
+    <p><b>setMonth()</b></p>
+    <p id="p3"></p></br>
+    
+    <p><b>setDate()</b></p>
+    <p id="p4"></p></br>
+    
+    <p><b>setHours()</b></p>
+    <p id="p5"></p></br>
+    
+    <p><b>setMinutes()</b></p>
+    <p id="p6"></p></br>
+    
+    <p><b>setSeconds()</b></p>
+    <p id="p7"></p></br>
+    
+    <p><b>setMilliseconds()</b></p>
+    <p id="p8"></p></br>
+    
+<script type="text/javascript" charset="utf-8">
+  // Javascript  set date method
+  /*
+  setFullYear()
+  setMonth()
+  setDate()
+  setHours()
+  setMinutes()
+  setSeconds()
+  setMilliseconds()
+  setTime()
+  */
+  const d1 = new Date();
+  document.getElementById("p1").innerHTML = d1;
+  
+  const d2 = new Date();
+  d2.setFullYear(2002);
+  document.getElementById("p2").innerHTML = d2;
+  
+  const d3 = new Date();
+  d3.setMonth(10);
+  document.getElementById("p3").innerHTML = d3;
+  
+  const d4 = new Date();
+  document.getElementById("p4").innerHTML = d4;
+  
+  const d5 = new Date();
+  d5.setHours(22);
+  document.getElementById("p5").innerHTML = d5;
+  
+  const d6 = new Date();
+  d6.setMinutes(11);
+  document.getElementById("p6").innerHTML = d6;
+  
+  const d7 = new Date();
+  d7.setSeconds(60);
+  document.getElementById("p7").innerHTML = d7;
+  
+  const d8 = new Date();
+  d8.setMilliseconds(199998776557);
+  document.getElementById("p8").innerHTML = d8;
+  
+</script>
+  </body>
+</html>

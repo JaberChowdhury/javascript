@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      // 2D Array
+      const users = [
+        ["Maruf", 100],
+        ["sifat", 300],
+        ["jaber", 288],
+        ["python", 387],
+        ["c++", 778888],
+        ["javascript", 777],
+      ];
+      //array [row] [column]
+      //console.log(users[0][0]);
+      for (x = 0; x < users.length; x++) {
+        for (y = 0; y < 2; y++) {
+          console.log(users[x][y]);
+        }
+      }
+      /*
+      2D Array
+      * create a function called highest_run_scorer that will
+      * receive a 2D Array
+      * return that player name who got the highest score
+      * the name of the playe also
+      */
+      const highest_run_scorer = (players) => {
+        var highest_run_player = players[0][0];
+        var highest_run = players[0][1];
+        for (x = 0; x < players.length; x++) {
+          if (highest_run < players[x][1]) {
+            highest_run = players[x][1];
+            highest_run_player = [x][0];
+          }
+        }
+        return highest_run_player;
+      };
+      const players = [
+        ["sifat", 30],
+        ["rahiq", 78],
+        ["soikot", 6],
+        ["abrar", 77],
+        ["jaber", 66],
+        ["us", 67777],
+      ];
+      var name = highest_run_scorer(players);
+      console.log(name);
+    </script>
+  </body>
+</html>

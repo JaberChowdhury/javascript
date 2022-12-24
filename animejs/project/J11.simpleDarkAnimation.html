@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Hii</title>
+<style type="text/css" media="all">
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  min-height: 100vh;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+}
+.block {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: absolute;
+}
+</style>
+  </head>
+  <body>
+    <div class="container"></div>
+<script src="anime.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  var container = document.querySelectorAll (".container")[0];
+  var blocks = document.querySelectorAll (".block")[0];
+  
+  
+  const gradient =()=> {
+    var red = Math.floor(Math.random()*255);
+    var red1 = Math.floor(Math.random()*255);
+    var green = Math.floor(Math.random()*255);
+    var green1 = Math.floor(Math.random()*255);
+    var blue = Math.floor(Math.random()*255);
+    var blue1 = Math.floor(Math.random()*255);
+    var x = Math.floor(Math.random()*360);
+    var rgbcolor = `-webkit-linear-gradient(${x}deg,rgb(${red},${green},${blue}),rgb(${red1},${green1},${blue1}))`;
+    return rgbcolor;
+};
+gradient();
+
+  for (let x = 0; x < 400; x++) {
+    var block = document.createElement ("div");
+    container.appendChild (block);
+    block.classList.add("block");
+  }
+  
+  const animationBlocks = () => {
+    anime({
+      targets: '.block',
+      translateX: ()=> anime.random(-200,200),
+      translateY: ()=> anime.random(-400,400),
+      scale:[
+        {value:0.5},
+        {value:0.07},
+        {value:0.02},
+        ],
+      background: gradient,
+      easing: 'easeInOutBack',
+      duration: 2000,
+      //delay: anime.stagger(2),
+      delay: (el,i)=>{return i*10},
+      complete: animationBlocks,
+    });
+  }
+  animationBlocks();
+//  setInterval(animationBlocks,3000);
+</script> 
+  </body>
+</html>

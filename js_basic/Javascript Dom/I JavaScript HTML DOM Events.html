@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+  </head>
+  <body onload="checkcoki()">
+    
+   <h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+   <h1 onclick="changeText(this)">Click on this text!</h1>
+   <p id="demoforcoki">~~</p>
+   <input id="uppeinp" type="text" onchange="uppercase()" placeholder="Enter text here " />
+   <button id="buttonone">Click Here</button>
+    
+<script type="text/javascript" charset="utf-8">
+  /* A JavaScript can be executed when an event occurs, 
+    like when a user clicks on an HTML element.
+    
+    
+ ■ Examples of HTML events:
+    ● When a user clicks the mouse
+    ● When a web page has loaded
+    ● When an image has been loaded
+    ● When the mouse moves over an element
+    ● When an input field is changed
+    ● When an HTML form is submitted
+    ● When a user strokes a key
+  */
+  function changeText(variables) {
+    variables.innerHTML = "Yaaa!! You clicked me!!!";
+  }
+  
+  
+  /*
+■ The onload and onunload Events:- 
+    ● The onload and onunload events are triggered when the 
+    user enters or leaves the page.
+    ● The onload event can be used to check the visitor's
+    browser type and browser version, and load the proper
+    version of the web page based on the information.🔥🔥🔥
+    ● The onload and onunload events can be used to deal with cookies.
+  */
+  
+  function checkcoki() {
+    if (navigator.cookieEnabled==true) {
+      var text = "Your cookies are enabled😳";
+    }
+    else {
+      var text = "Not enabled 😮";
+    }
+    document.querySelector("#demoforcoki").innerHTML = text;
+  }
+  
+  
+  /*
+■ The onchange Event
+    ● The onchange event is often used in combination
+       with validation of input fields.
+  */
+  /*
+  function uppercase() {
+    var inp = document.querySelector ("#uppeinp");
+    var inp.value = inp.value.toUpperCase();
+  }
+  */
+  
+  
+  var xyz = document.querySelector ("#buttonone");
+  xyz.onclick = function () {
+    console.log (Date());
+  };
+  
+  
+  
+</script>
+  </body>
+</html>

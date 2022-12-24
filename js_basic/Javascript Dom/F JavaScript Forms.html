@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<h2>JavaScript Validation</h2>
+
+<form name="myForm" onsubmit="return validateForm()" method="post" >
+  Name: <input type="text" name="fname" required>
+  <input type="submit" value="Submit">
+</form>
+<p id="demoforp">Paragraph</p>
+<hr />
+
+
+
+
+<h1>
+  Check validation of a odd number 
+</h1>
+ <form name="oddform" method="get" onsubmit="return oddfunc()" method="post" accept-charset="utf-8">
+   Enter number: <input type="text" name="nname" placeholder="Enter a number (0-9):- " required/>
+   <input type="submit" value="submit" />
+ </form>
+ <h3 class="validation">~</h3>
+ 
+ 
+<script>
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  let demoforp = document.querySelector ("#demoforp");
+  demoforp.innerHTML = x;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+
+function oddfunc() {
+  let inputfr_gsl = document.forms["oddform"];
+  console.log (inputfr_gsl);
+  let inputfromhtml = document.forms["oddform"]["nname"].value;
+  let oddinp = parseInt(inputfromhtml);
+  let h3tag = document.querySelector (".validation");
+  if (oddinp%2===1) {
+    h3tag.innerHTML = "yes!! " + oddinp + " is a odd number";
+    console.log ("yes!! " + oddinp + " is a odd number");
+  }
+  else if (oddinp%2!==1) {
+    h3tag.innerHTML = "Oh noo!! " + inputfromhtml + " is not a odd number";
+    console.log ("Oh noo!! " + inputfromhtml + " is not a odd number");
+  }
+  else if(typeof(oddinp)==="string") {
+    h3tag.innerHTML = "Oh noo!! Input is not a Number";
+    console.log ("Oh noo!! Input is not a Number");
+  }
+  else {
+    h3tag.innerHTML = "Oh noo!! Something wrong";
+    console.log ("Oh noo!! Something wrong");
+  }
+}
+
+</script>
+</body>
+</html>

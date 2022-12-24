@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title></title>
+  </head>
+  <body>
+<input type="text" id="demo" onchange="nef()"/>
+<script type="text/javascript" charset="utf-8">
+  /*
+  The onload and onunload events are triggered when
+  the user enters or leaves the page.
+  These can be useful when performing actions 
+  after the page is loaded.
+  
+  Similarly, the window.onload event can be used to run
+  code after the whole page is loaded.
+  
+  window.onload = function() {
+   //some code
+  }
+
+  It’s important to understand events, because they are an
+  essential part of dynamic web pages.
+  */
+  window.onload = function (){
+    alert("windows loaded");
+  }
+  function nef() {
+    var x = document.querySelector ("#demo");
+    x.value = x.value.toUpperCase();
+  }
+</script>
+  </body>
+</html>

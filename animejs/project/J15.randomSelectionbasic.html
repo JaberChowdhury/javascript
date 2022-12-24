@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.container {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.box {
+  --width: 20px;
+  width: var(--width);
+  height: var(--width);
+  background-color: orange;
+  border-radius: 50%;
+}
+</style>
+  </head>
+  <body>
+    <div class="container"></div>
+
+<script src="anime.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+const rgba =()=>{
+    var red = Math.floor(Math.random()*255);
+    var green = Math.floor(Math.random()*255);
+    var blue = Math.floor(Math.random()*255);
+    var alpha = Math.random()*1+1;
+    var rgbcolor = `rgba(${red},${green},${blue},${alpha})`;
+    return rgbcolor;
+};
+const gradient =()=> {
+    var x = Math.floor(Math.random()*360);
+    var rgbcolor = `-webkit-linear-gradient(${x}deg,${rgba()},${rgba()},${rgba()},${rgba()})`;
+    return rgbcolor;
+};
+gradient();
+
+const container = document.querySelectorAll(".container")[0];
+const grid = [20,10];
+const column = grid[0];
+const row = grid[1];
+const limit = grid[0] * grid[1];
+for(let i=0; i<limit; i++) {
+  const box = document.createElement ("div");
+  box.classList.add ("box");
+  container.appendChild (box);
+}
+const random =()=>{
+  const randomNumber = Math.floor(Math.random()*66);
+  return randomNumber;
+}
+
+
+const animation =()=>{
+  const rn = random();
+anime({
+  targets: ".box",
+  autoplay:true, 
+  scale:0.5,
+  opacity:1000,
+  keyframes: [
+      {
+        translateX: anime.stagger('-2px', {grid: grid, from: "center", axis: 'x'}),
+        translateY: anime.stagger('-2px', {grid: grid, from: "center", axis: 'y'}),
+        duration: 100
+      }, 
+      {
+        translateX: anime.stagger('4px', {grid: grid, from: "center", axis: 'x'}),
+        translateY: anime.stagger('4px', {grid: grid, from: "center", axis: 'y'}),
+        scale: anime.stagger([0.6, 1], {grid: grid, from: "center"}),
+        background: rgba(),
+        duration: 225
+      }, 
+      {
+        translateX: 0,
+        translateY: 0,
+        scale: 0.5,
+        duration: 1200,
+      }
+    ],
+  delay: anime.stagger(80, {grid: grid, from: rn}),
+  complete:animation,
+})
+anime({
+  targets: `box[${rn}]`,
+  scale: 15,
+})
+}
+animation();
+</script>
+  </body>
+</html>

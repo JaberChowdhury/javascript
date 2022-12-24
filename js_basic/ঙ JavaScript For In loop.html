@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript" charset="utf-8">
+  // The JavaScript for in statement loops through the properties of an Object
+  // syntax 🔥🔥🔥
+  /*
+  for (key in object) {
+      // code block to be executed
+   }
+  */
+  
+  const person = {fname:"John", lname:"Doe", age:25};
+  let text = "";
+  for (let x in person) {
+    text = text + person[x];
+    console.log (text);
+  }
+  console.log (text);
+   const info = {name:"Red-remix",College:"NaN",Hobby:"Coding"};
+  for (let x in info) {
+    document.write(info[x]);
+  }
+ 
+  
+  //  For In Over Arrays🔥🔥🔥🔥
+  // The JavaScript for in statement can also loop over the properties of an Array:
+  /*
+  syntax
+  for (variable in array) {
+     code
+  }
+  */
+  const numbers = [45, 4, 9, 16, 25];
+
+  let txt = "";
+  for (let x in numbers) {
+     console.log (txt += numbers[x]);
+  }
+  console.log ("🔥🔥🔥🔥🔥🔥🔥🔥");
+  
+  
+  const y = [1,2,45,9,6,35,8,5,9,5,8,5];
+  for (let number in y) {
+    console.log (number);
+  }
+  // Do not use for in over an Array if the index order is important.
+  //It is better to use a for loop, a for of loop, or Array.forEach() when the order is important.
+  
+  
+  // repeat array iteration 
+</script>
+  </body>
+</html>

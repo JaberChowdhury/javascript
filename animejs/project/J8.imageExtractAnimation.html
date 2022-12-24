@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+<style type="text/css" media="all">
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  transition: all 0.5s linear;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(20,1fr);
+  background-color: #000000;
+  overflow: hidden;
+  position: relative;
+}
+.box {
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  background-image: url("./all/photo.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+  </head>
+  <body>
+    <div class="container"></div>
+<script src="anime.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+const container = document.querySelectorAll(".container")[0];
+let grid = [20,40];
+
+
+  const rgb =()=> {
+    let r = Math.floor(Math.random()*255);
+    let g = Math.floor(Math.random()*255);
+    let b = Math.floor(Math.random()*255);
+    let rgb = `rgb(${r},${g},${b})`;
+    return rgb;
+  }
+
+
+for(let i=0; i<800; i++) {
+  const box = document.createElement ("div");
+  box.classList.add("box");
+  container.appendChild(box);
+  box.style.backgroundColor = rgb;
+}
+
+var animation = anime
+.timeline({
+  targets:".box",
+  easing:"easeInOutBounce",
+  duration: 3000,
+  loop: true,
+  autoplay: false,
+  delay: anime.stagger(500,{grid:grid,from:0}),
+  direction: "alternate",
+})
+.add({
+  scale:0,
+  translateX: ()=> anime.random(360,200),
+  translateY: ()=> anime.random(360,-2100),
+  duration: ()=> anime.random(500,300),
+})
+.add({
+  scale:1,
+  translateX: 0,
+  translateY: 0,
+  duration: ()=> anime.random(200,300),
+})
+
+
+animation.play();
+
+</script>
+  </body>
+</html>

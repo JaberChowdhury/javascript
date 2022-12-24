@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+  * {
+    background-size: cover;
+    font-weight: bold;
+  }
+</style>
+  </head>
+  <body>
+    <button onclick="alert('You clicked me😡')">I AM A BUTTON</button>
+    <!--Don't  use "" inside "" -->
+    <button onclick="mymessage()">Function Button</button>
+    <p onclick="para()">Black Light</p>
+    
+    <button type="submit" onclick="change()">Click me</button>
+    
+    
+    <button onclick="pic01()">Picture one</button>
+    <button onclick="pic02()">Picture two</button>
+    <p></p>
+    <img id="img1" src="" alt="" width="300px" height="300px"/>
+    <img id="img2" src="" alt="" width="300px" height="300px"/>
+    
+<script type="text/javascript" charset="utf-8">
+  function mymessage () {
+    document.write ("Haha!! This is a function");
+    alert ("Haha!! This is a function");
+    console.log ("Haha!! This is a function");
+  }
+  function para () {
+    alert("I am a paragraph ");
+  }
+  function change () {
+    document.querySelectorAll("button")[2].innerHTML = "Clicked";
+  }
+  
+  
+  function pic01 () {
+    document.querySelector("#img1").src = "pic1.jpg"
+  }
+  function pic02 () {
+    document.querySelector("#img2").src = "pic2.jpg"
+  }
+  
+</script>
+  </body>
+</html>

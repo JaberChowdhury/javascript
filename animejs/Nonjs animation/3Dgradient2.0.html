@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #717171;
+}
+.cube {
+  --size: 260px;
+  width: var(--size);
+  height: var(--size);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  position: relative;
+}
+.cube .side{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	font-size: 2em;
+	top: 0;
+	left: 0;
+}
+.cube .side:nth-child(1){
+	transform-origin: center left;
+	transform: translateZ(calc(var(--size) / -2)) rotateY(-90deg);
+}
+.cube .side:nth-child(2){
+	transform-origin: center right;
+	transform: translateZ(calc(var(--size) / -2)) rotateY(90deg);
+}
+.cube .side:nth-child(3){
+	transform: translateZ(calc(var(--size) / 2));
+}
+.cube .side:nth-child(4){
+	transform-origin: top center;
+	transform: translateZ(calc(var(--size) / -2)) rotateX(90deg);
+}
+.cube .side:nth-child(5){
+	transform-origin: bottom center;
+	transform: translateZ(calc(var(--size) / -2)) rotateX(-90deg);
+}
+.cube .side:nth-child(6){
+	transform: translateZ(calc(var(--size) / -2));
+}
+
+.box {
+  --s: 20px;
+  width: var(--s);
+  height: var(--s);
+  background-color: orange;
+  font-size: 0.2em;
+  transform: scale(0.5) rotatez(0deg);
+  border-radius: 50%;
+}
+</style>
+	</head>
+	<body>
+		<div class="cube">
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+		</div>
+	
+	
+	
+	
+<script src="all/anime.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+const rgba =()=>{
+    var red = Math.floor(Math.random()*255);
+    var green = Math.floor(Math.random()*255);
+    var blue = Math.floor(Math.random()*255);
+    var alpha = Math.random()*1+1;
+    var rgbcolor = `rgba(${red},${green},${blue},${alpha})`;
+    return rgbcolor;
+};
+const gradient =(limit)=> {
+    var x = Math.floor(Math.random()*360);
+    const c = `${rgba()},`;
+    const countrgb = c.repeat(limit);
+    const rgbcolor = `-webkit-linear-gradient(${x}deg,${countrgb}${rgba()})`;
+    return rgbcolor;
+};
+
+
+
+
+
+const side = document.querySelectorAll(".side");
+const grid = [13,12];
+side.forEach((el,index)=>{
+  for(let i=0; i<156; i++) {
+    el.innerHTML += `
+    <div class="box"></div>
+    `;
+  }
+})
+
+const box = document.querySelectorAll(".box");
+box.forEach((el,index)=>{
+  el.style.background = gradient(2);
+})
+
+
+		
+		
+var cube = document.querySelector('.cube');
+window.addEventListener('mousemove', function(e){
+	var x = e.clientX | 0;
+	var y = e.clientY | 0;
+	cube.style.transform = 'rotateX(' + -y + 'deg) rotateY(' + -x + 'deg)'
+})
+window.addEventListener('touchmove', function(e){
+	var x = e.touches[0].clientX | 0;
+	var y = e.touches[0].clientY | 0;
+	var z = e.touches[0].clientY | 0;
+	cube.style.transform = 'rotateX(' + y + 'deg) rotateY(' + x + 'deg)'
+})
+</script>
+  </body>
+</html>

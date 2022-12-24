@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Hii</title>
+<style type="text/css" media="all">
+@font-face {
+  src:url("./all/flipside.ttf");
+  font-family: "flipside";
+  font-weight: bold;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "flipside";
+}
+body {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  min-height: 100vh;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+}
+.block {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+</style>
+  </head>
+  <body>
+    <div class="container"></div>
+<script src="/anime.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  var container = document.querySelectorAll (".container")[0];
+  var blocks = document.querySelectorAll (".block")[0];
+  
+  
+   const gradient =()=> {
+    var red = Math.floor(Math.random()*255);
+    var red1 = Math.floor(Math.random()*255);
+    var green = Math.floor(Math.random()*255);
+    var green1 = Math.floor(Math.random()*255);
+    var blue = Math.floor(Math.random()*255);
+    var blue1 = Math.floor(Math.random()*255);
+    var x = Math.floor(Math.random()*360);
+    var rgbcolor = `-webkit-linear-gradient(${x}deg,rgb(${red},${green},${blue}),rgb(${red1},${green1},${blue1}))`;
+    return rgbcolor;
+};
+gradient();
+ 
+  
+  for (let x = 0; x < 800; x++) {
+    var block = document.createElement ("div");
+    container.appendChild (block);
+    block.classList.add("block");
+    block.innerHTML = x;
+    block.style.background = gradient;
+  }
+const animationBlocks = anime
+    .timeline({
+      targets: '.block',
+      easing: 'easeInOutBack',
+      loop: true,
+      autoplay: false,
+      duration: 3000,
+      direction: "alternate",
+    })
+    .add({
+      translateX: ()=> anime.random(-200,200),
+      translateY: ()=> anime.random(-400,400),
+      scale: ()=> anime.random(0.032,0.03),
+      background: gradient,
+      delay: anime.stagger(2),
+    })
+    .add({
+      translateX: ()=> anime.random(-200,200),
+      translateY: ()=> anime.random(-400,400),
+      scale: [
+        {value:0.5},
+        {value:0.01},
+        {value:0.1},
+        {value:0},
+        {value:0.2},
+        ],
+      background: gradient,
+    //  delay: anime.stagger(2),
+      delay: (el,i)=>{return i*1},
+    })
+    .add({
+      translateX: [
+        anime.stagger(0),
+        anime.stagger(1),
+        anime.stagger(0),
+        anime.stagger(-0.5),
+        anime.stagger(0),
+        anime.stagger(0.5),
+        anime.stagger(-1),
+        anime.stagger(0),
+        ],
+      translateY: [
+        anime.stagger(0),
+        anime.stagger(0),
+        anime.stagger(0),
+        anime.stagger(0),
+        anime.stagger(0),
+        anime.stagger(0),
+        anime.stagger(0),
+        anime.stagger(0),
+        ],
+      scale: [
+        {value:0.5},
+        {value:1},
+        {value:.1},
+        {value:0},
+        {value:0.2},
+        ],
+      background: gradient,
+      delay: anime.stagger(2),
+      easing: "easeInBack",
+      top: "0px",
+    })
+    .add({
+      translateX: ()=> anime.random(-200,200),
+      translateY: ()=> anime.random(-0,800),
+      scale: [
+        {value:0.5},
+        {value:1},
+        {value:.1},
+        {value:0},
+        {value:0.2},
+        ],
+      background: gradient,
+      delay: anime.stagger(2),
+    })
+    .add({
+      borderRadius: "0%",
+      background: gradient,
+      delay: anime.stagger(2),
+    })
+    .add({
+      translateX: ()=> anime.random(-200,200),
+      translateY: ()=> anime.random(-0,800),
+      scale: [
+        {value:()=>anime.random(-0.5,0.05)},
+        {value:1},
+        {value:.1},
+        {value:0},
+        {value:0.2},
+        ],
+      background: gradient,
+      delay: anime.stagger(2),
+    })
+    .add({
+      rotate: "5turn",
+      background: gradient,
+      delay: anime.stagger(2),
+    })
+    
+    
+    
+    
+    
+setTimeout(function() {
+   animationBlocks.play();
+}, 200);
+</script> 
+  </body>
+</html>

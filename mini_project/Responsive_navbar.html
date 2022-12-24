@@ -1,0 +1,297 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /*
+    background-color: rgb(218,197,196);
+    */
+    background-image: url('Screenshot_20220406-000630_Samsung Notes-04.jpeg');
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  header {
+    width: calc(100% - 50px);
+    border: 0.6px solid black;
+    border-radius: 10px;
+    top: 0px;
+    margin: 10px;
+    position: fixed;
+    z-index: 100;
+     background: rgba(255,255,255,0.02);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0);
+    backdrop-filter: blur(3.6px);
+    -webkit-backdrop-filter: blur(3.6px);
+  
+  }
+  .container {
+    transition: 0.5s;
+     background: rgba(255,255,255,0.02);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0);
+    backdrop-filter: blur(3.6px);
+    -webkit-backdrop-filter: blur(3.6px);
+  
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px;
+    font-size: 30px;
+  }
+  .logo > a {
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  ul li {
+    list-style: none;
+    display: inline;
+  }
+  ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    padding: 4px;
+  }
+  button {
+    width: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 50px;
+    display: none;
+  }
+  section  {
+    width: 370px;
+    height: 300vh;
+    padding: 10px;
+    position: relative;
+    margin-top: 100px;
+    font-size: 10px;
+    text-align: justify;
+    border: 1px solid black;
+  }
+@media (max-width:900px) {
+  header {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+  button {
+    display: block;
+    transform: 0.3s;
+  }
+  .container {
+    width: calc(100% - 40px);
+    height: calc(100vh - 200px);
+    display: flex;
+    top: 100px;
+    position: absolute;
+    margin-left: -100%;
+  }
+  nav {
+    padding: 0px 20px;
+  }
+  .container_res {
+  margin-left: 0px;
+  background: rgba(255,255,255,0.02);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0);
+  backdrop-filter: blur(3.6px);
+  -webkit-backdrop-filter: blur(3.6px);
+  
+  }
+  ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  ul li {
+   display: block;
+   text-align: center;
+   position: relative;
+   width: 400px;
+   transition: 0.3s;
+  }
+  ul > li:hover {
+  background: rgba(255,255,255,0.02);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0);
+  backdrop-filter: blur(3.6px);
+  -webkit-backdrop-filter: blur(3.6px);
+  }
+}
+</style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><a href="#">Logo</a></div>
+        <div class="container">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Sponsor</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <button type="button">=</button>
+      </nav>
+    </header>
+    <section>
+      apt update 
+apt upgrade -y
+pkg install git vim neovim wget bash zsh nodejs bat sox -y
+cd
+cd ..
+cd usr/etc
+rm -rf motd 
+cd
+cd /data/data/com.termux/files/home/storage/dcim/
+git clone https://github.com/Blacklegion69/Termux_guide.git
+cd Termux_guide
+cp OperatorMono-Bold.otf /data/data/com.termux/files/home/.termux
+cd /data/data/com.termux/files/home/.termux
+mv OperatorMono-Bold.otf font.ttf
+cd
+clear
+cd storage/dcim/Termux_guide
+cp .vimrc /data/data/com.termux/files/home
+cp termux.properties /data/data/com.termux/files/home/.termux
+cd
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+cd /data/data/com.termux/files/home/storage/dcim/Termux_guide
+cp .zshrc /data/data/com.termux/files/home
+cd
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
+cd
+cd /data/data/com.termux/files/home/.oh-my-zsh/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/ apt update 
+apt upgrade -y
+pkg install git vim neovim wget bash zsh nodejs bat sox -y
+cd
+cd ..
+cd usr/etc
+rm -rf motd 
+cd
+cd /data/data/com.termux/files/home/storage/dcim/
+git clone https://github.com/Blacklegion69/Termux_guide.git
+cd Termux_guide
+cp OperatorMono-Bold.otf /data/data/com.termux/files/home/.termux
+cd /data/data/com.termux/files/home/.termux
+mv OperatorMono-Bold.otf font.ttf
+cd
+clear
+cd storage/dcim/Termux_guide
+cp .vimrc /data/data/com.termux/files/home
+cp termux.properties /data/data/com.termux/files/home/.termux
+cd
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+cd /data/data/com.termux/files/home/storage/dcim/Termux_guide
+cp .zshrc /data/data/com.termux/files/home
+cd
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
+cd
+cd /data/data/com.termux/files/home/.oh-my-zsh/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/ apt update 
+apt upgrade -y
+pkg install git vim neovim wget bash zsh nodejs bat sox -y
+cd
+cd ..
+cd usr/etc
+rm -rf motd 
+cd
+cd /data/data/com.termux/files/home/storage/dcim/
+git clone https://github.com/Blacklegion69/Termux_guide.git
+cd Termux_guide
+cp OperatorMono-Bold.otf /data/data/com.termux/files/home/.termux
+cd /data/data/com.termux/files/home/.termux
+mv OperatorMono-Bold.otf font.ttf
+cd
+clear
+cd storage/dcim/Termux_guide
+cp .vimrc /data/data/com.termux/files/home
+cp termux.properties /data/data/com.termux/files/home/.termux
+cd
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+cd /data/data/com.termux/files/home/storage/dcim/Termux_guide
+cp .zshrc /data/data/com.termux/files/home
+cd
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
+cd
+cd /data/data/com.termux/files/home/.oh-my-zsh/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/ apt update 
+apt upgrade -y
+pkg install git vim neovim wget bash zsh nodejs bat sox -y
+cd
+cd ..
+cd usr/etc
+rm -rf motd 
+cd
+cd /data/data/com.termux/files/home/storage/dcim/
+git clone https://github.com/Blacklegion69/Termux_guide.git
+cd Termux_guide
+cp OperatorMono-Bold.otf /data/data/com.termux/files/home/.termux
+cd /data/data/com.termux/files/home/.termux
+mv OperatorMono-Bold.otf font.ttf
+cd
+clear
+cd storage/dcim/Termux_guide
+cp .vimrc /data/data/com.termux/files/home
+cp termux.properties /data/data/com.termux/files/home/.termux
+cd
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+cd /data/data/com.termux/files/home/storage/dcim/Termux_guide
+cp .zshrc /data/data/com.termux/files/home
+cd
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
+cd
+cd /data/data/com.termux/files/home/.oh-my-zsh/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/ 
+    </section>
+<script type="text/javascript" charset="utf-8">
+  var button = document.querySelectorAll("button")[0];
+  var container = document.querySelector (".container");
+  button.addEventListener ("click",function(){
+  //  container.style.left = "0%";
+      container.classList.toggle ("container_res");
+  })
+</script>
+  </body>
+</html>

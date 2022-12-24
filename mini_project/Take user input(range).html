@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <input type="range" min="0.0" max="1.0" value="0.05" step="0.1"/>
+    <h1 id="one">
+      Bangladesh
+    </h1>
+<script type="text/javascript" charset="utf-8">
+  const input = document.querySelectorAll("input")[0];
+  const country = document.querySelectorAll("#one")[0];
+  
+  input.addEventListener("input",function(){
+    var x = input.value;
+    country.style.backgroundColor = `rgba(00,00,00,${x})`;
+  })
+</script>
+  </body>
+</html>

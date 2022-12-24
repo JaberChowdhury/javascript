@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+  .sty {
+    font-size: 10px;
+    color: red;
+    text-decoration: underline;
+  }
+</style>
+  </head>
+  <body>
+    
+<button id="button_one">Click Me</button>
+<button id="button_two">Click Me2</button>
+<hr />
+<h1 id="my_country">I love my country very much</h1>
+
+<script type="text/javascript" charset="utf-8">
+  let button_one = document.querySelector ("#button_one")
+  button_one.addEventListener("click", myfunction);
+  function myfunction () {
+     alert("You clicked the first button");
+     button_one.innerHTML = "Clicked";
+  }
+  document.querySelector ("#button_two").addEventListener("click", function(){
+    alert("You clicked second button");
+  });
+  
+  
+  let my_country = document.querySelector ("#my_country");
+  my_country.addEventListener("mouseover", function(){
+     my_country.classList.add("sty");
+  });
+  my_country.addEventListener("mouseout", function(){
+     my_country.classList.remove("sty");
+  });
+  
+  
+</script>
+  </body>
+</html>

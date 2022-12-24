@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title></title>
+  </head>
+  <body>
+<form method="post" onsubmit="return validate()">
+  Number: <input type="text" name="num1" id="num1" /><br />
+  Repeat: <input type="text" name="num2" id="num2" /><br />
+  <input type="submit" value="Submit" />
+</form>
+<script type="text/javascript" charset="utf-8">
+  /*
+  Form Validation
+  */
+function validate() {
+var num1 = document.querySelector ("#num1").value;
+var num2 = document.querySelector ("#num2").value;
+  if (num1!="" && num2!="") {
+    if (num1 === num2) {
+      console.log ("Thanks");
+    }
+    else {
+      console.log ("Didn't match");
+       alert ("Didn't match");
+    }
+  }
+}
+</script>
+  </body>
+</html>

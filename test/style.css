@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #889a9e;
+}
+.container {
+  width: 400px;
+  padding: 5px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+.images {
+  width: 100%;
+  padding: 4px;
+  padding-top: 30px;
+  background-color: #73c7dc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.number {
+  width: 100px;
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  -webkit-text-stroke: 0.1px black;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px white;
+  position: absolute;
+  top: -5px;
+  left: -40px;
+  transform: rotate(-45deg);
+}
+.images > .dual {
+  width: 180px;
+  height: 200px;
+  background-color: #efd9514b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.dual > .normal {
+  width: 180px;
+  height: 100px;
+  background-size: cover;
+}
+.dual > .gif {
+  width: 180px;
+  height: 100px;
+  background-size: cover;
+}
+.images > .largeimage {
+  width: 180px;
+  height: 200px;
+  overflow: hidden;
+  background-size: cover;
+}

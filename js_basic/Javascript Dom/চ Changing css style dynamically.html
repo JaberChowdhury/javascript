@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+   #para {
+     position: relative;
+     transition: 0.5s;
+   }
+  .parastyle {
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+    margin: 10px;
+    text-decoration: underline;
+  }
+  .container {
+    width: 300px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  .ball {
+    width: 0px;
+    height: 100%;
+    background-color: black;
+    transition: 0.5s;
+  }
+  .butt_container {
+    width: 300px;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+</style>
+  </head>
+  <body>
+    <p id="para">I love my country</p>
+    <button onclick="adds()">Add style</button>
+    <button onclick="rem()">Remove style</button>
+    <p></p><hr />
+    
+    <div class="container"><div class="ball"></div></div>
+    <div class="butt_container">
+         <button onclick="left()">Left</button>
+         <button onclick="right()">Right</button>
+    </div>
+    
+<script type="text/javascript" charset="utf-8">
+    let paragraph = document.querySelector ("#para");
+  function adds() {
+    paragraph.classList.add("parastyle");
+  }
+  function rem() {
+    paragraph.classList.remove("parastyle");
+  }
+  let ball = document.querySelector (".ball");
+  function left() {
+    ball.style.width= "2px";
+    ball.style.backgroundColor = "red";
+    ball.style.marginLeft = "0%";
+  }
+  function right() {
+    ball.style.width = "2px";
+    ball.style.backgroundColor = "red";
+    ball.style.marginLeft = "98%";
+  }
+  
+  
+</script>
+  </body>
+</html>

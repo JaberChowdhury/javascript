@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript" charset="utf-8">
+  /*
+  
+  //lets see a exampleof for loop
+  for (i=0; i<=100; i=i+1) {
+    document.write (" " + i);
+  }
+  document.write ("<br/>");
+  
+  
+  // Now see a example of while loop
+  var i = 0;
+  while (i<=50) {
+    document.write (" " + i);
+    i =i+1
+  }
+  document.write ("<br/>");
+  
+  var a = parseInt(prompt("Enter the starting Number:- "));
+  var b = parseInt(prompt("Enter the ending Number:- "));
+  var sum = 0;
+  while (a<=b) {
+    sum = sum + a
+    a = a + 1
+  }
+  console.log ("Total sum= "+sum);
+  document.write ("Total sum= "+sum);
+  
+  document.write ("<br/>");
+  */
+  
+  
+  var i = 0;
+  var sum = 0;
+  while (i<=100) {
+    if (i%3==0 && i%5==0) {
+      sum = sum + i
+      document.write ("  " + i);
+      document.write ("<br/>");
+    }
+    i = i+ 1
+  }
+  document.write ("Total sum= " + sum);
+  
+  document.write ("<br/>");
+</script>
+  </body>
+</html>

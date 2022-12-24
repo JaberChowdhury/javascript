@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Event listener in multiple element</title>
+<style type="text/css" media="all">
+:root{
+  --w: 190px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  clickEffect-sizing: border-clickEffect;
+  transition: all 0.5s linear;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit,minmax(var(--w),1fr));
+  background-color: #10b9810d;
+}
+.clickEffect {
+  --w:190px;
+  width: var(--w);
+  height: calc(var(--w) / 2);
+  background-color:#10b981;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  font-size: 2em;
+  border-radius: 2px;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.clickEffect > span {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 100%;
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgba(255,255,255,0.59);
+  animation: animate 1s linear 1;
+}
+@keyframes animate {
+  100% {
+    width: 600px;
+    height: 600px;
+    opacity: 0%;
+    border-radius: 50%;
+  }
+}
+</style>
+  </head>
+  <body>
+<button class="clickEffect">Click Me</button>
+<button class="clickEffect">Click Me</button>
+<button class="clickEffect">Click Me</button>
+<button class="clickEffect">Click Me</button>
+<button class="clickEffect">Click Me</button>
+<button class="clickEffect">Click Me</button>
+<button class="clickEffect">Click Me</button>
+<button class="clickEffect">Click Me</button>
+
+<script type="text/javascript" charset="utf-8">
+const clickEffect = document.querySelectorAll (".clickEffect");
+clickEffect.forEach(function(i,a){
+  i.addEventListener("click",function(e){
+    const red = Math.floor(Math.random()*255);
+    const green = Math.floor(Math.random()*255);
+    const blue = Math.floor(Math.random()*255);
+    const rgb = `rgb(${red}+${green}+${blue})`;
+    const x = e.offsetX;
+    const y = e.offsetY;
+    const span = document.createElement ("span");
+    i.appendChild (span);
+    //span.style.backgroundColor = rgb;
+    span.style.top = y+"px";
+    span.style.left = x+"px";
+    setTimeout(function(){
+      span.remove();
+    },999)
+  })
+})
+</script>
+  </body>
+</html>
