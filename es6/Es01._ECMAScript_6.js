@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title></title>
-  </head>
-  <body>
-<script type="text/javascript" charset="utf-8">
-  /*
+/*
   ECMAScript (ES) is a scripting language specification
 created to standardize JavaScript.
   
@@ -31,6 +23,3 @@ applications, including
 that it introduced new conventions and OOP concepts
 such as classes.
   */
-</script>
-  </body>
-</html>

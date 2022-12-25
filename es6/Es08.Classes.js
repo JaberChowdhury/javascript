@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Classes</title>
-  </head>
-  <body>
-<script type="text/javascript" charset="utf-8">
 // date = 3 August 2022
 // time = 11:50 pm
 
@@ -20,19 +12,3 @@ constructor method for initializing.
 
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
-  </body>
-</html>
