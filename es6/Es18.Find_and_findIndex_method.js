@@ -33,3 +33,12 @@ const student = [{
     id: 107,
     gpa: 4.55
 }, ];
+
+const getResult =(value,index,array)=>{
+  if(value.gpa >2){
+    return value;
+  }
+};
+
+const getGpa = student.find(getResult);
+console.log (getGpa);
