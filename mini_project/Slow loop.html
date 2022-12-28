@@ -8,7 +8,9 @@
 <h1 id="num">●●</h1>
 <script type="text/javascript" charset="utf-8">
   function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve)=>{
+      setTimeout(resolve,ms)
+    })
    }
    var num = document.querySelector ("#num");
    async function Tutor() {
