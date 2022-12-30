@@ -9,6 +9,12 @@ Mainarray.forEach((value)=>{
 // console.log (power);
 
 // let's use es6 feature 
+/*
+const newArray = Mainarray.map((value,index,array)=>{
+  return statement ;
+});
+
+*/
 const power = Mainarray.map((value) => {
     return value * value;
 });
