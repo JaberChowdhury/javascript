@@ -1,10 +1,10 @@
-// Lets see a javascript object 
-const info={
-  name:"Black_Light",
-  work:"student",
-  hobby:"programming"
-}
-console.log (info);
+// Lets see a javascript object
+const info = {
+  name: "Black_Light",
+  work: "student",
+  hobby: "programming",
+};
+console.log(info);
 /* 
 এখন আমাদের যদি এমন আরো অবজেক্ট  তৈরি করতে হয় তাহলে 
 বারবার কপি-পেষ্ট করে ইডিট করে তৈরী করতে হবে। যা কখনো সময় সাপেক্ষ,
@@ -12,20 +12,20 @@ console.log (info);
 ব্যবহার করব। 
 */
 
-function Person (fname,lname,age){
+function Person(fname, lname, age) {
   this.firstName = fname;
   this.lastname = lname;
   this.age = age;
-  this.fullname=function(){
+  this.fullname = function () {
     return this.firstName + " " + this.lastname;
-  }
+  };
 }
 
-const black = new Person("Black","Light",19);
+const black = new Person("Black", "Light", 19);
 black.country = "Bangladesh";
 black.hobby = "programming,Coding🗿";
-console.log (black);
-console.log (black.fullname());
+console.log(black);
+console.log(black.fullname());
 
 /*important note 
 

@@ -15,11 +15,10 @@ console.log(two);
 console.log(three);
 // using function
 let fun = () => {
-    return [1, 2, 3];
-}
+  return [1, 2, 3];
+};
 let [ones, , twos] = fun();
 console.log(twos);
-
 
 /*
  Object Destructuring in ES6
@@ -30,32 +29,23 @@ console.log(twos);
  
 */
 let obj = {
-    h: 12344,
-    s: 76543
+  h: 12344,
+  s: 76543,
 };
-let {
-    h,
-    s
-} = obj;
+let { h, s } = obj;
 console.log(h);
 
-// More simple 
+// More simple
 let a, b;
-({
-    a,
-    b
-} = {
-    name: "black ",
-    id: "hiii"
+({ a, b } = {
+  name: "black ",
+  id: "hiii",
 });
-console.log(a + b); // facing problem 
+console.log(a + b); // facing problem
 
 // extra simple
-let {
-    x,
-    y
-} = {
-    x: "Bangladesh ",
-    y: "Dhaka"
+let { x, y } = {
+  x: "Bangladesh ",
+  y: "Dhaka",
 };
 console.log(x + y);

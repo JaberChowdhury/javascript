@@ -1,4 +1,4 @@
-// Array destructuring 
+// Array destructuring
 
 const array = [12, 76, 8, 5, 88, 5, 875, 77, 777, 7, 88];
 

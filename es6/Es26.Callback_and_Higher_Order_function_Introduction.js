@@ -10,14 +10,14 @@ Concept:
  তাকে বলা হয় Higher order function। 
 */
 
-const callback =(user,message)=>{
-  console.log (`hello ${user},${message}`);
+const callback = (user, message) => {
+  console.log(`hello ${user},${message}`);
 };
-const higherOrderFunction =(user,message,argument)=>{
-  argument(user,message);
+const higherOrderFunction = (user, message, argument) => {
+  argument(user, message);
 };
 
-higherOrderFunction("Jaber","How are you?",callback);
+higherOrderFunction("Jaber", "How are you?", callback);
 
 /*
 এখানে higherOrderFunction হলো Higher order function  

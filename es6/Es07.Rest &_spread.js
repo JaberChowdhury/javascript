@@ -11,13 +11,13 @@ if an array contains all the arguments passed:
 */
 
 function containsAll(arr) {
-    for (let k = 0; k < arguments.length; k++) {
-        let num = arguments[k];
-        if (arr.indexOf(num) === -1) {
-            return false;
-        }
+  for (let k = 0; k < arguments.length; k++) {
+    let num = arguments[k];
+    if (arr.indexOf(num) === -1) {
+      return false;
     }
-    return true;
+  }
+  return true;
 }
 let x = [2, 4, 6, 6];
 console.log(containsAll(x, 2, 4, 7));

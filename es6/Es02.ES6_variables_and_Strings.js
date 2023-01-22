@@ -10,7 +10,7 @@ const c = 0;
 const cc = "String";
 // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 if (true) {
-    let name = "Red_Remix";
+  let name = "Red_Remix";
 }
 console.log(name); // Generate an Error
 /*
@@ -24,23 +24,23 @@ it was declared as let.
 
 var x = 5;
 if (true) {
-    var x = 10;
-    console.log(x); // return 10
+  var x = 10;
+  console.log(x); // return 10
 }
 console.log(x); // return 10
 
 // Let's use let 🔥🔥🔥🔥🔥
 let y = 10;
 if (true) {
-    let y = 20;
-    console.log(y); // return 20
+  let y = 20;
+  console.log(y); // return 20
 }
 console.log(y); // return 10 🔥
 
 //🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 //One of the best uses for let is in loops:
 for (let t = 0; t <= 100; t++) {
-    console.log(t);
+  console.log(t);
 }
 
 // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
