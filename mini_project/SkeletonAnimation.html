@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #4f4f4f;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #4fcfef;
+        flex-direction: column;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: black;
+        position: relative;
+        overflow: hidden;
+      }
+      .big {
+        width: 100%;
+        height: 300px;
+        background-color: var(--bg);
+        overflow: hidden;
+      }
+      .all {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        position: relative;
+      }
+      .circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--bg);
+        overflow: hidden;
+      }
+      .line {
+        width: 80%;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 50px;
+      }
+      .line1 {
+        width: 90%;
+        height: 20px;
+        border-radius: 4px;
+        background-color: var(--bg);
+        overflow: hidden;
+        margin: 4px;
+      }
+      .line2 {
+        width: 40%;
+        height: 20px;
+        border-radius: 4px;
+        background-color: var(--bg);
+        margin: 4px;
+        overflow: hidden;
+      }
+      .animate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .animate::before {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 700%;
+        background: -webkit-linear-gradient(
+          left,
+          transparent,
+          rgba(255,255,255,0.5),
+          transparent
+        );
+        transform: rotate(45deg);
+        left: -190%;
+        animation: animate 1.2s ease-out infinite;
+      }
+      @keyframes animate {
+        100% {
+          left: 190%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="big animate"></div>
+      <div class="all">
+        <div class="circle animate"></div>
+        <div class="line">
+          <div class="line1 animate"></div>
+          <div class="line1 animate"></div>
+          <div class="line2 animate"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
