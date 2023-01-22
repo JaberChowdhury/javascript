@@ -3,75 +3,79 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>box animation</title>
-<style type="text/css" media="all">
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-section {
-  position: absolute;
-  margin: 10px auto;
-  display: grid;
-  grid-template-columns: repeat(10,1fr);
-  justify-content: center;
-  align-items: center;
-}
-.box {
-  width: 30px;
-  height: 30px;
-  background-color: #00ff19;
-}
-.box:nth-child(odd) {
-  background-color: #9400ff;
-}
-</style>
+    <style type="text/css" media="all">
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      section {
+        position: absolute;
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        justify-content: center;
+        align-items: center;
+      }
+      .box {
+        width: 30px;
+        height: 30px;
+        background-color: #00ff19;
+      }
+      .box:nth-child(odd) {
+        background-color: #9400ff;
+      }
+    </style>
   </head>
   <body>
-    <section class="container">    </section>
-<script src="anime.min.js"></script>  
-<script type="text/javascript" charset="utf-8">
-const container = document.querySelectorAll (".container")[0];
+    <section class="container"></section>
+    <script src="anime.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      const container = document.querySelectorAll(".container")[0];
 
-for (x=0; x<190; x++) {
-  let r = Math.floor(Math.random()*255);
-  let g = Math.floor(Math.random()*255);
-  let b = Math.floor(Math.random()*255);
-  let rgb = `rgb(${r},${g},${b})`;
-  let box = document.createElement ("div");
-  box.classList.add("box");
-  container.appendChild (box);
-  box.style.backgroundColor = rgb;
-}
+      for (x = 0; x < 190; x++) {
+        let r = Math.floor(Math.random() * 255);
+        let g = Math.floor(Math.random() * 255);
+        let b = Math.floor(Math.random() * 255);
+        let rgb = `rgb(${r},${g},${b})`;
+        let box = document.createElement("div");
+        box.classList.add("box");
+        container.appendChild(box);
+        box.style.backgroundColor = rgb;
+      }
 
-
-
-function animation(){
-  anime({
-  targets: '.box',
-  scale: [
-    {value: .01, easing: 'easeOutSine', duration: 500},
-    {value: 1, easing: 'easeInOutQuad', duration: 1200}
-  ], 
-  delay: anime.stagger(200, {grid: [10,19], from: 'center'}),
-  easing: 'easeInOutQuad',
-  duration:1000,
-  backgroundColor: ["#c2c2c2","#00ff49","#00f1ff","#ff00c3","#00ffae"],
-  loop:true,
- // rotate: anime.stagger("1turn"),
-  direction: "alternate",
-  complete:animation,
-});
-}
-animation();
- // anime.stagger(value, {grid: [rows, columns], axis: 'x'})
-</script>
+      function animation() {
+        anime({
+          targets: ".box",
+          scale: [
+            { value: 0.01, easing: "easeOutSine", duration: 500 },
+            { value: 1, easing: "easeInOutQuad", duration: 1200 },
+          ],
+          delay: anime.stagger(200, { grid: [10, 19], from: "center" }),
+          easing: "easeInOutQuad",
+          duration: 1000,
+          backgroundColor: [
+            "#c2c2c2",
+            "#00ff49",
+            "#00f1ff",
+            "#ff00c3",
+            "#00ffae",
+          ],
+          loop: true,
+          // rotate: anime.stagger("1turn"),
+          direction: "alternate",
+          complete: animation,
+        });
+      }
+      animation();
+      // anime.stagger(value, {grid: [rows, columns], axis: 'x'})
+    </script>
   </body>
 </html>

@@ -2,136 +2,143 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title>To Do App</title>
-<style type="text/css" media="all">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: all 0.5s linear;
-}
-body {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: #c6dde3;
-}
-.container {
-  width: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 10px;
-  background-color: white;
-  margin: 10px;
-  border-radius: 5px;
-}
-.container > h3 {
-  text-decoration: underline;
-}
-form {
-  width: 100%;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-form > input {
-  margin: 10px;
-  height: 50px;
-  font-weight: bold;
-  font-size: 1.2em;
-  border-radius: 3px;
-}
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all 0.5s linear;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #c6dde3;
+      }
+      .container {
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+        background-color: white;
+        margin: 10px;
+        border-radius: 5px;
+      }
+      .container > h3 {
+        text-decoration: underline;
+      }
+      form {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      form > input {
+        margin: 10px;
+        height: 50px;
+        font-weight: bold;
+        font-size: 1.2em;
+        border-radius: 3px;
+      }
 
-#text {
-  width: 60%;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#button {
-  width: 25%;
-  background-color: #00ffcb;
-  outline: #ffa000;
-  border: 1px solid #ffa000;
-}
-.result {
-  width: 400px;
-  max-height: 1200px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column-reverse;
-  overflow: scroll;
-}
-.box {
-  width: 100%;
-  position: relative;
-  margin: 10px 0px 10px 0px;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border-radius: 5px;
-}
-.box > p {
-  width: 65%;
-  min-height: 40px;
-  background-color: #54f6e38f;
-  margin: 0px 4px 0px 4px;
-  padding: 1px;
-  font-weight: bold;
-  border-radius: 5px;
-  overflow: scroll;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.box > .timebox {
-  width: 25%;
-  height: 100%;
-  background-color: #00ccff50;
-  margin: 0px 4px 0px 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-weight: 200;
-  border-radius: 5px;
-}
-.box > .cancel {
-  width: 10%;
-  height: 100%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.8em;
-  background-color: #ff000090;
-  margin: 0px 4px 0px 4px;
-  border-radius: 5px;
-}
-</style>
+      #text {
+        width: 60%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #button {
+        width: 25%;
+        background-color: #00ffcb;
+        outline: #ffa000;
+        border: 1px solid #ffa000;
+      }
+      .result {
+        width: 400px;
+        max-height: 1200px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        overflow: scroll;
+      }
+      .box {
+        width: 100%;
+        position: relative;
+        margin: 10px 0px 10px 0px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+      }
+      .box > p {
+        width: 65%;
+        min-height: 40px;
+        background-color: #54f6e38f;
+        margin: 0px 4px 0px 4px;
+        padding: 1px;
+        font-weight: bold;
+        border-radius: 5px;
+        overflow: scroll;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box > .timebox {
+        width: 25%;
+        height: 100%;
+        background-color: #00ccff50;
+        margin: 0px 4px 0px 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-weight: 200;
+        border-radius: 5px;
+      }
+      .box > .cancel {
+        width: 10%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.8em;
+        background-color: #ff000090;
+        margin: 0px 4px 0px 4px;
+        border-radius: 5px;
+      }
+    </style>
   </head>
   <body>
-<div class="container">
-  <h3>To Do App</h3>
-  <form class="inputItem" action="" method="get" accept-charset="utf-8">
-    <input type="text" name="" id="text" value="" required="required" placeholder="Add your ToDo here:"/>
-    <input type="button" name="" id="button" value="ADD+" />
-  </form>
-</div>
-<div class="result">
-  <!--
+    <div class="container">
+      <h3>To Do App</h3>
+      <form class="inputItem" action="" method="get" accept-charset="utf-8">
+        <input
+          type="text"
+          name=""
+          id="text"
+          value=""
+          required="required"
+          placeholder="Add your ToDo here:"
+        />
+        <input type="button" name="" id="button" value="ADD+" />
+      </form>
+    </div>
+    <div class="result">
+      <!--
   <div class="box">
     <p>Hi,There is my to do app.thanks for using my app</p>
     <div class="timebox">
@@ -141,21 +148,24 @@ form > input {
     <div class="cancel">×</div>
   </div>
   -->
-</div>
+    </div>
 
-<script src="Js_file/anime.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-// DOM 
-const form = document.querySelectorAll("form")[0];
-const text = document.querySelectorAll("#text")[0];
-const button = document.querySelectorAll("#button")[0];
-const result = document.querySelectorAll(".result")[0];
+    <script
+      src="Js_file/anime.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script type="text/javascript" charset="utf-8">
+      // DOM
+      const form = document.querySelectorAll("form")[0];
+      const text = document.querySelectorAll("#text")[0];
+      const button = document.querySelectorAll("#button")[0];
+      const result = document.querySelectorAll(".result")[0];
 
-
-form.addEventListener("submit",(event)=>{
-  event.preventDefault();
-  const d = new Date();
-  result.innerHTML  += `
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const d = new Date();
+        result.innerHTML += `
   <div class="box">
     <p>${text.value}</p>
     <div class="timebox">
@@ -165,53 +175,49 @@ form.addEventListener("submit",(event)=>{
     <div class="cancel">×</div>
   </div>
   `;
-  text.value = "";
-  const cancel = document.querySelectorAll(".cancel");
-  const box = document.querySelectorAll(".box");
-  anime({
-    targets:box[box.length-1],
-    scale:[
-      {value:1,easing:"easeOutBounce"},
-      {value:0,easing:"easeOutBounce"},
-      {value:1,easing:"easeOutBounce"},
-      ],
-    translateY:[
-      {value:330,easing:"easeInBack"},
-      {value:-300,easing:"easeInBack"},
-      {value:0,easing:"easeInBack"},
-      ],
-    rotateX:"2turn",
-    easing:"easeOutBounce",
-    duration: 500,
-  })
-  cancel.forEach((element,index)=>{
-    element.addEventListener("click",()=>{
-      anime({
-        targets: box[index],
-        scale:[
-          {value:0, easing:"easeInOutBounce"},
+        text.value = "";
+        const cancel = document.querySelectorAll(".cancel");
+        const box = document.querySelectorAll(".box");
+        anime({
+          targets: box[box.length - 1],
+          scale: [
+            { value: 1, easing: "easeOutBounce" },
+            { value: 0, easing: "easeOutBounce" },
+            { value: 1, easing: "easeOutBounce" },
           ],
-        translateX: [
-          {value:-5000,easing:"easeInBack"},
+          translateY: [
+            { value: 330, easing: "easeInBack" },
+            { value: -300, easing: "easeInBack" },
+            { value: 0, easing: "easeInBack" },
           ],
-        opacity:[
-          {value:0.3,easing:"easeInBack"},
-          {value:0,easing:"easeInBack"},
-          ],
-        rotateX: "2turn",
-        duration:1000,
-        delay:anime.stagger(100),
-      })//animejs
-      setTimeout(()=>{
-        box[index].style.display = "none";
-      },1500)//setTimeout
-    })//event listener 
-  })//forEach
-})
-button.addEventListener("click",(event)=>{
-  event.preventDefault();
-  const d = new Date();
-  result.innerHTML  += `
+          rotateX: "2turn",
+          easing: "easeOutBounce",
+          duration: 500,
+        });
+        cancel.forEach((element, index) => {
+          element.addEventListener("click", () => {
+            anime({
+              targets: box[index],
+              scale: [{ value: 0, easing: "easeInOutBounce" }],
+              translateX: [{ value: -5000, easing: "easeInBack" }],
+              opacity: [
+                { value: 0.3, easing: "easeInBack" },
+                { value: 0, easing: "easeInBack" },
+              ],
+              rotateX: "2turn",
+              duration: 1000,
+              delay: anime.stagger(100),
+            }); //animejs
+            setTimeout(() => {
+              box[index].style.display = "none";
+            }, 1500); //setTimeout
+          }); //event listener
+        }); //forEach
+      });
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        const d = new Date();
+        result.innerHTML += `
   <div class="box">
     <p>${text.value}</p>
     <div class="timebox">
@@ -221,49 +227,45 @@ button.addEventListener("click",(event)=>{
     <div class="cancel">×</div>
   </div>
   `;
-  text.value = "";
-  const cancel = document.querySelectorAll(".cancel");
-  const box = document.querySelectorAll(".box");
-  anime({
-    targets:box[box.length-1],
-    scale:[
-      {value:1,easing:"easeOutBounce"},
-      {value:0,easing:"easeOutBounce"},
-      {value:1,easing:"easeOutBounce"},
-      ],
-    translateY:[
-      {value:330,easing:"easeInBack"},
-      {value:-300,easing:"easeInBack"},
-      {value:0,easing:"easeInBack"},
-      ],
-    rotateX:"2turn",
-    easing:"easeOutBounce",
-    duration: 500,
-  })
-  cancel.forEach((element,index)=>{
-    element.addEventListener("click",()=>{
-      anime({
-        targets: box[index],
-        scale:[
-          {value:0, easing:"easeInOutBounce"},
+        text.value = "";
+        const cancel = document.querySelectorAll(".cancel");
+        const box = document.querySelectorAll(".box");
+        anime({
+          targets: box[box.length - 1],
+          scale: [
+            { value: 1, easing: "easeOutBounce" },
+            { value: 0, easing: "easeOutBounce" },
+            { value: 1, easing: "easeOutBounce" },
           ],
-        translateX: [
-          {value:-5000,easing:"easeInBack"},
+          translateY: [
+            { value: 330, easing: "easeInBack" },
+            { value: -300, easing: "easeInBack" },
+            { value: 0, easing: "easeInBack" },
           ],
-        opacity:[
-          {value:0.3,easing:"easeInBack"},
-          {value:0,easing:"easeInBack"},
-          ],
-        rotateX: "2turn",
-        duration:1000,
-        delay:anime.stagger(100),
-      })//animejs
-      setTimeout(()=>{
-        box[index].style.display = "none";
-      },1500)//setTimeout
-    })//event listener 
-  })//forEach
-})
-</script>
+          rotateX: "2turn",
+          easing: "easeOutBounce",
+          duration: 500,
+        });
+        cancel.forEach((element, index) => {
+          element.addEventListener("click", () => {
+            anime({
+              targets: box[index],
+              scale: [{ value: 0, easing: "easeInOutBounce" }],
+              translateX: [{ value: -5000, easing: "easeInBack" }],
+              opacity: [
+                { value: 0.3, easing: "easeInBack" },
+                { value: 0, easing: "easeInBack" },
+              ],
+              rotateX: "2turn",
+              duration: 1000,
+              delay: anime.stagger(100),
+            }); //animejs
+            setTimeout(() => {
+              box[index].style.display = "none";
+            }, 1500); //setTimeout
+          }); //event listener
+        }); //forEach
+      });
+    </script>
   </body>
 </html>

@@ -1,33 +1,53 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title></title>
   </head>
   <body>
-<div class="divone">Welcome all</div>
-<img onclick="imgfunc()" class="imagess" src="pic1.jpg" alt="" width="300px" height="300px" />
-<div></div>
-<input onclick="timehere()" type="button" name="" id="buttonss" value="Click me" />
-<div class="times">Time is here</div>
+    <div class="divone">Welcome all</div>
+    <img
+      onclick="imgfunc()"
+      class="imagess"
+      src="pic1.jpg"
+      alt=""
+      width="300px"
+      height="300px"
+    />
+    <div></div>
+    <input
+      onclick="timehere()"
+      type="button"
+      name=""
+      id="buttonss"
+      value="Click me"
+    />
+    <div class="times">Time is here</div>
 
+    <script type="text/javascript" charset="utf-8">
+      // Changing HTML Content
+      const divone = document.querySelector(".divone");
+      divone.innerHTML = "Changed by JavaScript  DOM";
 
-<script type="text/javascript" charset="utf-8">
-  // Changing HTML Content
-  const divone = document.querySelector (".divone");
-  divone.innerHTML = "Changed by JavaScript  DOM";
-  
-  function imgfunc() {
-       document.querySelector (".imagess").src = "pic2.jpg";
-  }
-  
-  const divtime = document.querySelector (".times");
-  function timehere() {
-    const date = new Date();
-    divtime.innerHTML ="Seconds= " + date.getSeconds() + "</br>" + "Minutes= "  + date.getMinutes() + "</br>" + "Hour= " + date.getHours();
-  }
-  
- //  Never use document.write() after the document is loaded. It will overwrite the document.
-</script>
+      function imgfunc() {
+        document.querySelector(".imagess").src = "pic2.jpg";
+      }
+
+      const divtime = document.querySelector(".times");
+      function timehere() {
+        const date = new Date();
+        divtime.innerHTML =
+          "Seconds= " +
+          date.getSeconds() +
+          "</br>" +
+          "Minutes= " +
+          date.getMinutes() +
+          "</br>" +
+          "Hour= " +
+          date.getHours();
+      }
+
+      //  Never use document.write() after the document is loaded. It will overwrite the document.
+    </script>
   </body>
 </html>

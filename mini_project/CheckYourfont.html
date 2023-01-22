@@ -3,88 +3,84 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title></title>
-<style type="text/css" media="all">
-@font-face {
-  src:url("coc.otf");
-  font-family: billo;
-  font-weight: 100;
-}
-:root {
-  --w: 132px;
-}
-* {
-  margin: 0px;
-  padding: 0px;
-  font-family: billo;
-  box-sizing: border-box;
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-body {
-  display: grid;
-  background-color: black;
-  grid-template-columns: repeat(auto-fit, minmax(var(--w),1fr));
-}
-.text {
-  width: var(--w);
-  height: var(--w);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2px;
-  border-radius: 3px;
-  background-color: #c95000;
-  font-size: calc(var(--w)/1.5);
-  color: white;
-  position: relative;
-  transform: scale(0) rotatey(0deg);
-}
-.span {
-  width: 40%;
-  height: 40%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background-color: #914000;
-  border-radius: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.35em;
-  color: black;
-  font-family: roboto;
-}
-</style>
+    <style type="text/css" media="all">
+      @font-face {
+        src: url("coc.otf");
+        font-family: billo;
+        font-weight: 100;
+      }
+      :root {
+        --w: 132px;
+      }
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: billo;
+        box-sizing: border-box;
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      body {
+        display: grid;
+        background-color: black;
+        grid-template-columns: repeat(auto-fit, minmax(var(--w), 1fr));
+      }
+      .text {
+        width: var(--w);
+        height: var(--w);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2px;
+        border-radius: 3px;
+        background-color: #c95000;
+        font-size: calc(var(--w) / 1.5);
+        color: white;
+        position: relative;
+        transform: scale(0) rotatey(0deg);
+      }
+      .span {
+        width: 40%;
+        height: 40%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: #914000;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.35em;
+        color: black;
+        font-family: roboto;
+      }
+    </style>
   </head>
   <body>
-<!--
+    <!--
 <div class="text">a<span class="span">s</span></div>
 -->
 
-    
-    
-<script type="text/javascript" charset="utf-8">
-
-  const body = document.querySelectorAll ("body")[0];
-  const word = `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890+×÷=~\|{}€$¥₩°•○●□■♤♡◇♧☆《▪》¡¿/_<>[]!@#£%^&*()-'"":;,?`;
-  const arr = Array.from(word);
-function createElement(){
-  for(let i=0; i<arr.length; i++) {
-    const box = document.createElement ("div");
-    box.classList.add("text");
-    const span = document.createElement ("span");
-    span.classList.add("span");
-    body.appendChild(box);
-    box.innerHTML = arr[i];
-    box.appendChild(span);
-    span.innerHTML = arr[i];
-    box.style.transform = "scale(0)"
-    setTimeout(function(){
-      box.style.transform = "scale(1)"
-    },100*i);
-  }
-};
-createElement();
-
-</script>
+    <script type="text/javascript" charset="utf-8">
+      const body = document.querySelectorAll("body")[0];
+      const word = `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890+×÷=~\|{}€$¥₩°•○●□■♤♡◇♧☆《▪》¡¿/_<>[]!@#£%^&*()-'"":;,?`;
+      const arr = Array.from(word);
+      function createElement() {
+        for (let i = 0; i < arr.length; i++) {
+          const box = document.createElement("div");
+          box.classList.add("text");
+          const span = document.createElement("span");
+          span.classList.add("span");
+          body.appendChild(box);
+          box.innerHTML = arr[i];
+          box.appendChild(span);
+          span.innerHTML = arr[i];
+          box.style.transform = "scale(0)";
+          setTimeout(function () {
+            box.style.transform = "scale(1)";
+          }, 100 * i);
+        }
+      }
+      createElement();
+    </script>
   </body>
 </html>

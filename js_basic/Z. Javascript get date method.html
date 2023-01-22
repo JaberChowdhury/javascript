@@ -1,33 +1,42 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title></title>
   </head>
   <body>
     <p><b>Normal Date</b></p>
-    <p id="p1"></p></br>
+    <p id="p1"></p>
+    <br />
     <p><b>getFullYear()</b></p>
-    <p id="p2"></p></br>
+    <p id="p2"></p>
+    <br />
     <p><b>getMonth()</b></p>
-    <p id="p3"></p></br>
+    <p id="p3"></p>
+    <br />
     <p><b>getDate()</b></p>
-    <p id="p4"></p></br>
+    <p id="p4"></p>
+    <br />
     <p><b>getHours()</b></p>
-    <p id="p5"></p></br>
+    <p id="p5"></p>
+    <br />
     <p><b>getMinutes()</b></p>
-    <p id="p6"></p></br>
+    <p id="p6"></p>
+    <br />
     <p><b>getSeconds()</b></p>
-    <p id="p7"></p></br>
+    <p id="p7"></p>
+    <br />
     <p><b>getMilliseconds()</b></p>
-    <p id="p8"></p></br>
+    <p id="p8"></p>
+    <br />
     <p><b>getTime()</b></p>
-    <p id="p9"></p></br>
+    <p id="p9"></p>
+    <br />
     <p><b>getDay()</b></p>
     <p id="p10"></p>
-<script type="text/javascript" charset="utf-8">
-  // Javascript  get date method
-  /*
+    <script type="text/javascript" charset="utf-8">
+      // Javascript  get date method
+      /*
   getFullYear()
   getMonth()
   getDate()
@@ -39,15 +48,15 @@
   getDay()
   Date.now()*
   */
-  const d1 = new Date();
-  document.getElementById("p1").innerHTML = d1 ;
-  
-  const d2 = new Date();
-  document.getElementById("p2").innerHTML = d2.getFullYear() ;
-  
-  const d3 = new Date();
-  document.getElementById("p3").innerHTML = d3.getMonth() ;
-  /*
+      const d1 = new Date();
+      document.getElementById("p1").innerHTML = d1;
+
+      const d2 = new Date();
+      document.getElementById("p2").innerHTML = d2.getFullYear();
+
+      const d3 = new Date();
+      document.getElementById("p3").innerHTML = d3.getMonth();
+      /*
   wait!!!!!See this!!
   months = ["January", "February", "March",_________,"November", "December"];
   We know Array elements count from 0,1,2,3,4
@@ -56,47 +65,45 @@
   March = 2 
   thats it 😊
   */
-setInterval(function(){
-  
-  const d4 = new Date();
-  document.getElementById("p4").innerHTML = d4.getDate() ;
-  
-  const d5 = new Date();
-  document.getElementById("p5").innerHTML = d5.getHours() ;
-  
-  const d6 = new Date();
-  document.getElementById("p6").innerHTML = d6.getMinutes() ;
-  
-  const d7 = new Date();
-  document.getElementById("p7").innerHTML = d7.getSeconds() ;
-  
-  const d8 = new Date();
-  document.getElementById("p8").innerHTML = d8.getMilliseconds() ;
-  
-  const d9 = new Date();
-  document.getElementById("p9").innerHTML = d9.getTime() ;
-  
-  const d10 = new Date();
-  document.getElementById("p10").innerHTML = d10.getDay() ;
-},10)
-  /*
+      setInterval(function () {
+        const d4 = new Date();
+        document.getElementById("p4").innerHTML = d4.getDate();
+
+        const d5 = new Date();
+        document.getElementById("p5").innerHTML = d5.getHours();
+
+        const d6 = new Date();
+        document.getElementById("p6").innerHTML = d6.getMinutes();
+
+        const d7 = new Date();
+        document.getElementById("p7").innerHTML = d7.getSeconds();
+
+        const d8 = new Date();
+        document.getElementById("p8").innerHTML = d8.getMilliseconds();
+
+        const d9 = new Date();
+        document.getElementById("p9").innerHTML = d9.getTime();
+
+        const d10 = new Date();
+        document.getElementById("p10").innerHTML = d10.getDay();
+      }, 10);
+      /*
   same as months
   sunday = 0 
   Monday = 1
   Tuesday = 2
   */
-  
-  
-  /*
-  ***************************************************
-  ***************************************************
-  ***************************************************
-  *************** UTC DATE METHOD *******************
-  ***************************************************
-  ***************************************************
-  ***************************************************
-  */
-  /*
+
+      /*
+       ***************************************************
+       ***************************************************
+       ***************************************************
+       *************** UTC DATE METHOD *******************
+       ***************************************************
+       ***************************************************
+       ***************************************************
+       */
+      /*
   getUTCDate()
   getUTCYear()
   getUTCMonth()
@@ -106,7 +113,6 @@ setInterval(function(){
   getUTCSeconds()
   getUTCMilliseconds()
   */
-  
-</script>
+    </script>
   </body>
 </html>

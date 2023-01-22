@@ -1,12 +1,12 @@
-const items = document.querySelectorAll (".box");
-items.forEach(function(item){
-  item.addEventListener("click",function(){
+const items = document.querySelectorAll(".box");
+items.forEach(function (item) {
+  item.addEventListener("click", function () {
     document.execCommand("copy");
   });
-  item.addEventListener("copy",function(event){
+  item.addEventListener("copy", function (event) {
     event.preventDefault();
-    if(event.clipboardData) {
-      event.clipboardData.setData("text/plain",item.textContent);
+    if (event.clipboardData) {
+      event.clipboardData.setData("text/plain", item.textContent);
     }
   });
 });

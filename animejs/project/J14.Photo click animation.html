@@ -2,114 +2,118 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title>AnimeJs animation</title>
-<style type="text/css" media="all">
-div {
-  max-width: 450px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 80px auto;
-}
+    <style type="text/css" media="all">
+      div {
+        max-width: 450px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 80px auto;
+      }
 
-span {
-  flex: 0 1 20%;
-  cursor: pointer;
-  font-size: 0;
-  overflow: hidden;
-}
+      span {
+        flex: 0 1 20%;
+        cursor: pointer;
+        font-size: 0;
+        overflow: hidden;
+      }
 
-img {
-  width: 100%;
-  pointer-events: none;
-}
+      img {
+        width: 100%;
+        pointer-events: none;
+      }
 
-h1 {
-  position: fixed;
-  top: 0;
-  font-size: 16px;
-  background-color: #000;
-  color: #fff;
-  font-weight: normal;
-  margin: 0;
-  transform: translateX(-50%);
-  left: 50%;
-  line-height: 2;
-  padding: 0 20px;
-}
-</style>
+      h1 {
+        position: fixed;
+        top: 0;
+        font-size: 16px;
+        background-color: #000;
+        color: #fff;
+        font-weight: normal;
+        margin: 0;
+        transform: translateX(-50%);
+        left: 50%;
+        line-height: 2;
+        padding: 0 20px;
+      }
+    </style>
   </head>
   <body>
+    <div>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+      <span><img src="all/photo.jpg" alt="photo" /></span>
+    </div>
 
+    <script src="anime.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      const images = document.querySelectorAll("span");
 
-<div>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-  <span><img src="all/photo.jpg" alt="photo" /></span>
-</div>
+      images.forEach((image, index) => {
+        image.addEventListener("click", (e) => {
+          anime({
+            targets: images,
+            autoplay: true,
+            opacity: [
+              { value: 0.5, easing: "easeOutSine", duration: 600 },
+              { value: 1, easing: "easeInOutQuad", duration: 900 },
+            ],
+            filter: [
+              {
+                value: "blur(5px) grayscale(100%)",
+                easing: "easeOutSine",
+                duration: 700,
+              },
+              {
+                value: "blur(0px) grayscale(0%)",
+                easing: "easeInOutQuad",
+                duration: 1000,
+              },
+            ],
+            borderRadius: [
+              { value: "50%", easing: "easeOutSine", duration: 700 },
+              { value: "0%", easing: "easeInOutQuad", duration: 1000 },
+            ],
+            scale: [
+              { value: 0.15, easing: "easeOutSine", duration: 600 },
+              { value: 1, easing: "easeInOutQuad", duration: 1100 },
+            ],
+            delay: anime.stagger(200, { grid: [5, 5], from: index }),
+          });
+        });
+      });
 
-
-
-<script src="anime.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-const images = document.querySelectorAll("span");
-
-images.forEach((image, index) => {
-image.addEventListener("click", e => {
-  anime({
-    targets: images,
-    autoplay: true,
-    opacity: [
-      { value: .5, easing: "easeOutSine", duration: 600 },
-      { value: 1, easing: "easeInOutQuad", duration: 900 }
-    ],
-    filter: [
-      { value: "blur(5px) grayscale(100%)", easing: "easeOutSine", duration: 700 },
-      { value: "blur(0px) grayscale(0%)", easing: "easeInOutQuad", duration: 1000 }
-    ],
-    borderRadius: [
-      { value: "50%", easing: "easeOutSine", duration: 700 },
-      { value: "0%", easing: "easeInOutQuad", duration: 1000 }
-    ],
-    scale: [
-      { value: 0.15, easing: "easeOutSine", duration: 600 },
-      { value: 1, easing: "easeInOutQuad", duration: 1100 }
-    ],
-    delay: anime.stagger(200, { grid: [5, 5], from: index })
-  });
-});
-});
-
-window.onload = () => document.querySelector('h1').remove();
-document.addEventListener("DOMContentLoaded", () => {
-document.querySelectorAll("img").forEach(img => {
-  img.onerror = function() {
-    this.style.display = "none";
-  };
-});
-});
-</script>
+      window.onload = () => document.querySelector("h1").remove();
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("img").forEach((img) => {
+          img.onerror = function () {
+            this.style.display = "none";
+          };
+        });
+      });
+    </script>
   </body>
 </html>

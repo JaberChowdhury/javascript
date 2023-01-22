@@ -2,68 +2,72 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title></title>
-<style type="text/css" media="all">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #333333;
-}
-.container {
-  width:400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  color: white;
-}
-.container > span {
-  color: white;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-</style>
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #333333;
+      }
+      .container {
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        color: white;
+      }
+      .container > span {
+        color: white;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      Hi_there_I_am_a_font-end_developer
-    </div>
+    <div class="container">Hi_there_I_am_a_font-end_developer</div>
 
-<script src="all/anime.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-const container = document.querySelectorAll (".container")[0];
-container.innerHTML = container.textContent.replace(/\S/g, "<span>$&</span>");
+    <script
+      src="all/anime.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script type="text/javascript" charset="utf-8">
+      const container = document.querySelectorAll(".container")[0];
+      container.innerHTML = container.textContent.replace(
+        /\S/g,
+        "<span>$&</span>"
+      );
 
-
-anime.timeline({loop:true,direction:"alternate"})
-.add({
-  targets:".container span",
-  scale:[2,0.4,1],
-  margin: [1,5,0,1,0],
-  border:"1px solid red",
-  color:["#ff0000","#ffffff","#ff0000","ffffff"],
-  delay:anime.stagger(50),
-})
-.add({
-  targets:".container span",
-  scale:[2,0.4,1],
-  margin: [1,5,0,1,0],
-  border:"none",
-  color:["#ff0000","#ffffff","#ff0000","ffffff"],
-  delay:anime.stagger(50,{from:"last"}),
-})
-</script>
+      anime
+        .timeline({ loop: true, direction: "alternate" })
+        .add({
+          targets: ".container span",
+          scale: [2, 0.4, 1],
+          margin: [1, 5, 0, 1, 0],
+          border: "1px solid red",
+          color: ["#ff0000", "#ffffff", "#ff0000", "ffffff"],
+          delay: anime.stagger(50),
+        })
+        .add({
+          targets: ".container span",
+          scale: [2, 0.4, 1],
+          margin: [1, 5, 0, 1, 0],
+          border: "none",
+          color: ["#ff0000", "#ffffff", "#ff0000", "ffffff"],
+          delay: anime.stagger(50, { from: "last" }),
+        });
+    </script>
   </body>
 </html>

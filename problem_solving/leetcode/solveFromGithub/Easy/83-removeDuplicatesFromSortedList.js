@@ -9,7 +9,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var deleteDuplicates = function(head) {
+var deleteDuplicates = function (head) {
   var origHead = head;
   while (head !== null && head.next !== null) {
     if (head.next.val === head.val) {

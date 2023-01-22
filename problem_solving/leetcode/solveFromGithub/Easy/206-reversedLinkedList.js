@@ -10,8 +10,8 @@
  * @return {ListNode}
  */
 // Iterative way
-var reverseList = function(head) {
-  if (head === null || head.next === null)  return head;
+var reverseList = function (head) {
+  if (head === null || head.next === null) return head;
   var headNext = head.next;
   head.next = null;
   while (head !== null && headNext !== null) {
@@ -26,20 +26,20 @@ var reverseList = function(head) {
 };
 
 // a more concise solution, prevHead eventually wll be the reversed list head
-var reverseList = function(head) {
-    var prevHead = null;
-    while (head) {
-        var headNext = head.next;
-        head.next = prevHead;
-        prevHead = head;
-        head = headNext;
-    }
-    return prevHead;
+var reverseList = function (head) {
+  var prevHead = null;
+  while (head) {
+    var headNext = head.next;
+    head.next = prevHead;
+    prevHead = head;
+    head = headNext;
+  }
+  return prevHead;
 };
 
 // recursive way
-var reverseList = function(head) {
-  if (head === null || head.next === null)  return head;
+var reverseList = function (head) {
+  if (head === null || head.next === null) return head;
   var headNext = head.next;
   head.next = null;
   var nextReversedListHead = reverseList(headNext);

@@ -14,16 +14,16 @@
  * @param {number} val
  * @return {ListNode}
  */
-var removeElements = function(head, val) {
-    if (!head) return null;
-    while (head && head.val === val) head = head.next;
-    var headCopy = head;
-    var prev = head;
-    while (head) {
-        head = head.next;
-        if (head && head.val === val) prev.next = head.next;
-        else prev = head;
-    }
+var removeElements = function (head, val) {
+  if (!head) return null;
+  while (head && head.val === val) head = head.next;
+  var headCopy = head;
+  var prev = head;
+  while (head) {
+    head = head.next;
+    if (head && head.val === val) prev.next = head.next;
+    else prev = head;
+  }
 
-    return headCopy;
+  return headCopy;
 };

@@ -1,34 +1,35 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title></title>
-<style type="text/css" media="all">
-  #ptag {
-    border: 1px solid black;
-  }
-</style>
+    <style type="text/css" media="all">
+      #ptag {
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
     <!---
   <button id="bybtn">Click Me</button>
   -->
-  <p id="ptag">~</p>
-  <button id="lastbutton">Double Event listener test</button>
-  
-  <button id="perameter">parameter test</button>
-  <p class="parameter">🔥🔥🔥🔥🔥🔥</p>
-  
-<script type="text/javascript" charset="utf-8">
-  // The addEventListener() method
-  
-  document.addEventListener("click",function(){// Anynonimous function 
-    var widt = Math.random()*33;
-    var width = widt + "px";
-    document.querySelector ("#ptag").style.width = width ;
-  });
-  
-  /*
+    <p id="ptag">~</p>
+    <button id="lastbutton">Double Event listener test</button>
+
+    <button id="perameter">parameter test</button>
+    <p class="parameter">🔥🔥🔥🔥🔥🔥</p>
+
+    <script type="text/javascript" charset="utf-8">
+      // The addEventListener() method
+
+      document.addEventListener("click", function () {
+        // Anynonimous function
+        var widt = Math.random() * 33;
+        var width = widt + "px";
+        document.querySelector("#ptag").style.width = width;
+      });
+
+      /*
   ●  When using the addEventListener() method,
   the JavaScript is separated from the HTML markup,
   for better readability and allows you to add event
@@ -37,8 +38,8 @@
   ●  You can easily remove an event listener by using the
   removeEventListener() method.
   */
-  
-  /*
+
+      /*
   Syntax
 
    element.addEventListener(event, function, useCapture);
@@ -56,44 +57,45 @@
    whether to use event bubbling or event capturing.
    This parameter is optional.
   */
-  
-  // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
-  // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
-  // Add many event listener 
-  let x = document.querySelector ("#lastbutton");
-  x.addEventListener ("click",function(){
-    alert ("Double add event listener  working!!!!");
-  });
-  x.addEventListener ("click",function(){
-    alert ("Another add event listener  working!🔥🔥🔥🔥🔥🔥!");
-  });
-  
-  
-  // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
-  // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
-  // Passing perameter 
-  
-  let a = 100;
-  let b = 200;
-   document.querySelector ("#perameter").addEventListener("click",function(){
-     myfunctionforparameter(a,b);
-   });
-  function myfunctionforparameter(a,b) {
-    document.querySelector (".parameter").innerHTML = a + b;
-  }
-  
-  // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
-  // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
-  // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
-  // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
-  // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
-  
-  /*
+
+      // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
+      // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
+      // Add many event listener
+      let x = document.querySelector("#lastbutton");
+      x.addEventListener("click", function () {
+        alert("Double add event listener  working!!!!");
+      });
+      x.addEventListener("click", function () {
+        alert("Another add event listener  working!🔥🔥🔥🔥🔥🔥!");
+      });
+
+      // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
+      // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
+      // Passing perameter
+
+      let a = 100;
+      let b = 200;
+      document
+        .querySelector("#perameter")
+        .addEventListener("click", function () {
+          myfunctionforparameter(a, b);
+        });
+      function myfunctionforparameter(a, b) {
+        document.querySelector(".parameter").innerHTML = a + b;
+      }
+
+      // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
+      // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
+      // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
+      // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
+      // 💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝💝
+
+      /*
   🔥🔥🔥 Event Bubbling or Event Capturing?🔥🔥🔥
   */
-  /*
+      /*
   Next part
   */
-</script>
+    </script>
   </body>
 </html>

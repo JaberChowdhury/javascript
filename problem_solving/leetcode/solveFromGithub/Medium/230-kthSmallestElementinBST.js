@@ -13,37 +13,37 @@
  * @param {number} k
  * @return {number}
  */
-var kthSmallest = function(root, k) {
-    var stack = [];
-    var node = root;
+var kthSmallest = function (root, k) {
+  var stack = [];
+  var node = root;
 
-    while (node || stack.length > 0) {
-        if (node) {
-            stack.push(node);
-            node = node.left;
-        } else {
-            node = stack.pop();
-            k--;
-            if (k === 0) return node.val;
-            node = node.right;
-        }
+  while (node || stack.length > 0) {
+    if (node) {
+      stack.push(node);
+      node = node.left;
+    } else {
+      node = stack.pop();
+      k--;
+      if (k === 0) return node.val;
+      node = node.right;
     }
+  }
 };
 
 // second try
-var kthSmallest = function(root, k) {
-    var stack = [];
+var kthSmallest = function (root, k) {
+  var stack = [];
 
-    while (root || stack.length > 0) {
-        while (root) {
-            stack.push(root);
-            root = root.left;
-        }
-        root = stack.pop();
-        k--;
-        if (k === 0) return root.val;
-        root = root.right;
+  while (root || stack.length > 0) {
+    while (root) {
+      stack.push(root);
+      root = root.left;
     }
+    root = stack.pop();
+    k--;
+    if (k === 0) return root.val;
+    root = root.right;
+  }
 
-    return 0;
+  return 0;
 };

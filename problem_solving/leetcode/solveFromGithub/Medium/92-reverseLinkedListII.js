@@ -11,26 +11,26 @@
  * @param {number} n
  * @return {ListNode}
  */
-var reverseBetween = function(head, m, n) {
-    var dummyHead = new ListNode(null);
-    dummyHead.next = head;
-    var pre = dummyHead;
+var reverseBetween = function (head, m, n) {
+  var dummyHead = new ListNode(null);
+  dummyHead.next = head;
+  var pre = dummyHead;
 
-    for (var i = 1 ; i < m; i++) {
-        pre = pre.next;
-    }
+  for (var i = 1; i < m; i++) {
+    pre = pre.next;
+  }
 
-    var curr = pre.next;
-    var newHead = pre;
-    for (var i = 0; i <= n - m; i++) {
-        var currNext = curr.next;
-        curr.next = pre;
-        pre = curr;
-        curr = currNext;
-    }
-    // reset the head and tail pointers
-    newHead.next.next = curr;
-    newHead.next = pre;
+  var curr = pre.next;
+  var newHead = pre;
+  for (var i = 0; i <= n - m; i++) {
+    var currNext = curr.next;
+    curr.next = pre;
+    pre = curr;
+    curr = currNext;
+  }
+  // reset the head and tail pointers
+  newHead.next.next = curr;
+  newHead.next = pre;
 
-    return dummyHead.next;
+  return dummyHead.next;
 };

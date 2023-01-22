@@ -5,25 +5,22 @@
     <title></title>
   </head>
   <body>
-<button type="submit">button01</button>
-<button type="submit">button02</button>
-<button type="submit">button03</button>
-<button type="submit">button04</button>
-<h1>
-  #
-</h1>
-<script type="text/javascript" charset="utf-8">
-  var text = document.querySelectorAll("h1")[0];
-  var button = document.getElementsByTagName("button");
-  console.log (button);
-  for (let x = 0; x < button.length; x++) {
-    button[x].addEventListener("click", function(){
-      console.log (x);
-      text.innerHTML = x;
-      button[x].style.marginTop = "90px";
-    })
-  }
-  
-</script>
+    <button type="submit">button01</button>
+    <button type="submit">button02</button>
+    <button type="submit">button03</button>
+    <button type="submit">button04</button>
+    <h1>#</h1>
+    <script type="text/javascript" charset="utf-8">
+      var text = document.querySelectorAll("h1")[0];
+      var button = document.getElementsByTagName("button");
+      console.log(button);
+      for (let x = 0; x < button.length; x++) {
+        button[x].addEventListener("click", function () {
+          console.log(x);
+          text.innerHTML = x;
+          button[x].style.marginTop = "90px";
+        });
+      }
+    </script>
   </body>
 </html>

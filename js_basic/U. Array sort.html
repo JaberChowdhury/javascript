@@ -1,72 +1,77 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title></title>
   </head>
   <body>
-<script type="text/javascript" charset="utf-8">
-  // sort = সাজানো
-  var fruit = ["Banana", "Apple","Jackfruit", "Cucumber", "Orange", "Mango", "Guava"];
-  var fruit = fruit.sort();// A,B,C,D,E
-  var fruit = fruit.reverse();// E,D,C,B,A
-  console.log (fruit);
-  
-  // Sorting numbers
-  const point = [27,37,89,277,288,-100,2778,273,-172,82];
-  point.sort(function(a,b){
-   // return a-b;
-    return b-a;
-  });
-  console.log (point); // return বড় থেকে ছোট
-  
-  
-  // Random numbers
-  const points = [27,37,89,277,288,-100,2778,273,-172,82];
-  points.sort(function(a,b){
-    return 0.5 - Math.random();
-  });
-  console.log (points);
-  
-  
-  // Sorting Object Arrays
-  const cars = [
-   {type:"Volvo", year:2016},
-   {type:"Saab", year:2001},
-   {type:"BMW", year:2010},
-   {type:"BMWh", year:2040},
-   {type:"BM7W", year:2210},
-   {type:"BftMW", year:2110}
-  ];
-  cars.sort(function(a, b){
-    return a.year - b.year - Math.random();
-    // return a.year - b.year;
-  });
-  console.log (cars); // year  অনুযায়ী  ছোট থেকে বড়
+    <script type="text/javascript" charset="utf-8">
+      // sort = সাজানো
+      var fruit = [
+        "Banana",
+        "Apple",
+        "Jackfruit",
+        "Cucumber",
+        "Orange",
+        "Mango",
+        "Guava",
+      ];
+      var fruit = fruit.sort(); // A,B,C,D,E
+      var fruit = fruit.reverse(); // E,D,C,B,A
+      console.log(fruit);
 
-  
-  console.log ("🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳");
-  const carses = [
-   {type:"Volvo", year:2016},
-   {type:"Saab", year:2001},
-   {type:"BMW", year:2010},
-   {type:"AMWh", year:2040},
-   {type:"XM7W", year:2210},
-   {type:"ftMW", year:2110},
-   {type:"kftMW", year:2110}
-  ];
-  carses.sort(function(a, b){
-     let x = a.type.toLowerCase();
-     let y = b.type.toLowerCase();
-     if (x < y) {
-       return -1;
-     }
-     if (x > y) {
-       return 1;
-     }
-     return 0;
-   });
-   console.log (carses);
-</script>
+      // Sorting numbers
+      const point = [27, 37, 89, 277, 288, -100, 2778, 273, -172, 82];
+      point.sort(function (a, b) {
+        // return a-b;
+        return b - a;
+      });
+      console.log(point); // return বড় থেকে ছোট
+
+      // Random numbers
+      const points = [27, 37, 89, 277, 288, -100, 2778, 273, -172, 82];
+      points.sort(function (a, b) {
+        return 0.5 - Math.random();
+      });
+      console.log(points);
+
+      // Sorting Object Arrays
+      const cars = [
+        { type: "Volvo", year: 2016 },
+        { type: "Saab", year: 2001 },
+        { type: "BMW", year: 2010 },
+        { type: "BMWh", year: 2040 },
+        { type: "BM7W", year: 2210 },
+        { type: "BftMW", year: 2110 },
+      ];
+      cars.sort(function (a, b) {
+        return a.year - b.year - Math.random();
+        // return a.year - b.year;
+      });
+      console.log(cars); // year  অনুযায়ী  ছোট থেকে বড়
+
+      console.log("🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳");
+      const carses = [
+        { type: "Volvo", year: 2016 },
+        { type: "Saab", year: 2001 },
+        { type: "BMW", year: 2010 },
+        { type: "AMWh", year: 2040 },
+        { type: "XM7W", year: 2210 },
+        { type: "ftMW", year: 2110 },
+        { type: "kftMW", year: 2110 },
+      ];
+      carses.sort(function (a, b) {
+        let x = a.type.toLowerCase();
+        let y = b.type.toLowerCase();
+        if (x < y) {
+          return -1;
+        }
+        if (x > y) {
+          return 1;
+        }
+        return 0;
+      });
+      console.log(carses);
+    </script>
   </body>
 </html>

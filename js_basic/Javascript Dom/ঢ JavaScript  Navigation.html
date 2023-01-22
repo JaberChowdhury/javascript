@@ -1,13 +1,12 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title></title>
   </head>
   <body>
-    
- <!--   <p id="demo">This is a paragraph tag</p>-->
-    
+    <!--   <p id="demo">This is a paragraph tag</p>-->
+
     <div class="container">
       <h4>This is a heading</h4>
       <h4>This is a heading</h4>
@@ -25,23 +24,22 @@
       <h4>This is a heading</h4>
       <h4>This is a heading</h4>
     </div>
-<script type="text/javascript" charset="utf-8">
-  /*
+    <script type="text/javascript" charset="utf-8">
+      /*
   Javascript  Dom navigation 
   console.log (document.querySelector("#demo").innerHTML);
   console.log (document.querySelector("#demo").firstChild.nodeValue);
   console.log (document.querySelector("#demo").childNodes[0].nodeValue);
   */
 
- var container = document.querySelector (".container");
- container.childNodes[0].nodeValue = "0 Changed by javascript";
- container.childNodes[10].nodeValue = "1 Changed by javascript";
- container.childNodes[2].nodeValue = "2 Changed by javascript";
+      var container = document.querySelector(".container");
+      container.childNodes[0].nodeValue = "0 Changed by javascript";
+      container.childNodes[10].nodeValue = "1 Changed by javascript";
+      container.childNodes[2].nodeValue = "2 Changed by javascript";
 
-
- /*
+      /*
  Confusing 🥲
  */
-</script>
+    </script>
   </body>
 </html>

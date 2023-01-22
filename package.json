@@ -1,0 +1,34 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "This is my javascript repo.My first javascript journey.All my practise and code and collections.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "null"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blacklegion69/javascript.git"
+  },
+  "keywords": [
+    "Javascript",
+    "Jsx",
+    "Nodejs",
+    "Tailwindcss",
+    "Html",
+    "Css",
+    "js"
+  ],
+  "author": "Md Jaber Hossain Chowdhury",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Blacklegion69/javascript/issues"
+  },
+  "homepage": "https://github.com/Blacklegion69/javascript#readme",
+  "devDependencies": {
+    "prettier": "2.8.3"
+  }
+}

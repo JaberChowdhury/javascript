@@ -1,13 +1,12 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title></title>
   </head>
   <body>
-<script type="text/javascript" charset="utf-8">
-
-  /*
+    <script type="text/javascript" charset="utf-8">
+      /*
   A+ = 80 - 100
   A  = 70 - 79
   B  = 60 - 69
@@ -15,11 +14,11 @@
   D  = 40 - 49
   F  = 0  - 39
   */
-  
-  var marks = parseInt(prompt("Enter your markes: "));
-  console.log (typeof(marks)); // The input converted into number
-  
-  /*
+
+      var marks = parseInt(prompt("Enter your markes: "));
+      console.log(typeof marks); // The input converted into number
+
+      /*
   if (marks >= 80 && marks <= 100) {
     document.write ("You got A+ because your mark is " + marks + " .");
     console.log ("You got A+ because your mark is " + marks + " .");
@@ -49,39 +48,35 @@
     console.log ("wrong_input 💔");
   }
   */
-  
-  function myfunction (marks) {
-    if (marks >= 80 && marks <= 100) {
-      document.write ("You got A+ because your mark is " + marks + " .");       console.log ("You got A+ because your mark is " + marks + " .");
-    }
-    else if (marks >= 70 && marks <= 79) {
-      document.write ("You got A because your mark is " + marks + " .");
-      console.log ("You got A because your mark is " + marks + " .");
-    }
-    else if (marks >= 60 && marks <= 69) {
-      document.write ("You got B because your mark is " + marks + " .");
-      console.log ("You got B because your mark is " + marks + " .");
-    }
-    else if (marks >= 50 && marks <= 59) {
-      document.write ("You got C because your mark is " + marks + " .");
-      console.log ("You got C because your mark is " + marks + " .");
-    }
-    else if (marks >= 40 && marks <= 49) {
-      document.write ("You got D because your mark is " + marks + " .");
-      console.log ("You got D because your mark is " + marks + " .");
-    }
-    else if (marks >= 0 && marks <= 39) {
-      document.write ("You got F(Fail) because your mark is " + marks + " .");
-      console.log ("You got F because your mark is " + marks + " .");
-    }
-    else {
-      document.write ("wrong_input 💔");
-      console.log ("wrong_input 💔");
-    }
-  }
-  myfunction(marks);
-  console.log (typeof(myfunction));
-  
-</script>
+
+      function myfunction(marks) {
+        if (marks >= 80 && marks <= 100) {
+          document.write("You got A+ because your mark is " + marks + " .");
+          console.log("You got A+ because your mark is " + marks + " .");
+        } else if (marks >= 70 && marks <= 79) {
+          document.write("You got A because your mark is " + marks + " .");
+          console.log("You got A because your mark is " + marks + " .");
+        } else if (marks >= 60 && marks <= 69) {
+          document.write("You got B because your mark is " + marks + " .");
+          console.log("You got B because your mark is " + marks + " .");
+        } else if (marks >= 50 && marks <= 59) {
+          document.write("You got C because your mark is " + marks + " .");
+          console.log("You got C because your mark is " + marks + " .");
+        } else if (marks >= 40 && marks <= 49) {
+          document.write("You got D because your mark is " + marks + " .");
+          console.log("You got D because your mark is " + marks + " .");
+        } else if (marks >= 0 && marks <= 39) {
+          document.write(
+            "You got F(Fail) because your mark is " + marks + " ."
+          );
+          console.log("You got F because your mark is " + marks + " .");
+        } else {
+          document.write("wrong_input 💔");
+          console.log("wrong_input 💔");
+        }
+      }
+      myfunction(marks);
+      console.log(typeof myfunction);
+    </script>
   </body>
 </html>

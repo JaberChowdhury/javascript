@@ -4,9 +4,9 @@
     <title></title>
   </head>
   <body>
-<input type="text" id="demo" onchange="nef()"/>
-<script type="text/javascript" charset="utf-8">
-  /*
+    <input type="text" id="demo" onchange="nef()" />
+    <script type="text/javascript" charset="utf-8">
+      /*
   The onload and onunload events are triggered when
   the user enters or leaves the page.
   These can be useful when performing actions 
@@ -22,13 +22,13 @@
   It’s important to understand events, because they are an
   essential part of dynamic web pages.
   */
-  window.onload = function (){
-    alert("windows loaded");
-  }
-  function nef() {
-    var x = document.querySelector ("#demo");
-    x.value = x.value.toUpperCase();
-  }
-</script>
+      window.onload = function () {
+        alert("windows loaded");
+      };
+      function nef() {
+        var x = document.querySelector("#demo");
+        x.value = x.value.toUpperCase();
+      }
+    </script>
   </body>
 </html>

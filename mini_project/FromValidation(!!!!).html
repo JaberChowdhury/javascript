@@ -3,154 +3,169 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>New App</title>
-<style type="text/css" media="all">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: all 0.5s linear;
-}
-body {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #d7e3e7;
-}
-.container {
-  width: 90%;
-  padding: 10px;
-  border: 2px double blue;
-  border-radius: 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: white;
-  position: relative;
-}
-form {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-}
-label {
-  width: 90%;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0px 10px 0px;;
-}
-label > input {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.2em;
-  border: 1px solid gold;
-}
-input[type="submit"] {
-  width: 50%;
-  height: 30px;
-  font-weight: bold;
-  font-size: 1.1em;
-  outline: none;
-}
-p {
-  margin: 5px;
-  text-align: center;
-}
-p > a  {
-  font-weight: bold;
-}
-.alert {
-  width: 90%;
-  height: 120px;
-  display: none; /* flex*/
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  background-color: white;
-  overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 1px 1px 10px 1px black;
-}
-.alert > p {
-  font-size: 1.4em;
-}
-.alert > p > span {
-  padding: 5px;
-  font-weight: bold;
-  color: red;
-}
-.alert > .loader {
-  width: 100%;
-  height: 10px;
-  background-color: red;
-  position: absolute;
-  top: 0px;
-}
-.load {
-  width: 0%;
-  height: 100%;
-  background-color: white;
-  position: absolute;
-  animation: animate 4s linear forwards;
-}
-@keyframes animate{
-  100% {
-    width: 100%;
-  }
-}
-</style>
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all 0.5s linear;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #d7e3e7;
+      }
+      .container {
+        width: 90%;
+        padding: 10px;
+        border: 2px double blue;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        position: relative;
+      }
+      form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+      }
+      label {
+        width: 90%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0px 10px 0px;
+      }
+      label > input {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2em;
+        border: 1px solid gold;
+      }
+      input[type="submit"] {
+        width: 50%;
+        height: 30px;
+        font-weight: bold;
+        font-size: 1.1em;
+        outline: none;
+      }
+      p {
+        margin: 5px;
+        text-align: center;
+      }
+      p > a {
+        font-weight: bold;
+      }
+      .alert {
+        width: 90%;
+        height: 120px;
+        display: none; /* flex*/
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        background-color: white;
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 1px 1px 10px 1px black;
+      }
+      .alert > p {
+        font-size: 1.4em;
+      }
+      .alert > p > span {
+        padding: 5px;
+        font-weight: bold;
+        color: red;
+      }
+      .alert > .loader {
+        width: 100%;
+        height: 10px;
+        background-color: red;
+        position: absolute;
+        top: 0px;
+      }
+      .load {
+        width: 0%;
+        height: 100%;
+        background-color: white;
+        position: absolute;
+        animation: animate 4s linear forwards;
+      }
+      @keyframes animate {
+        100% {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <h1>Log In</h1>
       <form action="" method="get" accept-charset="utf-8">
-        <label for="email"><input type="email" name="" id="email" value="" placeholder="Enter your email"/></label>
-        <label for="password"><input type="password" name="" id="password" value="" placeholder="Enter your password"/></label>
+        <label for="email"
+          ><input
+            type="email"
+            name=""
+            id="email"
+            value=""
+            placeholder="Enter your email"
+        /></label>
+        <label for="password"
+          ><input
+            type="password"
+            name=""
+            id="password"
+            value=""
+            placeholder="Enter your password"
+        /></label>
         <input onclick="check()" type="submit" name="" id="" value="Login" />
       </form>
-      <p>Do you forgot your password?<a>"</a><a href="#">Forget password??</a><a>"</a></p>
+      <p>
+        Do you forgot your password?<a>"</a><a href="#">Forget password??</a
+        ><a>"</a>
+      </p>
     </div>
     <div class="alert">
       <div class="loader"><span></span></div>
-      <p>
-      Authentication <span>Failed🤯</span>
-      </p>
+      <p>Authentication <span>Failed🤯</span></p>
     </div>
 
-<script type="text/javascript" charset="utf-8">
-const form = document.querySelectorAll ("form")[0];
-const email = document.querySelectorAll ("#email")[0];
-const password = document.querySelectorAll ("#password")[0];
-const load = document.querySelectorAll (".loader span")[0];
-const alertx = document.querySelectorAll (".alert")[0];
+    <script type="text/javascript" charset="utf-8">
+      const form = document.querySelectorAll ("form")[0];
+      const email = document.querySelectorAll ("#email")[0];
+      const password = document.querySelectorAll ("#password")[0];
+      const load = document.querySelectorAll (".loader span")[0];
+      const alertx = document.querySelectorAll (".alert")[0];
 
 
-var emailx = "abc@gmail.com";
-var passwordx = "12345";
+      var emailx = "abc@gmail.com";
+      var passwordx = "12345";
 
-const check =()=> {
-  if (email.value !== emailx && password.value !== passwordx) {
-    alertx.style.display = "flex";
-    load.classList.add ("load");
-    setTimeout(function(){
-      alertx.;
-    }
-  }
-  else {
-    alert("okkk");
-  }
-}
-</script>
+      const check =()=> {
+        if (email.value !== emailx && password.value !== passwordx) {
+          alertx.style.display = "flex";
+          load.classList.add ("load");
+          setTimeout(function(){
+            alertx.;
+          }
+        }
+        else {
+          alert("okkk");
+        }
+      }
+    </script>
   </body>
 </html>

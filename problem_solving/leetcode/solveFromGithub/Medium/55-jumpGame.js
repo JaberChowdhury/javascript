@@ -5,30 +5,30 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var canJump = function(nums) {
-    var max = 0;
-    for (var i = 0; i < nums.length; i++) {
-        if (i > max) return false;
-        max = Math.max(max, i + nums[i]);
-    }
+var canJump = function (nums) {
+  var max = 0;
+  for (var i = 0; i < nums.length; i++) {
+    if (i > max) return false;
+    max = Math.max(max, i + nums[i]);
+  }
 
-    return true;
+  return true;
 };
 
 // second try, not good
-var canJump = function(nums) {
-    if (nums.length === 1) return true;
-    var maxJump = 0;
-    for (var i = 0; i < nums.length; i++) {
-        maxJump = Math.max(maxJump, nums[i] + i);
-        if (maxJump === i) return false;
-        if (maxJump >= nums.length - 1) return true;
-    }
+var canJump = function (nums) {
+  if (nums.length === 1) return true;
+  var maxJump = 0;
+  for (var i = 0; i < nums.length; i++) {
+    maxJump = Math.max(maxJump, nums[i] + i);
+    if (maxJump === i) return false;
+    if (maxJump >= nums.length - 1) return true;
+  }
 
-    return false;
+  return false;
 };
 
-var canJump = function(nums) {
+var canJump = function (nums) {
   if (nums.length < 1) return true;
   var maxNextJump = nums[0];
 
@@ -41,4 +41,4 @@ var canJump = function(nums) {
   }
 
   return true;
-}
+};

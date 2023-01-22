@@ -3,7 +3,7 @@
  * @return {number}
  */
 // accepted, but not perfect
-var singleNumber = function(nums) {
+var singleNumber = function (nums) {
   var appears = {};
   for (var i = 0; i < nums.length; i++) {
     if (appears[nums[i]]) {
@@ -17,10 +17,10 @@ var singleNumber = function(nums) {
 };
 
 // a better solution: use XOR. XOR same number is 0
-var singleNumber = function(nums) {
-    var result = 0;
-    for (var i = 0; i < nums.length; i++) {
-        result = nums[i] ^ result;
-    }
-    return result;
+var singleNumber = function (nums) {
+  var result = 0;
+  for (var i = 0; i < nums.length; i++) {
+    result = nums[i] ^ result;
+  }
+  return result;
 };

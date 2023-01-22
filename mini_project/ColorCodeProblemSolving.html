@@ -3,67 +3,52 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title></title>
-<style type="text/css" media="all">
-@font-face {
-  src:url("all/font.ttf");
-  font-family: billo;
-  font-weight: 100;
-}
-@font-face {
-  src:url("all/roboto.ttf");
-  font-family: roboto;
-  font-weight: 100;
-}
+    <style type="text/css" media="all">
+      @font-face {
+        src: url("all/font.ttf");
+        font-family: billo;
+        font-weight: 100;
+      }
+      @font-face {
+        src: url("all/roboto.ttf");
+        font-family: roboto;
+        font-weight: 100;
+      }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:root {
-  --w: 252px;
-}
-* {
-  margin: 0px;
-  padding: 0px;
-  font-family: billo;
-  box-sizing: border-box;
-  transition: 0.5s;
-}
-body {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--w),1fr));
-}
-.box {
-  width: var(--w);
-  height: calc(var(--w) - var(--w)/2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2px;
-  border-radius: 3px;
-  color: black;
-  position: relative;
-}
-</style>
+      :root {
+        --w: 252px;
+      }
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: billo;
+        box-sizing: border-box;
+        transition: 0.5s;
+      }
+      body {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(var(--w), 1fr));
+      }
+      .box {
+        width: var(--w);
+        height: calc(var(--w) - var(--w) / 2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2px;
+        border-radius: 3px;
+        color: black;
+        position: relative;
+      }
+    </style>
   </head>
   <body>
-<!--
+    <!--
 <div class="text">a<span class="span">s</span></div>
 -->
 
-<script type="text/javascript" charset="utf-8">
-const line = `
+    <script type="text/javascript" charset="utf-8">
+      const line = `
 AntiqueWhite FAEBD7 250,235,215 Aqua 00FFFF 0,255,255 
 Aquamarine 7FFFD4 127,255,212 Azure F0FFFF 240,255,255 
 Beige F5F5DC 245,245,220 Bisque FFE4C4 255,228,196 
@@ -147,24 +132,24 @@ SlateGray 708090 112,128,144 SlateGrey 708090
 245,245,245 Yellow FFFF00 255,255,0 YellowGreen 9ACD32 
 154,205,50
 `;
-const arr = line.split(" ");
+      const arr = line.split(" ");
 
-function createElement(){
-var x = 1;
-const body = document.querySelectorAll ("body")[0];
-  for (var i = 0; i < arr.length; i++) {
-    x = x+3;
-    const box = document.createElement ("div");
-    box.classList.add ("box");
-    body.appendChild (box);
-    box.innerHTML = arr[i];
-    box.style.backgroundColor = arr[i];
-    if (i===1 || i%2==0) {
-      box.style.backgroundColor = "#"+arr[i];
-    }
-  }
-}
-createElement();
-</script>
+      function createElement() {
+        var x = 1;
+        const body = document.querySelectorAll("body")[0];
+        for (var i = 0; i < arr.length; i++) {
+          x = x + 3;
+          const box = document.createElement("div");
+          box.classList.add("box");
+          body.appendChild(box);
+          box.innerHTML = arr[i];
+          box.style.backgroundColor = arr[i];
+          if (i === 1 || i % 2 == 0) {
+            box.style.backgroundColor = "#" + arr[i];
+          }
+        }
+      }
+      createElement();
+    </script>
   </body>
 </html>

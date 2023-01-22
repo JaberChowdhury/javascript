@@ -2,70 +2,70 @@
 <html lang="en">
   <head>
     <title>Year hover Effect</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
-<style>
-* {
-  margin="0";
-  padding="0";
-  box-sizing="border-box";
-}
-body {
-  width:100%;
-  min-height:100vh;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #212121;
-}
-.year {
-  display: flex;
-  position: relative;
-  gap: 5px;
-}
-.box {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.box > b {
-  font-size: 3em;
-  -webkit-text-stroke:1px var(--clr);
-}
-.box::before {
-  content: attr(data-text);
-  position: absolute;
-  width: 100%;
-  height: 0;
-  top: 0;
-  left: 0;
-  line-height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3em;
-  color: var(--clr);
-  border-bottom: 4px solid var(--clr);
-  transition: 0.26s;
-  overflow: hidden;
-  background-color: #212121;
-}
-.box:hover::before {
-  height: 100%;
-  filter: drop-shadow(0 0 20px var(--clr));
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      * {
+        margin="0";
+        padding="0";
+        box-sizing="border-box";
+      }
+      body {
+        width:100%;
+        min-height:100vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #212121;
+      }
+      .year {
+        display: flex;
+        position: relative;
+        gap: 5px;
+      }
+      .box {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .box > b {
+        font-size: 3em;
+        -webkit-text-stroke:1px var(--clr);
+      }
+      .box::before {
+        content: attr(data-text);
+        position: absolute;
+        width: 100%;
+        height: 0;
+        top: 0;
+        left: 0;
+        line-height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3em;
+        color: var(--clr);
+        border-bottom: 4px solid var(--clr);
+        transition: 0.26s;
+        overflow: hidden;
+        background-color: #212121;
+      }
+      .box:hover::before {
+        height: 100%;
+        filter: drop-shadow(0 0 20px var(--clr));
+      }
+    </style>
   </head>
   <body>
     <div class="year">
-      <span class="box" style="--clr:#f672b7" data-text="2"><b>2</b></span>
-      <span class="box" style="--clr:#ff8800" data-text="0"><b>0</b></span>
-      <span class="box" style="--clr:#00ccff" data-text="2"><b>2</b></span>
-      <span class="box" style="--clr:#00ffdc" data-text="3"><b>2</b></span>
+      <span class="box" style="--clr: #f672b7" data-text="2"><b>2</b></span>
+      <span class="box" style="--clr: #ff8800" data-text="0"><b>0</b></span>
+      <span class="box" style="--clr: #00ccff" data-text="2"><b>2</b></span>
+      <span class="box" style="--clr: #00ffdc" data-text="3"><b>2</b></span>
     </div>
   </body>
 </html>

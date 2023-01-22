@@ -2,77 +2,75 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>
-      Odd number test with javascript
-    </title>
-<style type="text/css" media="all">
-  * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-weight: bold;
-    transition: 0.5s;
-  }
-  section {
-    width: calc(100% - 50px);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px 0px;
-    margin: 10px auto;
-  }
-  #inpnum {
-    height: 30px;
-    margin: 5px;
-  }
-  #inpsub {
-    width: 70px;
-    height: 30px;
-  }
-  div {
-    width: calc(100% - 120px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    margin: auto;
-  }
-</style>
+    <title>Odd number test with javascript</title>
+    <style type="text/css" media="all">
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-weight: bold;
+        transition: 0.5s;
+      }
+      section {
+        width: calc(100% - 50px);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px 0px;
+        margin: 10px auto;
+      }
+      #inpnum {
+        height: 30px;
+        margin: 5px;
+      }
+      #inpsub {
+        width: 70px;
+        height: 30px;
+      }
+      div {
+        width: calc(100% - 120px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        margin: auto;
+      }
+    </style>
   </head>
   <body>
-<section>
-  <input type="number" name="" id="inpnum" value="" />
-  <button type="submit" id="inpsub" onclick="work(inpnum)">Check</button>
-</section>
-<h5 id="text">
-</h5>
-<script type="text/javascript" charset="utf-8">
-  const inpnum = document.querySelector ("#inpnum");
-  const inpsub = document.querySelector ("#inpsub");
-  const text = document.querySelector ("#text");
-  text.style.textAlign = "center";
-  
-  const createele = (message,not) => {
-    let div = document.createElement("div");
-    let divtext = document.createTextNode(message + " is " + not + " a odd Number!!!");
-    div.appendChild(divtext);
-    text.appendChild(div);
-  }
-  function work (inpnum){
-     if (inpnum.value % 2 ===0) {
-        let inputvalue = inpnum.value;
-        let not = " ";
-        createele(inputvalue,not);
-     }
-     else {
-       let inputvalue = inpnum.value;
-       console.log ("is not a odd number");
-       let not = "not";
-       createele(inputvalue,not);
-     }
-  }
-</script>
+    <section>
+      <input type="number" name="" id="inpnum" value="" />
+      <button type="submit" id="inpsub" onclick="work(inpnum)">Check</button>
+    </section>
+    <h5 id="text"></h5>
+    <script type="text/javascript" charset="utf-8">
+      const inpnum = document.querySelector("#inpnum");
+      const inpsub = document.querySelector("#inpsub");
+      const text = document.querySelector("#text");
+      text.style.textAlign = "center";
+
+      const createele = (message, not) => {
+        let div = document.createElement("div");
+        let divtext = document.createTextNode(
+          message + " is " + not + " a odd Number!!!"
+        );
+        div.appendChild(divtext);
+        text.appendChild(div);
+      };
+      function work(inpnum) {
+        if (inpnum.value % 2 === 0) {
+          let inputvalue = inpnum.value;
+          let not = " ";
+          createele(inputvalue, not);
+        } else {
+          let inputvalue = inpnum.value;
+          console.log("is not a odd number");
+          let not = "not";
+          createele(inputvalue, not);
+        }
+      }
+    </script>
   </body>
 </html>

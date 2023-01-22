@@ -1,5 +1,5 @@
 const root = document.querySelector("#root");
 const myf = () => {
-  console.log ("this is react bro!!!"); 
+  console.log("this is react bro!!!");
 };
-ReactDOM.render(myf(),root);
+ReactDOM.render(myf(), root);

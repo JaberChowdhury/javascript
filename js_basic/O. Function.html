@@ -1,14 +1,14 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title></title>
   </head>
   <body>
-<script type="text/javascript" charset="utf-8">
-  // ফাংশনের ভেতরের অংশ হলো ভিন্ন দুনিয়া এর ভেতরের কাজ বাইরের কাজের সাথে মিল নেই
-  // return  একটি keyword এটির মাধ্যমে ফাংশনের কাজ সম্পন্ন হয় এর পর জাভাস্ক্রিপ্ট ফাংশন আর কাজ করবে না 
-  /*
+    <script type="text/javascript" charset="utf-8">
+      // ফাংশনের ভেতরের অংশ হলো ভিন্ন দুনিয়া এর ভেতরের কাজ বাইরের কাজের সাথে মিল নেই
+      // return  একটি keyword এটির মাধ্যমে ফাংশনের কাজ সম্পন্ন হয় এর পর জাভাস্ক্রিপ্ট ফাংশন আর কাজ করবে না
+      /*
   
   function myfunction (name, age) {
     console.log (name + " is " + age + " years old.");
@@ -40,45 +40,38 @@
   document.write (carName);
   console.log (carName);
   */
-  
-  let x = parseInt(prompt ("Enter a value for x :- "));
-  let y = parseInt(prompt ("Enter a value for y :- "));
-  let wish = prompt("Enter the symbol  [+, -, *, /]  for the math:- ");
-  function addition (x,y) {
-    let result = x+y;
-    document.write ("Result= " + result);
-  }
-  function subtraction (x,y) {
-    let result = x-y;
-    document.write ("Result= " + result);
-  }
-  function multiplication (x,y) {
-    let result = x*y;
-    document.write ("Result= " + result);
-  }
-  function division (x,y) {
-    let result = x/y;
-    document.write ("Result= " + result);
-  }
-  
-  if (wish == "+") {
-    addition(x,y);
-  }
-  else if (wish == "-") {
-    subtraction(x,y);
-  }
-  else if (wish == "*") {
-    multiplication(x,y);
-  }
-  else if (wish == "/") {
-    division(x,y);
-  }
-  else {
-    document.write ("Wrong_input");
-  }  
-  
-  
-  
-</script>
+
+      let x = parseInt(prompt("Enter a value for x :- "));
+      let y = parseInt(prompt("Enter a value for y :- "));
+      let wish = prompt("Enter the symbol  [+, -, *, /]  for the math:- ");
+      function addition(x, y) {
+        let result = x + y;
+        document.write("Result= " + result);
+      }
+      function subtraction(x, y) {
+        let result = x - y;
+        document.write("Result= " + result);
+      }
+      function multiplication(x, y) {
+        let result = x * y;
+        document.write("Result= " + result);
+      }
+      function division(x, y) {
+        let result = x / y;
+        document.write("Result= " + result);
+      }
+
+      if (wish == "+") {
+        addition(x, y);
+      } else if (wish == "-") {
+        subtraction(x, y);
+      } else if (wish == "*") {
+        multiplication(x, y);
+      } else if (wish == "/") {
+        division(x, y);
+      } else {
+        document.write("Wrong_input");
+      }
+    </script>
   </body>
 </html>

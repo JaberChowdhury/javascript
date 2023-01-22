@@ -3,37 +3,37 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>mouse tracker</title>
-<style type="text/css" media="all">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /*
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /*
   transition:all 0.01s linear;
   */
-}
-body {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background-color: black;
-}
-span {
-  width: 100px;
-  height: 100px;
-  border: 2px double #00ccff;
-  border-radius: 32% 68% 41% 59% / 67% 40% 60% 33% ;
-  pointer-events: none;
-  position: absolute;
-  transform: translate(-50%,-50%);
-  /*
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: black;
+      }
+      span {
+        width: 100px;
+        height: 100px;
+        border: 2px double #00ccff;
+        border-radius: 32% 68% 41% 59% / 67% 40% 60% 33%;
+        pointer-events: none;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        /*
   animation: animate 3s linear infinite;
   */
-}
-/*
+      }
+      /*
 @keyframes animate {
   10% {
     border-radius: 55% 45% 52% 48% / 76% 44% 56% 24% ;
@@ -69,60 +69,74 @@ span {
 }
 */
 
-p {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  position: absolute;
-  pointer-events: none;
-  background-color: #fff;
-  transform: translate(-50%,-50%);
-  animation: animationp 2s linear infinite;
-}
-@keyframes animtionp {
-  100% {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    opacity: 0%;
-  }
-}
-</style>
+      p {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        pointer-events: none;
+        background-color: #fff;
+        transform: translate(-50%, -50%);
+        animation: animationp 2s linear infinite;
+      }
+      @keyframes animtionp {
+        100% {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          opacity: 0%;
+        }
+      }
+    </style>
   </head>
   <body>
-  <span></span>
-  <script type="text/javascript" charset="utf-8">
-let word = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"];
-let hexcolor = (y) => {
-  for (let x = 0; x < word.length/2 - 2; x++) {
-    let n = Math.floor(Math.random()*word.length);
-    let hexcode = word[n];
-    y=y+hexcode;
-  }
-  return y;
-}
-document.addEventListener ("touchmove",function(e){
-    let color = ("#"+hexcolor("")+"ff");
-    let body = document.querySelectorAll ("body")[0];
-    let p = document.createElement ("p");
-    body.appendChild(p);
-    let span = document.querySelectorAll ("span")[0];
-  	var x = e.touches[0].clientX | 0;
-	  var y = e.touches[0].clientY | 0;
-    span.style.left = x+"px";
-    span.style.top = y+"px";
-    span.style.border = "2px double "+color;
-    p.style.left = x+"px";
-    p.style.top = y+"px";
-    p.style.backgroundColor = color;
-    
-    setTimeout(function() {
-      p.remove();
-    }, 1950);
-    
-  })
- 
- 
-  </script>
+    <span></span>
+    <script type="text/javascript" charset="utf-8">
+      let word = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+      ];
+      let hexcolor = (y) => {
+        for (let x = 0; x < word.length / 2 - 2; x++) {
+          let n = Math.floor(Math.random() * word.length);
+          let hexcode = word[n];
+          y = y + hexcode;
+        }
+        return y;
+      };
+      document.addEventListener("touchmove", function (e) {
+        let color = "#" + hexcolor("") + "ff";
+        let body = document.querySelectorAll("body")[0];
+        let p = document.createElement("p");
+        body.appendChild(p);
+        let span = document.querySelectorAll("span")[0];
+        var x = e.touches[0].clientX | 0;
+        var y = e.touches[0].clientY | 0;
+        span.style.left = x + "px";
+        span.style.top = y + "px";
+        span.style.border = "2px double " + color;
+        p.style.left = x + "px";
+        p.style.top = y + "px";
+        p.style.backgroundColor = color;
+
+        setTimeout(function () {
+          p.remove();
+        }, 1950);
+      });
+    </script>
   </body>
 </html>

@@ -11,10 +11,10 @@
  * @return {boolean}
  */
 // recursion
-var hasPathSum = function(root, sum) {
-    if (!root) return false;
-    if (root.val === sum && !root.left && !root.right) return true;
-    if (hasPathSum(root.left, sum - root.val)) return true;
-    if (hasPathSum(root.right, sum - root.val)) return true;
-    return false;
+var hasPathSum = function (root, sum) {
+  if (!root) return false;
+  if (root.val === sum && !root.left && !root.right) return true;
+  if (hasPathSum(root.left, sum - root.val)) return true;
+  if (hasPathSum(root.right, sum - root.val)) return true;
+  return false;
 };

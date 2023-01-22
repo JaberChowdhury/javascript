@@ -1,25 +1,25 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title></title>
   </head>
   <body>
-    <h4 style="text-align:center"></h4>
-<script type="text/javascript" charset="utf-8">
-  var body = document.querySelectorAll ("body")[0];
-  var heading = document.querySelectorAll("h4")[0];
-  const randomrgb = () => {
-    var x = Math.floor(Math.random()*255);
-    var y = Math.floor(Math.random()*255);
-    var z = Math.floor(Math.random()*255);
-    var alpha = (Math.random()*1).toFixed(3);
-    var bgcol = 'rgb('+ (x) + ',' + (y) +','+ (z) + `,` + (alpha) + ')';
-    heading.innerHTML = bgcol;
-    body.style.backgroundColor = bgcol;
-  }
-  setInterval(randomrgb,1000);
- // body.addEventListener("click",randomrgb);
-</script>
+    <h4 style="text-align: center"></h4>
+    <script type="text/javascript" charset="utf-8">
+      var body = document.querySelectorAll("body")[0];
+      var heading = document.querySelectorAll("h4")[0];
+      const randomrgb = () => {
+        var x = Math.floor(Math.random() * 255);
+        var y = Math.floor(Math.random() * 255);
+        var z = Math.floor(Math.random() * 255);
+        var alpha = (Math.random() * 1).toFixed(3);
+        var bgcol = "rgb(" + x + "," + y + "," + z + `,` + alpha + ")";
+        heading.innerHTML = bgcol;
+        body.style.backgroundColor = bgcol;
+      };
+      setInterval(randomrgb, 1000);
+      // body.addEventListener("click",randomrgb);
+    </script>
   </body>
 </html>

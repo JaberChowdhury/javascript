@@ -1,103 +1,114 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>triangle design</title>
-<style type="text/css" media="all">
-  :root {
-    --color: red;
-  }
-  * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-  }
-  body {
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  .block {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    transform: rotatez(45deg);
-    background: var(--color);
-    /*
+    <style type="text/css" media="all">
+      :root {
+        --color: red;
+      }
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .block {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transform: rotatez(45deg);
+        background: var(--color);
+        /*
     */
-  }
-  .block:nth-child(even) {
-    overflow: hidden;
-  }
-  .block::before {
-    content: " ";
-    position: absolute;
-    width: 100%;
-    height: 80px;
-    bottom: 0px;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    background-color: var(--color);
-    /*
+      }
+      .block:nth-child(even) {
+        overflow: hidden;
+      }
+      .block::before {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        bottom: 0px;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        background-color: var(--color);
+        /*
     */
-  }
-  .block::after {
-    content: " ";
-    position: absolute;
-    width: 80px;
-    height: 100%;
-    right: 0px;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-right-radius: 50%;
-    background-color: var(--color);
-    /*
+      }
+      .block::after {
+        content: " ";
+        position: absolute;
+        width: 80px;
+        height: 100%;
+        right: 0px;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-top-right-radius: 50%;
+        background-color: var(--color);
+        /*
     */
-  }
-</style>
+      }
+    </style>
   </head>
   <body>
-<script src="anime.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-  for (x=0; x<=190; x++) {
-    const body = document.querySelectorAll ("body")[0];
-      let r = Math.floor(Math.random()*255);
-      let g = Math.floor(Math.random()*255);
-      let b = Math.floor(Math.random()*255);
-      let rgb = `rgb(${r},${g},${b})`;
-      const block = document.createElement ("div");
-      block.classList.add("block");
-      body.appendChild (block);
-      /*
+    <script src="anime.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      for (x = 0; x <= 190; x++) {
+        const body = document.querySelectorAll("body")[0];
+        let r = Math.floor(Math.random() * 255);
+        let g = Math.floor(Math.random() * 255);
+        let b = Math.floor(Math.random() * 255);
+        let rgb = `rgb(${r},${g},${b})`;
+        const block = document.createElement("div");
+        block.classList.add("block");
+        body.appendChild(block);
+        /*
       block.style.backgroundColor = rgb;
       */
-      block.style.setProperty("--color",rgb);
-    }
-  
-  function animation() {
-    anime({
-      targets:".block",
-      translateX: ()=> {return anime.random(-400,400)},
-      translateY: ()=> {return anime.random(-400,400)},
-      scale: ()=> {return anime.random(0.002,1.3)},
-      rotate: ()=> anime.random(180,360),
-      easing: "easeOutBounce",
-      duration: 3000,
-      delay: anime.stagger(10),
-      opacity: 0.5,
-      complete: animation,
-    });
-  }
-  animation();
-</script>
+        block.style.setProperty("--color", rgb);
+      }
+
+      function animation() {
+        anime({
+          targets: ".block",
+          translateX: () => {
+            return anime.random(-400, 400);
+          },
+          translateY: () => {
+            return anime.random(-400, 400);
+          },
+          scale: () => {
+            return anime.random(0.002, 1.3);
+          },
+          rotate: () => anime.random(180, 360),
+          easing: "easeOutBounce",
+          duration: 3000,
+          delay: anime.stagger(10),
+          opacity: 0.5,
+          complete: animation,
+        });
+      }
+      animation();
+    </script>
   </body>
 </html>

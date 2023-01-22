@@ -2,40 +2,38 @@
 <html lang="en">
   <head>
     <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="css" href="style.css">
-<style>
-* {
-  margin:0px;
-  padding:0px;
-  box-sizing:border-box;
-}
-body {
-  background: black;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center ;
-  align-items: center;
-}
-:root {
-  --color:red;
-}
-span {
-  width: 5px;
-  height: 5px;
-  background-color: var(--color);
-  border-radius: 50%;
-  position: absolute;
-  pointer-events: none;
-  box-shadow: 1px 1px 1px 1px white,
-             -1px 1px 1px 1px white,
-              1px -1px 1px 1px white,
-             -1px -1px 1px 1px white;
-  animation: animate 2s linear 1;
-}
-/*
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="css" href="style.css" />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        background: black;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      :root {
+        --color: red;
+      }
+      span {
+        width: 5px;
+        height: 5px;
+        background-color: var(--color);
+        border-radius: 50%;
+        position: absolute;
+        pointer-events: none;
+        box-shadow: 1px 1px 1px 1px white, -1px 1px 1px 1px white,
+          1px -1px 1px 1px white, -1px -1px 1px 1px white;
+        animation: animate 2s linear 1;
+      }
+      /*
 span::before {
   content: " ";
   position: absolute;
@@ -49,56 +47,55 @@ span::before {
 animation: animate 1.5s linear 1 0.5s;
 }
 */
-@keyframes animate {
-  50% {
-    opacity: 10% ;
-      box-shadow: 44px 44px 1px 1px white,
-               -44px 44px 1px 1px white,
-                44px -44px 1px 1px white,
-               -44px -44px 1px 1px white;
-  }
-  100% {
-    transform: scale(2.3);
-    opacity: 0;
-    box-shadow: 90px 90px 1px 1px white,
-               -90px 90px 1px 1px white,
-                90px -90px 1px 1px white,
-               -90px -90px 1px 1px white;
-  }
-}
-</style>
+      @keyframes animate {
+        50% {
+          opacity: 10%;
+          box-shadow: 44px 44px 1px 1px white, -44px 44px 1px 1px white,
+            44px -44px 1px 1px white, -44px -44px 1px 1px white;
+        }
+        100% {
+          transform: scale(2.3);
+          opacity: 0;
+          box-shadow: 90px 90px 1px 1px white, -90px 90px 1px 1px white,
+            90px -90px 1px 1px white, -90px -90px 1px 1px white;
+        }
+      }
+    </style>
   </head>
   <body>
-<script>
-  document.addEventListener("mousedown",function(e){
-      let color =
-        [
-          "#00ccff","#ff0000",
-          "#ffb600","#ffed00",
-          "#dcff00","#58ff00",
-          "#00f2ff","#00b2ff",
-          "#5900ff","#e100ff"
-        ]
-      let body = document.querySelectorAll("body")[0];
-      let span = document.createElement("span");
-      let x = e.offsetX;
-      let y = e.offsetY;
-      span.style.left = x +"px";
-      span.style.top = y +"px";
-      body.appendChild(span);
-      let n = Math.random() * 10;
-      span.style.width = 0.5+n +"px";
-      span.style.height = 0.5+n +"px";
-      let colrandon = Math.floor(Math.random() * color.length);
-      span.style.backgroundColor = color[colrandon];
-      let transformvalue = Math.floor(Math.random()*360);
-      span.style.transform = `rotate(`+transformvalue+`deg)`
-      
-      setTimeout(function() {
-        span.remove()
-      }, 1950);
-    })
-</script>
+    <script>
+      document.addEventListener("mousedown", function (e) {
+        let color = [
+          "#00ccff",
+          "#ff0000",
+          "#ffb600",
+          "#ffed00",
+          "#dcff00",
+          "#58ff00",
+          "#00f2ff",
+          "#00b2ff",
+          "#5900ff",
+          "#e100ff",
+        ];
+        let body = document.querySelectorAll("body")[0];
+        let span = document.createElement("span");
+        let x = e.offsetX;
+        let y = e.offsetY;
+        span.style.left = x + "px";
+        span.style.top = y + "px";
+        body.appendChild(span);
+        let n = Math.random() * 10;
+        span.style.width = 0.5 + n + "px";
+        span.style.height = 0.5 + n + "px";
+        let colrandon = Math.floor(Math.random() * color.length);
+        span.style.backgroundColor = color[colrandon];
+        let transformvalue = Math.floor(Math.random() * 360);
+        span.style.transform = `rotate(` + transformvalue + `deg)`;
+
+        setTimeout(function () {
+          span.remove();
+        }, 1950);
+      });
+    </script>
   </body>
 </html>
-

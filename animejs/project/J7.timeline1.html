@@ -3,129 +3,160 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>AnimeJsAnimation</title>
-<style type="text/css" media="all">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: all 0.5s linear;
-}
-body {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #000000;
-  /*
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all 0.5s linear;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+        /*
   background-color: #040bf25e;
   */
-}
-.container {
-  display: grid;
-  grid-template-columns: repeat(9,1fr);
-  justify-content: center;
-  align-items: center;
-  /*
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        justify-content: center;
+        align-items: center;
+        /*
   transform: scale(0.5);
   */
-}
-.box {
-  width: 40px;
-  height: 40px;
-  background-color: orange;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  /*
+      }
+      .box {
+        width: 40px;
+        height: 40px;
+        background-color: orange;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        /*
   background-image: url("all/photo.jpg");
   background-repeat: no-repeat;
   border: 0.1px solid white;
   */
-}
-</style>
+      }
+    </style>
   </head>
   <body>
-<div class="container"></div>
-    
-    
-    
-<script src="./anime.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-  const rgb =()=> {
-    let r = Math.floor(Math.random()*255);
-    let g = Math.floor(Math.random()*255);
-    let b = Math.floor(Math.random()*255);
-    let rgb = `rgb(${r},${g},${b})`;
-    return rgb;
-  }
+    <div class="container"></div>
 
+    <script
+      src="./anime.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script type="text/javascript" charset="utf-8">
+      const rgb = () => {
+        let r = Math.floor(Math.random() * 255);
+        let g = Math.floor(Math.random() * 255);
+        let b = Math.floor(Math.random() * 255);
+        let rgb = `rgb(${r},${g},${b})`;
+        return rgb;
+      };
 
+      const grid = [9, 18];
+      const container = document.querySelectorAll(".container")[0];
+      for (let i = 0; i < 162; i++) {
+        const box = document.createElement("div");
+        box.classList.add("box");
+        container.appendChild(box);
+        box.style.backgroundColor = rgb();
+      }
 
+      var animation = anime
+        .timeline({
+          targets: ".box",
+          easing: "easeInOutQuad",
+          duration: 1000,
+          loop: true,
+          autoplay: false,
+          direction: "alternate",
+        })
+        .add({
+          borderRadius: 50,
+          scale: 0.5,
+          delay: anime.stagger(100, { grid: grid, from: "last" }),
+          backgroundColor: "#00ccff",
+        })
+        .add({
+          translateX: () => anime.random(-755, 755),
+          translateY: () => anime.random(-755, 755),
+          delay: anime.stagger(100, { grid: grid, from: "last" }),
+          backgroundColor: "#ff000095",
+        })
+        .add({
+          translateX: 0,
+          translateY: 0,
+          delay: anime.stagger(300, { grid: grid, from: "last" }),
+          backgroundColor: "#4aff00",
+          borderRadius: 0,
+        })
+        .add({
+          delay: anime.stagger(100, { grid: grid, from: "center" }),
+          backgroundColor: "#ffc300",
+          borderRadius: 50,
+        })
+        .add({
+          translateX: [
+            {
+              value: anime.stagger("-405px", {
+                grid: grid,
+                from: "center",
+                axis: "x",
+              }),
+            },
+            {
+              value: anime.stagger("405px", {
+                grid: grid,
+                from: "center",
+                axis: "x",
+              }),
+            },
+            {
+              value: anime.stagger("0px", {
+                grid: grid,
+                from: "center",
+                axis: "x",
+              }),
+            },
+          ],
+          translateY: [
+            {
+              value: anime.stagger("-405px", {
+                grid: grid,
+                from: "center",
+                axis: "y",
+              }),
+            },
+            {
+              value: anime.stagger("405px", {
+                grid: grid,
+                from: "center",
+                axis: "y",
+              }),
+            },
+            {
+              value: anime.stagger("0px", {
+                grid: grid,
+                from: "center",
+                axis: "y",
+              }),
+            },
+          ],
+          delay: anime.stagger(100, { grid: grid, from: "center" }),
+          backgroundColor: "#ff2200",
+          scale: 0.31,
+        });
 
-const grid = [9,18];
-const container = document.querySelectorAll (".container")[0];
-for(let i=0; i<162; i++) {
-  const box = document.createElement ("div");
-  box.classList.add("box");
-  container.appendChild(box);
-  box.style.backgroundColor = rgb();
-}
-
-var animation = anime
-.timeline({
-  targets:".box",
-  easing:"easeInOutQuad",
-  duration: 1000,
-  loop: true,
-  autoplay: false,
-  direction: "alternate",
-})
-.add({
-  borderRadius: 50,
-  scale: 0.5,
-  delay: anime.stagger(100,{grid:grid,from:"last"}),
-  backgroundColor: "#00ccff",
-})
-.add({
-  translateX:()=> anime.random(-755,755),
-  translateY:()=> anime.random(-755,755),
-  delay: anime.stagger(100,{grid:grid,from:"last"}),
-  backgroundColor: "#ff000095",
-})
-.add({
-  translateX:0,
-  translateY:0,
-  delay: anime.stagger(300,{grid:grid,from:"last"}),
-  backgroundColor: "#4aff00",
-  borderRadius: 0,
-})
-.add({
-  delay: anime.stagger(100,{grid:grid,from:"center"}),
-  backgroundColor: "#ffc300",
-  borderRadius: 50,
-})
-.add({
-  translateX:[
-    {value: anime.stagger("-405px",{grid:grid,from:"center",axis:"x"})},
-    {value: anime.stagger("405px",{grid:grid,from:"center",axis:"x"})},
-    {value: anime.stagger("0px",{grid:grid,from:"center",axis:"x"})},
-    ],
-  translateY:[
-    {value: anime.stagger("-405px",{grid:grid,from:"center",axis:"y"})},
-    {value: anime.stagger("405px",{grid:grid,from:"center",axis:"y"})},
-    {value: anime.stagger("0px",{grid:grid,from:"center",axis:"y"})},
-    ],
-  delay: anime.stagger(100,{grid:grid,from:"center"}),
-  backgroundColor: "#ff2200",
-  scale: 0.31,
-})
-
-
-
-
-
-animation.play();
-</script>
+      animation.play();
+    </script>
   </body>
 </html>

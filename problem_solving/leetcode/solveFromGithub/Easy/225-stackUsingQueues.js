@@ -2,7 +2,7 @@
  * this question is super easy, 80ms used
  * @constructor
  */
-var Stack = function() {
+var Stack = function () {
   this.stack = [];
 };
 
@@ -10,27 +10,27 @@ var Stack = function() {
  * @param {number} x
  * @returns {void}
  */
-Stack.prototype.push = function(x) {
-    this.stack.push(x);
+Stack.prototype.push = function (x) {
+  this.stack.push(x);
 };
 
 /**
  * @returns {void}
  */
-Stack.prototype.pop = function() {
-    this.stack.pop();
+Stack.prototype.pop = function () {
+  this.stack.pop();
 };
 
 /**
  * @returns {number}
  */
-Stack.prototype.top = function() {
-    return this.stack[this.stack.length - 1];
+Stack.prototype.top = function () {
+  return this.stack[this.stack.length - 1];
 };
 
 /**
  * @returns {boolean}
  */
-Stack.prototype.empty = function() {
-    return this.stack.length === 0;
+Stack.prototype.empty = function () {
+  return this.stack.length === 0;
 };

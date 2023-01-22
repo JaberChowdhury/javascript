@@ -2,152 +2,140 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="" content="" />
     <title>Gradient palette</title>
-<style type="text/css" media="all">
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  background-color: #ffffff;
-}
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-}
-.box {
-  width: 70px;
-  height: 130px;
-  background: white;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 4px;
-  font-size: 0px;
-  transform: scale(0);
-  transition: 0.6s;
-  transform-origin: left;
-}
-.box:nth-child(even) {
-  transition: 0.6s;
-  transform: scale(0);
-}
-.box[data-scroll=in] {
-  transition: 0.6s;
-  transform: scale(1);
-}
-.button {
-  width: 100px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2em;
-  font-weight: bold;
-  position: fixed;
-  top: 5px;
-  right: 5px;
-  z-index: 1000;
-  background-color: green;
-}
-</style>
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        background-color: #ffffff;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+      }
+      .box {
+        width: 70px;
+        height: 130px;
+        background: white;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 4px;
+        font-size: 0px;
+        transform: scale(0);
+        transition: 0.6s;
+        transform-origin: left;
+      }
+      .box:nth-child(even) {
+        transition: 0.6s;
+        transform: scale(0);
+      }
+      .box[data-scroll="in"] {
+        transition: 0.6s;
+        transform: scale(1);
+      }
+      .button {
+        width: 100px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        position: fixed;
+        top: 5px;
+        right: 5px;
+        z-index: 1000;
+        background-color: green;
+      }
+    </style>
   </head>
   <body>
     <div class="button">Refresh</div>
     <div class="container"></div>
-<script src="Js_file/scroll-out.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="Js_fi/anime.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-const rgba =()=>{
-    var red = Math.floor(Math.random()*255);
-    var green = Math.floor(Math.random()*255);
-    var blue = Math.floor(Math.random()*255);
-    var alpha = Math.random()*1+1;
-    var rgbcolor = `rgba(${red},${green},${blue},${alpha})`;
-    return rgbcolor;
-};
-const gradient =()=> {
-    var x = Math.floor(Math.random()*360);
-    var rgbcolor = `-webkit-linear-gradient(${x}deg,${rgba()},${rgba()},${rgba()})`;
-    return rgbcolor;
-};
-gradient();
+    <script
+      src="Js_file/scroll-out.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="Js_fi/anime.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script type="text/javascript" charset="utf-8">
+      const rgba = () => {
+        var red = Math.floor(Math.random() * 255);
+        var green = Math.floor(Math.random() * 255);
+        var blue = Math.floor(Math.random() * 255);
+        var alpha = Math.random() * 1 + 1;
+        var rgbcolor = `rgba(${red},${green},${blue},${alpha})`;
+        return rgbcolor;
+      };
+      const gradient = () => {
+        var x = Math.floor(Math.random() * 360);
+        var rgbcolor = `-webkit-linear-gradient(${x}deg,${rgba()},${rgba()},${rgba()})`;
+        return rgbcolor;
+      };
+      gradient();
 
+      const container = document.querySelectorAll(".container")[0];
+      const limit = 500;
+      const setColor = () => {
+        const gradientcodeArray = [];
+        for (var i = 0; i < limit; i++) {
+          const box = document.createElement("div");
+          box.classList.add("box");
+          container.appendChild(box);
+          gradientcodeArray.push(gradient());
+        }
+        var items = document.querySelectorAll(".box");
+        for (let i = 0; i < items.length; i++) {
+          items[i].style.background = gradientcodeArray[i];
+          items[i].innerHTML = gradientcodeArray[i];
+        }
+      };
+      setColor();
 
+      const button = document.querySelectorAll(".button")[0];
+      button.addEventListener("click", () => {
+        setColor();
+      });
 
-const container = document.querySelectorAll(".container")[0];
-const limit = 500;
-const setColor=()=>{
-const gradientcodeArray = [];
-for (var i = 0; i < limit; i++) {
-  const box = document.createElement ("div");
-  box.classList.add("box");
-  container.appendChild(box);
-  gradientcodeArray.push(gradient())
-}
-  var items = document.querySelectorAll (".box");
-  for(let i=0; i<items.length; i++) {
-    items[i].style.background = gradientcodeArray[i];
-    items[i].innerHTML = gradientcodeArray[i];
-  }
-}
-setColor();
+      var items = document.querySelectorAll(".box");
+      items.forEach(function (item, index) {
+        item.addEventListener("click", function () {
+          document.execCommand("copy");
+          anime({
+            targets: item,
+            scale: [{ value: 0.5 }, { value: 1 }],
+            borderRadius: [{ value: "50%" }, { value: "0%" }],
+            height: [{ value: "0px" }, { value: "130px" }],
+            easing: "easeOutBounce",
+            duration: 550,
+          });
+        });
+        item.addEventListener("copy", function (event) {
+          event.preventDefault();
+          if (event.clipboardData) {
+            event.clipboardData.setData("text/plain", item.textContent);
+          }
+        });
+      });
 
-const button = document.querySelectorAll (".button")[0];
-button.addEventListener("click",()=>{
-  setColor();
-})
-
-
-
-
-
-
-
-
-var items = document.querySelectorAll (".box");
-items.forEach(function(item,index){
-  item.addEventListener("click",function(){
-    document.execCommand("copy");
-    anime({
-      targets: item,
-      scale: [
-        {value: 0.5},
-        {value: 1},
-        ],
-      borderRadius:[
-        {value:"50%"},
-        {value:"0%"},
-        ],
-      height:[
-        {value:"0px"},
-        {value:"130px"},
-        ],
-      easing:"easeOutBounce",
-      duration:550,
-    })
-  });
-  item.addEventListener("copy",function(event){
-    event.preventDefault();
-    if(event.clipboardData) {
-      event.clipboardData.setData("text/plain",item.textContent);
-    }
-  });
-});
-
-
-
-ScrollOut({
-  targets:".box",
-})
-</script>
+      ScrollOut({
+        targets: ".box",
+      });
+    </script>
   </body>
 </html>

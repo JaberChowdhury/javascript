@@ -10,21 +10,22 @@
  * @return {ListNode}
  */
 // O(1) space O(n) complexity
-var oddEvenList = function(head) {
-    if (head === null) {
-        return head;
-    }
-    var oddHead = head;
-    var even = head.next, evenHead = head.next;
-    while (true) {
-        if (oddHead.next === null || evenHead.next === null) {
-            oddHead.next = even;
-            break;
-        }
-        oddHead.next = evenHead.next;
-        oddHead = oddHead.next;
-        evenHead.next = oddHead.next;
-        evenHead = evenHead.next;
-    }
+var oddEvenList = function (head) {
+  if (head === null) {
     return head;
+  }
+  var oddHead = head;
+  var even = head.next,
+    evenHead = head.next;
+  while (true) {
+    if (oddHead.next === null || evenHead.next === null) {
+      oddHead.next = even;
+      break;
+    }
+    oddHead.next = evenHead.next;
+    oddHead = oddHead.next;
+    evenHead.next = oddHead.next;
+    evenHead = evenHead.next;
+  }
+  return head;
 };
