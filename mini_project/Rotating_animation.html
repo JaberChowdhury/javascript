@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .container {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 20px;
+        animation: container 2s linear infinite;
+      }
+      @keyframes container {
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+      .box {
+        width: 15px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        transform: rotate(0deg);
+      }
+      .box:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      .box:nth-child(3) {
+        transform: rotate(90deg);
+      }
+      .box:nth-child(4) {
+        transform: rotate(135deg);
+      }
+      .box:nth-child(5) {
+        transform: rotate(180deg);
+      }
+      .box:nth-child(6) {
+        transform: rotate(225deg);
+      }
+      .box:nth-child(7) {
+        transform: rotate(270deg);
+      }
+      .box:nth-child(8) {
+        transform: rotate(315deg);
+      }
+      .box:nth-child(9) {
+        transform: rotate(360deg);
+      }
+      .box:nth-child(10) {
+        transform: rotate(30deg);
+      }
+      .box:nth-child(11) {
+        transform: rotate(60deg);
+      }
+      .box:nth-child(12) {
+        transform: rotate(90deg);
+      }
+      .box:nth-child(13) {
+        transform: rotate(120deg);
+      }
+      .box:nth-child(14) {
+        transform: rotate(150deg);
+      }
+      .box:nth-child(15) {
+        transform: rotate(180deg);
+      }
+      .box:nth-child(16) {
+        transform: rotate(210deg);
+      }
+      .box:nth-child(17) {
+        transform: rotate(240deg);
+      }
+      .box:nth-child(18) {
+        transform: rotate(270deg);
+      }
+      .box:nth-child(19) {
+        transform: rotate(300deg);
+      }
+      .box:nth-child(20) {
+        transform: rotate(330deg);
+      }
+      .box::before {
+        content: "";
+        position: absolute;
+        --top: 200px;
+        width: 15px;
+        height: 45px;
+        transform: rotate(0deg) scale(0);
+        padding: 0;
+        border-radius: 50%;
+        background: -webkit-linear-gradient(
+          top,
+          black,
+          transparent,
+          red,
+          transparent,
+          black
+        );
+        top: 0px;
+        animation: boxbefore 2s ease-in-out infinite;
+        animation-delay: calc(var(--x) * 0.102s);
+      }
+      @keyframes boxbefore {
+        25% {
+          top: var(--top);
+          transform: rotate(0deg) scale(1);
+        }
+        50% {
+          top: 10px;
+          transform: rotate(360deg) scale(0);
+        }
+        75% {
+          top: -var(--top);
+          transform: rotate(0deg) scale(1);
+        }
+        100% {
+          top: 0;
+          transform: rotate(0deg) scale(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" style="--x: 0"></div>
+      <div class="box" style="--x: 1"></div>
+      <div class="box" style="--x: 2"></div>
+      <div class="box" style="--x: 3"></div>
+      <div class="box" style="--x: 4"></div>
+      <div class="box" style="--x: 5"></div>
+      <div class="box" style="--x: 6"></div>
+      <div class="box" style="--x: 7"></div>
+      <div class="box" style="--x: 8"></div>
+      <div class="box" style="--x: 9"></div>
+      <div class="box" style="--x: 10"></div>
+      <div class="box" style="--x: 11"></div>
+      <div class="box" style="--x: 12"></div>
+      <div class="box" style="--x: 13"></div>
+      <div class="box" style="--x: 14"></div>
+      <div class="box" style="--x: 15"></div>
+      <div class="box" style="--x: 16"></div>
+      <div class="box" style="--x: 17"></div>
+      <div class="box" style="--x: 18"></div>
+      <div class="box" style="--x: 19"></div>
+      <div class="box" style="--x: 20"></div>
+    </div>
+  </body>
+</html>
