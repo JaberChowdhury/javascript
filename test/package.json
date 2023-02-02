@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/Blacklegion69/javascript/issues"
   },
-  "homepage": "https://github.com/Blacklegion69/javascript#readme"
+  "homepage": "https://github.com/Blacklegion69/javascript#readme",
+  "devDependencies": {
+    "prettier": "2.8.3"
+  }
 }
