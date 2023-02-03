@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!-- 
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Itim&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #727272;
+      }
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+        display: none;
+      }
+      .load {
+        width: 50px;
+        height: 50px;
+        border: 10px solid black;
+        border-top: 10px solid #727272;
+        border-bottom: 10px solid #727272;
+        border-radius: 50%;
+        font-family: "Itim", cursive;
+        animation: animate 2s linear infinite;
+      }
+      @keyframes animate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .animation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Itim", cursive;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animation">
+      <div class="load"></div>
+      <h1>Loading.....</h1>
+    </div>
+    <div class="container"></div>
+    <script type="text/javascript" charset="utf-8">
+      const container = document.querySelectorAll(".container")[0];
+      const animation = document.querySelectorAll(".animation")[0];
+
+      const hideanimation = () => {
+        animation.style.display = "none";
+        container.style.display = "flex";
+      };
+      const getData = async () => {
+        const data = await fetch(
+          "https://mocki.io/v1/ea4dd910-ad95-4558-be79-d00be239230a"
+        );
+        const jsondata = await data.json();
+        const final = await jsondata.messages;
+        let generated = [];
+        for (let index = 0; index < 7; index++) {
+          const { id, type, content } = final[index][0]; //Done
+          const { username, avatar, avatar_decoration, public_flags, bot } =
+            final[index][0].author; //Done
+          const { size, url, proxy_url, width, height, content_type } =
+            final[index][0].attachments[0]; //Done
+
+          generated.push(`
+      <div
+        class="overflow-hidden w-[400px] flex justify-center relative items-center flex-col rounded bg-gray-400 p-2 m-2"
+      >
+        <h1
+          class="w-[80px] border border-2 border-rose-600 rotate-[-45deg] h-[30px] flex justify-center z-10 items-center absolute top-[20px] left-[-5px] p-2 m-2 rounded bg-slate-500 font-bold"
+        >
+          ${index}
+        </h1>
+        <div
+          class="w-full flex justify-center items-center font-bold bg-gray-300 rounded m-2 text-center p-2"
+        >
+          <p class="bg-slate-500 rounded mx-2 px-2">ID:</p>
+          <div class="bg-sky-300 px-2 rounded">${id}</div>
+        </div>
+        <div class="w-[400px] relative m-2 p-2 bg-gray-300 rounded">
+          <div
+            class="w-[270px] gap-2 flex justify-center items-center font-bold text-center bg-slate-500 rounded p-2 m-2"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Author:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${username}</p>
+          </div>
+          <div class="relative flex justify-center items-center">
+          <img
+            class="rounded w-[400px] h-[400px]"
+            src="${url}"
+            alt="Nothing found sorry:("
+          />
+          </div>
+        </div>
+        <div class="w-full bg-gray-600 rounded p-2 m-2">
+          <p
+            class="w-[140px] font-bold underline bg-rose-500 rounded p-2 mx-2 text-center"
+          >
+            Prompt:
+          </p>
+          <p class="p-3 font-bold m-2 rounded bg-slate-300">
+          ${content}
+          </p>
+        </div>
+        <div
+          class="w-full m-2 p-2 bg-slate-500 rounded flex justify-center items-center flex-wrap"
+        >
+          <div
+            class="overflow-hidden p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">url:</h1>
+            <p
+              class="w-[300px] h-8 overflow-x-scroll overflow-y-hidden bg-rose-500 rounded px-1 font-medium"
+            >
+            ${url}
+             </p>
+          </div>
+          <div
+            class="overflow-hidden p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">proxy_url:</h1>
+            <p
+              class="w-[300px] h-8 overflow-x-scroll overflow-y-hidden bg-rose-500 rounded px-1 font-medium"
+            >
+            ${proxy_url}
+             </p>
+          </div>
+        </div>
+        <div
+          class="w-full m-2 p-2 bg-slate-500 rounded flex justify-center items-center flex-wrap"
+        >
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Type:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${content_type}</p>
+          </div>
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Width:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${width}</p>
+          </div>
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Height:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${height}</p>
+          </div>
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Size:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${size}</p>
+          </div>
+        </div>
+      </div>
+          `);
+        }
+        for (let index = 8; index < 26; index++) {
+          const { id, type, content } = final[index][0]; //Done
+          const { username, avatar, avatar_decoration, public_flags, bot } =
+            final[index][0].author; //Done
+          const { size, url, proxy_url, width, height, content_type } =
+            final[index][0].attachments[0]; //Done
+
+          generated.push(`
+      <div
+        class="overflow-hidden w-[400px] flex justify-center relative items-center flex-col rounded bg-gray-400 p-2 m-2"
+      >
+        <h1
+          class="w-[80px] border border-2 border-rose-600 rotate-[-45deg] h-[30px] flex justify-center z-10 items-center absolute top-[20px] left-[-5px] p-2 m-2 rounded bg-slate-500 font-bold"
+        >
+          ${index}
+        </h1>
+        <div
+          class="w-full flex justify-center items-center font-bold bg-gray-300 rounded m-2 text-center p-2"
+        >
+          <p class="bg-slate-500 rounded mx-2 px-2">ID:</p>
+          <div class="bg-sky-300 px-2 rounded">${id}</div>
+        </div>
+        <div class="w-[400px] relative m-2 p-2 bg-gray-300 rounded">
+          <div
+            class="w-[270px] gap-2 flex justify-center items-center font-bold text-center bg-slate-500 rounded p-2 m-2"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Author:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${username}</p>
+          </div>
+          <div class="relative flex justify-center items-center">
+          <img
+            class="rounded w-[400px] h-[400px]"
+            src="${url}"
+            alt="Nothing found sorry:("
+          />
+          </div>
+        </div>
+        <div class="w-full bg-gray-600 rounded p-2 m-2">
+          <p
+            class="w-[140px] font-bold underline bg-rose-500 rounded p-2 mx-2 text-center"
+          >
+            Prompt:
+          </p>
+          <p class="p-3 font-bold m-2 rounded bg-slate-300">
+          ${content}
+          </p>
+        </div>
+        <div
+          class="w-full m-2 p-2 bg-slate-500 rounded flex justify-center items-center flex-wrap"
+        >
+          <div
+            class="overflow-hidden p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">url:</h1>
+            <p
+              class="w-[300px] h-8 overflow-x-scroll overflow-y-hidden bg-rose-500 rounded px-1 font-medium"
+            >
+            ${url}
+             </p>
+          </div>
+          <div
+            class="overflow-hidden p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">proxy_url:</h1>
+            <p
+              class="w-[300px] h-8 overflow-x-scroll overflow-y-hidden bg-rose-500 rounded px-1 font-medium"
+            >
+            ${proxy_url}
+             </p>
+          </div>
+        </div>
+        <div
+          class="w-full m-2 p-2 bg-slate-500 rounded flex justify-center items-center flex-wrap"
+        >
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Type:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${content_type}</p>
+          </div>
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Width:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${width}</p>
+          </div>
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Height:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${height}</p>
+          </div>
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Size:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${size}</p>
+          </div>
+        </div>
+      </div>
+          `);
+        }
+        for (let index = 28; index < final.length; index++) {
+          const { id, type, content } = final[index][0]; //Done
+          const { username, avatar, avatar_decoration, public_flags, bot } =
+            final[index][0].author; //Done
+          const { size, url, proxy_url, width, height, content_type } =
+            final[index][0].attachments[0]; //Done
+
+          generated.push(`
+      <div
+        class="overflow-hidden w-[400px] flex justify-center relative items-center flex-col rounded bg-gray-400 p-2 m-2"
+      >
+        <h1
+          class="w-[80px] border border-2 border-rose-600 rotate-[-45deg] h-[30px] flex justify-center z-10 items-center absolute top-[20px] left-[-5px] p-2 m-2 rounded bg-slate-500 font-bold"
+        >
+          ${index}
+        </h1>
+        <div
+          class="w-full flex justify-center items-center font-bold bg-gray-300 rounded m-2 text-center p-2"
+        >
+          <p class="bg-slate-500 rounded mx-2 px-2">ID:</p>
+          <div class="bg-sky-300 px-2 rounded">${id}</div>
+        </div>
+        <div class="w-[400px] relative m-2 p-2 bg-gray-300 rounded">
+          <div
+            class="w-[270px] gap-2 flex justify-center items-center font-bold text-center bg-slate-500 rounded p-2 m-2"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Author:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${username}</p>
+          </div>
+          <div class="relative flex justify-center items-center">
+          <img
+            class="rounded w-[400px] h-[400px]"
+            src="${url}"
+            alt="Nothing found sorry:("
+          />
+          </div>
+        </div>
+        <div class="w-full bg-gray-600 rounded p-2 m-2">
+          <p
+            class="w-[140px] font-bold underline bg-rose-500 rounded p-2 mx-2 text-center"
+          >
+            Prompt:
+          </p>
+          <p class="p-3 font-bold m-2 rounded bg-slate-300">
+          ${content}
+          </p>
+        </div>
+        <div
+          class="w-full m-2 p-2 bg-slate-500 rounded flex justify-center items-center flex-wrap"
+        >
+          <div
+            class="overflow-hidden p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">url:</h1>
+            <p
+              class="w-[300px] h-8 overflow-x-scroll overflow-y-hidden bg-rose-500 rounded px-1 font-medium"
+            >
+            ${url}
+             </p>
+          </div>
+          <div
+            class="overflow-hidden p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">proxy_url:</h1>
+            <p
+              class="w-[300px] h-8 overflow-x-scroll overflow-y-hidden bg-rose-500 rounded px-1 font-medium"
+            >
+            ${proxy_url}
+             </p>
+          </div>
+        </div>
+        <div
+          class="w-full m-2 p-2 bg-slate-500 rounded flex justify-center items-center flex-wrap"
+        >
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Type:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${content_type}</p>
+          </div>
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Width:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${width}</p>
+          </div>
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Height:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${height}</p>
+          </div>
+          <div
+            class="p-2 bg-slate-700 flex justify-center items-center rounded m-2 p-2 font-bold"
+          >
+            <h1 class="bg-sky-300 px-1 mx-2 rounded">Size:</h1>
+            <p class="bg-rose-500 rounded px-1 font-medium">${size}</p>
+          </div>
+        </div>
+      </div>
+          `);
+        }
+        container.innerHTML = generated;
+        hideanimation();
+      };
+
+      setTimeout(() => {
+        getData();
+      }, 1000);
+
+      console.log("In my api 7th and 27th value have some problem :(");
+    </script>
+  </body>
+</html>
+-->

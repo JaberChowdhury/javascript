@@ -1,3 +1,4 @@
+/*
 const getData = async () => {
   const data = await fetch("http://localhost:3000");
   const jsondata = await data.json();
@@ -18,3 +19,4 @@ const getData = async () => {
 };
 
 getData();
+*/
