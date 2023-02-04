@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/1f5ea246b1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Kanit", sans-serif;
+        transition: 1s;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .cutoff-text {
+        --max-lines: 2;
+        --line-height: 1.4;
+        max-height: calc(var(--max-lines) * 1em * var(--line-height));
+        line-height: var(--line-height);
+        overflow: hidden;
+        position: relative;
+      }
+      .expand-btn {
+        appearance: none;
+        border: 1px solid black;
+        padding: 0.5em;
+        border-radius: 0.25em;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+      .expand-btn:hover {
+        background-color: #ccc;
+      }
+      .expand-btn::before {
+        content: "Expand";
+      }
+      .expand-btn:checked::before {
+        content: "Collapse";
+      }
+      .cutoff-text:has(+ .expand-btn:checked) {
+        max-height: none;
+      }
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+      }
+      .image {
+        filter: blur(0px);
+        transition: 0.5s ease-in;
+      }
+      .maincontainer {
+        display: none;
+      }
+      .image:hover {
+        filter: blur(0px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container"></div>
+
+    <script type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

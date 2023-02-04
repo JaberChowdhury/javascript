@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="" />
+    <title></title>
+  </head>
+  <body>
+    <div
+      class="maincontainer w-[350px] my-[10px] flex justify-center items-center flex-col p-2 m-2 rounded bg-gray-300 relative border-2 border-gray-400"
+    >
+      <div
+        class="w-[90px] z-10 absolute left-[-10px] top-[2px] bg-red-400 font-bold border-2 border-red-500 rotate-[-45deg] rounded text-center p-2"
+      >
+        <i class="fa-regular fa-lightbulb"></i>ID: ${id}
+      </div>
+      <div class="bg-slate-100 rounded p-2 m-2 text-center font-bold">
+        <i class="fa-solid fa-clock"></i> Date-created:
+        <span class="font-medium bg-red-400 rounded px-1"
+          >${created_at.slice( 0, 10 )}</span
+        >
+      </div>
+      <div
+        class="w-full p-1 flex justify-center items-center flex-col bg-slate-100 rounded relative overflow-hidden"
+      >
+        <img
+          class="image w-full h-[400px] rounded border border-cyan-300 bg-red-500 bg-rose-500"
+          src="${file_url}"
+          alt="image not found"
+        />
+      </div>
+
+      <div class="w-full font-bold bg-slate-100 rounded p-2 m-2">
+        <i class="fa-sharp fa-solid fa-palette"></i> Artist:
+        <span class="font-medium bg-green-400 rounded px-1"
+          >${tag_string_artist}</span
+        >
+      </div>
+      <div class="w-full font-bold bg-slate-100 rounded p-2 m-2">
+        <i class="fa-solid fa-terminal"></i>Prompt:
+        <article class="cutoff-text font-medium bg-cyan-200 px-1 rounded">
+          ${tag_string}
+        </article>
+        <input class="expand-btn" type="checkbox" />
+      </div>
+
+      <div class="w-full font-bold bg-slate-100 rounded p-2 m-2">
+        <i class="fa-solid fa-people-arrows"></i>Tag String Character :
+        <span class="font-medium bg-cyan-500 rounded px-1"
+          >${tag_string_character}</span
+        >
+      </div>
+      <div class="w-full font-bold bg-slate-100 rounded p-2 m-2">
+        <i class="fa-solid fa-copyright"></i> Tag String Copyright :
+        <span class="font-medium bg-cyan-500 rounded px-1"
+          >${tag_string_copyright}</span
+        >
+      </div>
+      <div class="w-full font-bold bg-slate-100 rounded p-2 m-2">
+        <i class="fa-solid fa-meteor"></i>Tag String Meta :
+        <span class="font-medium bg-cyan-500 rounded px-1"
+          >${tag_string_meta}</span
+        >
+      </div>
+
+      <div
+        class="w-full gap-2 grid grid-cols-2 justify-between items-center font-bold bg-slate-100 rounded p-2 m-2"
+      >
+        <div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2">
+          <div class="w-[60px] px-2 bg-cyan-400 rounded text-center">
+            Width:
+          </div>
+          <div class="px-2 bg-cyan-400 font-medium rounded text-center">
+            ${image_width}
+          </div>
+        </div>
+        <div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2">
+          <div class="w-[60px] px-2 bg-cyan-400 rounded text-center">
+            Height:
+          </div>
+          <div class="px-2 bg-cyan-400 font-medium rounded text-center">
+            ${image_height}
+          </div>
+        </div>
+        <div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2">
+          <div class="w-[60px] px-2 bg-cyan-400 rounded text-center">Love:</div>
+          <div class="px-2 bg-cyan-400 font-medium rounded text-center">
+            ${fav_count}
+          </div>
+        </div>
+        <div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2">
+          <div class="w-[60px] px-2 bg-cyan-400 rounded text-center">Size:</div>
+          <div class="px-2 bg-cyan-400 font-medium rounded text-center">
+            ${parseInt(file_size / 1024).toFixed(1)}
+          </div>
+        </div>
+        <div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2">
+          <div class="w-[60px] px-2 bg-cyan-400 rounded text-center">Ext:</div>
+          <div class="px-2 bg-cyan-400 font-medium rounded text-center">
+            ${file_ext}
+          </div>
+        </div>
+        <div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2">
+          <div class="w-[60px] px-2 bg-cyan-400 rounded text-center">
+            Score:
+          </div>
+          <div class="px-2 bg-cyan-400 font-medium rounded text-center">
+            ${score}
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-full flex justify-between items-center flex-col font-bold bg-slate-100 rounded p-2 m-2"
+      >
+        <div
+          class="w-full flex justify-between items-center font-bold bg-stone-300 rounded p-2 m-2"
+        >
+          <div class="w-[80px]">File url:</div>
+          <input
+            class="px-2 rounded font-medium"
+            type="text"
+            value="${file_url}"
+            readonly
+          />
+        </div>
+        <div
+          class="w-full flex justify-between items-center font-bold bg-stone-300 rounded p-2 m-2"
+        >
+          <div class="w-[80px]">Large file url:</div>
+          <input
+            class="px-2 rounded font-medium"
+            type="text"
+            value="${large_file_url}"
+            readonly
+          />
+        </div>
+        <div
+          class="w-full flex justify-between items-center font-bold bg-stone-300 rounded p-2 m-2"
+        >
+          <div class="w-[80px]">preview file url:</div>
+          <input
+            class="px-2 rounded font-medium"
+            type="text"
+            value="${preview_file_url}"
+            readonly
+          />
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      const {
+              id,
+              created_at,
+              score,
+              image_width,
+              image_height,
+              tag_string,
+              fav_count,
+              file_ext,
+              file_size,
+              tag_string_character,
+              tag_string_copyright,
+              tag_string_artist,
+              tag_string_meta,
+              file_url,
+              large_file_url,
+              preview_file_url,
+            } = await json;
+    </script>
+  </body>
+</html>
