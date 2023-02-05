@@ -31,7 +31,7 @@ const data = async () => {
       large_file_url = json.large_file_url || "N/A",
       preview_file_url = json.preview_file_url || "N/A";
 
-    console.log(tag_string_artist);
+    console.log(json);
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
   }
