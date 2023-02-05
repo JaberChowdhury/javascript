@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap"
       rel="stylesheet"
     />
@@ -63,28 +67,101 @@
       .container {
         width: 100%;
         min-height: 100vh;
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         position: relative;
       }
-      .image {
-        filter: blur(0px);
-        transition: 0.5s ease-in;
-      }
+
       .maincontainer {
         display: none;
-      }
-      .image:hover {
-        filter: blur(0px);
       }
     </style>
   </head>
 
   <body>
-    <div class="container"></div>
+    <div
+      class="w-[350px] rounded fixed z-30 bg-rose-300 top-[10px] p-2 m-2 text-center"
+    >
+      Danbooru Dataset
+    </div>
+    <div
+      class="loading text-3xl flex justify-content items-center flex-col font-bold"
+    >
+      <i class="fa-solid fa-spin fa-arrows-spin"></i>
+      <h1 class="animate__animated animate__shakeX">Loading.......</h1>
+      <i class="fa-solid fa-spin fa-arrows-spin"></i>
+    </div>
+    <div class="container py-[60px]"></div>
 
-    <script type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      const container = document.querySelectorAll(".container")[0];
+      const loading = document.querySelectorAll(".loading")[0];
+
+      const hideloading = () => {
+        loading.style.display = "none";
+        container.style.display = "flex";
+      };
+
+      const fetchData = async (i) => {
+        try {
+          const req = await fetch(`https://danbooru.donmai.us/posts/${i}.json`);
+          return await req.json();
+        } catch (e) {
+          console.log(e);
+        }
+      };
+      const data = async () => {
+        let datahtml = "";
+        let count = 23820;
+        for (var i = 0; i < 100; i++) {
+          count--;
+          const json = await fetchData(count + 1);
+          if (!json) {
+            continue;
+          }
+          let id = json.id || 0,
+            created_at = json.created_at || "N/A",
+            score = json.score || 0,
+            image_width = json.image_width || 0,
+            image_height = json.image_height || 0,
+            tag_string = json.tag_string || "N/A",
+            fav_count = json.fav_count || 0,
+            file_ext = json.file_ext || "N/A",
+            file_size = json.file_size || 0,
+            tag_string_character = json.tag_string_character || "N/A",
+            tag_string_copyright = json.tag_string_copyright || "N/A",
+            tag_string_artist = json.tag_string_artist || "N/A",
+            tag_string_meta = json.tag_string_meta || "N/A",
+            file_url = json.file_url || "N/A",
+            large_file_url = json.large_file_url || "N/A",
+            preview_file_url = json.preview_file_url || "N/A";
+
+          if (created_at === "N/A" || file_url === "N/A") {
+            container.innerHTML +=
+              await '<div class=" flex justify-between items-center font-bold text-center bg-stone-300 rounded p-2 m-2"><i class="fa-solid text-rose-800 fa-circle-exclamation"></i>This Data is missing<i class="fa-solid text-rose-800 fa-circle-exclamation"></i></div>';
+          } else {
+            datahtml +=
+              await `<div class="maincontainer w-[350px] my-[10px] flex justify-center items-center flex-col p-2 m-2 rounded bg-gray-300 relative border-2 border-gray-400"><div class="w-[200px] z-10  bg-red-400 font-bold border-2 border-red-500 rounded text-center p-2"><i class="fa-regular fa-lightbulb"></i>ID: ${id}</div><div class="bg-slate-100 rounded p-2 m-2 text-center font-bold"><i class="fa-solid fa-clock"></i>Date-created:<span class="font-medium bg-red-400 rounded px-1">${created_at.slice(
+                0,
+                10
+              )}</span></div><div class="w-full p-1 flex justify-center items-center flex-col bg-slate-100 rounded relative overflow-hidden"><img class="image w-full h-[400px] rounded border border-cyan-300 bg-red-500 bg-rose-500" src="${file_url}" alt="image not found"></div><div class="w-full font-bold bg-slate-100 rounded p-2 m-2"><i class="fa-sharp fa-solid fa-palette"></i>Artist:<span class="font-medium bg-green-400 rounded px-1">${tag_string_artist}</span></div><div class="w-full font-bold bg-slate-100 rounded p-2 m-2"><i class="fa-solid fa-terminal"></i>Prompt:<article class="cutoff-text font-medium bg-cyan-200 px-1 rounded">${tag_string}</article><input class="expand-btn" type="checkbox"></div><div class="w-full font-bold bg-slate-100 rounded p-2 m-2"><i class="fa-solid fa-people-arrows"></i>Tag String Character :<span class="font-medium bg-cyan-500 rounded px-1">${tag_string_character}</span></div><div class="w-full font-bold bg-slate-100 rounded p-2 m-2"><i class="fa-solid fa-copyright"></i>Tag String Copyright :<span class="font-medium bg-cyan-500 rounded px-1">${tag_string_copyright}</span></div><div class="w-full font-bold bg-slate-100 rounded p-2 m-2"><i class="fa-solid fa-meteor"></i>Tag String Meta :<span class="font-medium bg-cyan-500 rounded px-1">${tag_string_meta}</span></div><div class="w-full gap-2 grid grid-cols-2 justify-between items-center font-bold bg-slate-100 rounded p-2 m-2"><div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2"><div class="w-[60px] px-2 bg-cyan-400 rounded text-center">Width:</div><div class="px-2 bg-cyan-400 font-medium rounded text-center">${image_width}</div></div><div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2"><div class="w-[60px] px-2 bg-cyan-400 rounded text-center">Height:</div><div class="px-2 bg-cyan-400 font-medium rounded text-center">${image_height}</div></div><div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2"><div class="w-[60px] px-2 bg-cyan-400 rounded text-center">Love:</div><div class="px-2 bg-cyan-400 font-medium rounded text-center">${fav_count}</div></div><div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2"><div class="w-[60px] px-2 bg-cyan-400 rounded text-center">Size:</div><div class="px-2 bg-cyan-400 font-medium rounded text-center">${parseInt(
+                file_size / 1024
+              ).toFixed(
+                1
+              )}</div></div><div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2"><div class="w-[60px] px-2 bg-cyan-400 rounded text-center">Ext:</div><div class="px-2 bg-cyan-400 font-medium rounded text-center">${file_ext}</div></div><div class="w-[140px] bg-rose-500 flex justify-between rounded p-2 m-2"><div class="w-[60px] px-2 bg-cyan-400 rounded text-center">Score:</div><div class="px-2 bg-cyan-400 font-medium rounded text-center">${score}</div></div></div><div class="w-full flex justify-between items-center flex-col font-bold bg-slate-100 rounded p-2 m-2"><div class="w-full flex justify-between items-center font-bold bg-stone-300 rounded p-2 m-2"><div class="w-[80px]">File url:</div><input class="px-2 rounded font-medium" type="text" value="${file_url}" readonly="readonly"></div><div class="w-full flex justify-between items-center font-bold bg-stone-300 rounded p-2 m-2"><div class="w-[80px]">Large file url:</div><input class="px-2 rounded font-medium" type="text" value="${large_file_url}" readonly="readonly"></div><div class="w-full flex justify-between items-center font-bold bg-stone-300 rounded p-2 m-2"><div class="w-[80px]">preview file url:</div><input class="px-2 rounded font-medium" type="text" value="${preview_file_url}" readonly="readonly"></div></div></div>`;
+          }
+          setTimeout( async () => {
+            hideloading();
+            container.innerHTML = await datahtml;
+          }, 2000);
+          await new Promise((resolve) => setTimeout(resolve, 10));
+        }
+      };
+      data();
+
+      const image = document.querySelectorAll(".image");
+    </script>
   </body>
 </html>
