@@ -1,5 +1,8 @@
 const getData = async () => {
-  const req = await fetch("https://danbooru.donmai.us/posts/" +Math.floor(Math.random() * 60000) +".json"
+  const req = await fetch(
+    "https://danbooru.donmai.us/posts/" +
+      Math.floor(Math.random() * 60000) +
+      ".json"
   );
   const json = await req.json();
   const text = await json.tag_string;
@@ -27,16 +30,12 @@ const getData = async () => {
     "bikini",
   ];
 
-
-
-
-
   const findbadword = () => {
     for (let i = 0; i < splitedText.length; i++) {
       if (badWords.includes(splitedText[i])) {
         console.log("The user text contains inappropriate language.");
         console.log(splitedText[i]);
-         break;
+        break;
       }
       if (i === splitedText.length) {
         console.log("The user text is appropriate.");
@@ -44,4 +43,3 @@ const getData = async () => {
     }
   };
 };
-
