@@ -1,0 +1,10 @@
+{
+  "name": "lab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "2.8.4",
+    "tailwindcss": "^3.2.6"
+  }
+}
