@@ -12,7 +12,6 @@ const result1 = arr1.concat(arr2, arr3);
 
 const result2 = [...arr1, ...arr2, ...arr3];
 
-
 console.log("📛📛📛📛📛📛 result1 📛📛📛📛📛📛");
 console.log(result1);
 console.log("📛📛📛📛📛📛 result2 📛📛📛📛📛📛");
