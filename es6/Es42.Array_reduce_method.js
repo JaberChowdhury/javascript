@@ -14,8 +14,8 @@ this is one of the most important array method
 
 const num = [..."0123456789"];
 
-const sum = num.reduce((prev,current,currentindex,arr)=>{
+const sum = num.reduce((prev, current, currentindex, arr) => {
   return parseInt(prev) + parseInt(current);
-},0);
+}, 0);
 
-console.log (sum);
+console.log(sum);
