@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rgb Generator using factory function</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+    <style type="text/css" media="all">
+      .box {
+        width: 300px;
+        height: 150px;
+        margin: 0px auto;
+        border: 2px solid black;
+        border-radius: 10px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        padding: 4px;
+        margin: 0px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="container">
+      <input
+        onchange="handleRed(this.value)"
+        type="range"
+        id="red"
+        min="0"
+        max="255"
+        value="100"
+      />
+      <input
+        onchange="handleGreen(this.value)"
+        type="range"
+        id="green"
+        min="0"
+        max="255"
+        value="100"
+      />
+      <input
+        onchange="handleBlue(this.value)"
+        type="range"
+        id="blue"
+        min="0"
+        max="255"
+        value="100"
+      />
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+      const box = document.querySelectorAll(".box")[0];
+      const red = document.querySelectorAll("#red")[0];
+      const green = document.querySelectorAll("#green")[0];
+      const blue = document.querySelectorAll("#blue")[0];
+      function color(x, y, z) {
+        let r = x.value;
+        let g = y.value;
+        let b = z.value;
+        box.style.backgroundColor = `rgb(${r},${g},${b})`;
+        box.innerHTML = `rgb(${r},${g},${b})`;
+        return {
+          setRed: function (aa) {
+            r = aa;
+            box.style.backgroundColor = `rgb(${r},${g},${b})`;
+            box.innerHTML = `rgb(${r},${g},${b})`;
+          },
+          setGreen: function (bb) {
+            g = bb;
+            box.style.backgroundColor = `rgb(${r},${g},${b})`;
+            box.innerHTML = `rgb(${r},${g},${b})`;
+          },
+          setBlue: function (cc) {
+            b = cc;
+            box.style.backgroundColor = `rgb(${r},${g},${b})`;
+            box.innerHTML = `rgb(${r},${g},${b})`;
+          },
+        };
+      }
+      function handleRed(e) {
+        code.setRed(e);
+      }
+      function handleGreen(e) {
+        code.setGreen(e);
+      }
+      function handleBlue(e) {
+        code.setBlue(e);
+      }
+      setInterval(() => {
+        const code = color(red, green, blue);
+      });
+    </script>
+  </body>
+</html>
