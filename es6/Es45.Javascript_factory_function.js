@@ -42,3 +42,26 @@ in this example we can create a new user without duplicating same text
 just call a function give it necessary info as parameters that's it 
 
 */
+
+// Another good example of Factory function
+
+/*
+const person=(tag,content,color)=>{
+  let el = document.createElement(tag);
+  el.innerText = content;
+  el.style.color = color;
+  document.body.append(el);
+  return{
+    setContent:(content)=>{
+      el.innerText = content;
+    },
+    setColor:(color)=>{
+      el.style.color = color;
+    }
+  };
+};
+const me = person("h1","I am jaber","black");
+me.setContent("I am really a good boy");
+const queeni = person("h1","I am Queen","pink");
+const princess = person("h1","I am princess","orange");
+*/
