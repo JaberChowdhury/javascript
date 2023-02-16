@@ -5,7 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="./style.css" rel="stylesheet" />
-    <script src="./tailwind.js" type="text/javascript" charset="utf-8"></script>
+    <script
+      src="./src/index.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
     <style type="text/css" media="all">
       * {
         margin: 0px;
@@ -58,7 +62,7 @@
       let element = "";
       for (let i = 0; i < final.length; i++) {
         element += `
-  <div class="w-[100px] m-1 rounded text-sm font-bold bg-[${final[i]}] h-[100px] flex justify-center items-center">
+  <div class="w-[100px] hover:scale-[1.1] m-1 active:scale-[0.9] rounded text-sm font-bold bg-[${final[i]}] h-[100px] flex justify-center items-center">
     <p class="rotate-[-45deg]">
       ${final[i]}
     </p>
