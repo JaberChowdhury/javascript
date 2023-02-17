@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "yarn prettier --check .",
-    "build": "zip ./build/build.zip ./*"
+    "build": "zip -r ./build/build.zip ./*"
   },
   "repository": {
     "type": "git",
