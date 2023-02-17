@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="./tailwind.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css" media="all">
+      * {
+        transition: 0.5s ease-in;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="container"
+      class="w-screen h-screen flex justify-center items-center flex-col p-2 bg-slate-500"
+    >
+      <div
+        class="item w-[400px] fixed bottom-10 p-1 bg-slate-500 rounded flex justify-left items-left overflow-x-scroll opacity-[1]"
+      ></div>
+
+      <div
+        class="text p-2 font-bold text-slate-100 rounded ounded bg-slate-500 shadow-md"
+      ></div>
+      <div class="flex justify-center items-center flex-wrap">
+        <div
+          id="red"
+          class="border-2 border-b-slate-900 w-[150px] h-[150px] m-2 rounded-full shadow-md bg-sky-700 flex justify-center items-center text-[40px] relative text-sky-900"
+        >
+          <div
+            class="w-4 h-4 border-[4px] border-slate-900 absolute top-[10px] rounded-full bg-sky-900"
+          ></div>
+          <div class="r"></div>
+        </div>
+        <div
+          id="green"
+          class="border-2 border-b-slate-900 w-[150px] h-[150px] m-2 rounded-full shadow-md bg-sky-700 flex justify-center items-center text-[40px] relative text-sky-900"
+        >
+          <div
+            class="w-4 h-4 border-[4px] border-slate-900 absolute top-[10px] rounded-full bg-sky-900"
+          ></div>
+          <div class="g"></div>
+        </div>
+        <div
+          id="blue"
+          class="border-2 border-b-slate-900 w-[150px] h-[150px] m-2 rounded-full shadow-md bg-sky-700 flex justify-center items-center text-[40px] relative text-sky-900"
+        >
+          <div
+            class="w-4 h-4 border-[4px] border-slate-900 absolute top-[10px] rounded-full bg-sky-900"
+          ></div>
+          <div class="b"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript" charset="utf-8">
+      const container = document.querySelectorAll("#container")[0];
+      const redel = document.querySelectorAll("#red")[0];
+      const greenel = document.querySelectorAll("#green")[0];
+      const blueel = document.querySelectorAll("#blue")[0];
+      const redcode = document.querySelectorAll(".r")[0];
+      const greencode = document.querySelectorAll(".g")[0];
+      const bluecode = document.querySelectorAll(".b")[0];
+      const text = document.querySelectorAll(".text")[0];
+      const item = document.querySelectorAll(".item")[0];
+
+      let items = [];
+
+      const color = () => {
+        const red = Math.floor(Math.random() * 255);
+        const green = Math.floor(Math.random() * 255);
+        const blue = Math.floor(Math.random() * 255);
+        container.style.backgroundColor = `rgb(${red},${green},${blue})`;
+        text.innerHTML = `rgb(${red},${green},${blue})`;
+        redel.style.rotate = `${red}deg`;
+        greenel.style.rotate = `${green}deg`;
+        blueel.style.rotate = `${blue}deg`;
+        redcode.innerHTML = red;
+        greencode.innerHTML = green;
+        bluecode.innerHTML = blue;
+        redcode.style.rotate = `-${red}deg`;
+        greencode.style.rotate = `-${green}deg`;
+        bluecode.style.rotate = `-${blue}deg`;
+        items.push(
+          `<div class="p-2 bg-[rgb(${red},${green},${blue})] font-bold rounded m-1">rgb(${red},${green},${blue})</div>`
+        );
+        let final = items.reverse();
+        item.innerHTML = final;
+      };
+      setInterval(() => {
+        color();
+      }, 1000);
+    </script>
+  </body>
+</html>
