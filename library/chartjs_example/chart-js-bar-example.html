@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chart Example</title>
+    <script src="../chart.js"></script>
+  </head>
+
+  <body>
+    <div style="width: 50%">
+      <canvas id="canvas" height="450" width="600"></canvas>
+    </div>
+
+    <script>
+      var getRandomDataArray = function () {
+        var dataArray = [];
+        for (var i = 0; i < 7; i++)
+          dataArray.push(Math.round(Math.random() * 100));
+        return dataArray;
+      };
+
+      var chartData = {
+        labels: [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+        ],
+        datasets: [
+          {
+            fillColor: "#ffa500",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: getRandomDataArray(),
+          },
+          {
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,0.8)",
+            highlightFill: "rgba(151,187,205,0.75)",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: getRandomDataArray(),
+          },
+        ],
+      };
+      window.onload = function () {
+        var chartOptions = { responsive: true };
+        var chart = document.getElementById("canvas").getContext("2d");
+        window.myBar = new Chart(chart).Bar(chartData, chartOptions);
+      };
+    </script>
+  </body>
+</html>
