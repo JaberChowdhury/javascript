@@ -4,17 +4,40 @@
     <title></title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/style.css" rel="stylesheet" />
     <script
-      src="./src/chart.js"
+      src="./src/tailwind.js"
       type="text/javascript"
       charset="utf-8"
     ></script>
+    
+    <style type="text/css" media="all">
+      .box {
+        animation: animate 1s linear infinite;
+        
+      }
+      
+      @keyframes animate {
+        100% {
+          transform: rotatex(360deg);
+        }
+      }
+    </style>
+    
   </head>
-  <body>
-    <div>
-      <canvas id="canvas"> </canvas>
+  <body class="w-full h-screen bg-slate-200 flex justify-center items-center relative">
+   
+    <div id="container" class="flex justify-center items-center relative">
+      <div style="--i:0" class="box w-4 h-20 bg-slate-600 rounded m-[2px]"></div>
+      <div style="--i:1" class="box w-4 h-20 bg-slate-600 rounded m-[2px]"></div>
+      <div style="--i:2" class="box w-4 h-20 bg-slate-600 rounded m-[2px]"></div>
+      <div style="--i:3" class="box w-4 h-20 bg-slate-600 rounded m-[2px]"></div>
+      <div style="--i:4" class="box w-4 h-20 bg-slate-600 rounded m-[2px]"></div>
+      <div style="--i:5" class="box w-4 h-20 bg-slate-600 rounded m-[2px]"></div>
+      <div style="--i:6" class="box w-4 h-20 bg-slate-600 rounded m-[2px]"></div>
+      <div style="--i:7" class="box w-4 h-20 bg-slate-600 rounded m-[2px]"></div>
+      <div style="--i:9" class="box w-4 h-20 bg-slate-600 rounded m-[2px]"></div>
     </div>
+
     <script src="./index.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>
