@@ -16,6 +16,7 @@ String padEnd()
 String charAt()
 String charCodeAt()
 String split()
+string startsWith()
 */
 
 const string =
