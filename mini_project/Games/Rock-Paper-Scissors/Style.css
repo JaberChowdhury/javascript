@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.header {
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #0066ff;
+  color: #00ffde;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.container {
+  width: 90%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  background-color: #8f9698;
+  border-radius: 4px;
+  position: relative;
+}
+.board {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  padding: 1px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: auto auto;
+  position: relative;
+  margin: 5px;
+  text-align: center;
+}
+.box {
+  width: 160px;
+  height: 100px;
+  background-color: white;
+  padding: 3px;
+  margin: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.final {
+  width: 100%;
+  padding: 3px;
+  margin: 3px;
+  font-size: 30px;
+  background-color: #cacaca;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border-radius: 4px;
+  text-align: center;
+}
+.button-group {
+  width: 100%;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+button {
+  width: 100%;
+  padding: 9px;
+  border-radius: 4px;
+  background-color: #ff7100;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  margin: 4px;
+  color: white;
+  -webkit-text-stroke: 0.5px black;
+}
+button:active {
+  box-shadow: none;
+}
+.resultDashboard {
+  width: 80%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding: 5px;
+  background-color: #ffab00;
+  border-radius: 4px;
+}
+.dashboard {
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border-radius: 4px;
+}
+.resultDashboard {
+  max-height: 400px;
+  overflow-y: scroll;
+}
