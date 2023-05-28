@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react';
-import anime from 'animejs';
+import React, { useRef, useEffect } from "react";
+import anime from "animejs";
 
 const MyComponent = () => {
   const elementRef = useRef(null);
@@ -8,9 +8,9 @@ const MyComponent = () => {
     anime({
       targets: elementRef.current,
       opacity: 0.5,
-      translateX: '50%',
+      translateX: "50%",
       duration: 1000,
-      easing: 'easeInOutQuad',
+      easing: "easeInOutQuad",
     });
   }, []);
 

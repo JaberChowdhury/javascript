@@ -1,0 +1,15 @@
+Nodejs is a opensource Javascript runtime.
+As this is opensource so we can see it's source code .
+
+Nodejs is a server-side language.Thats mean it only can 
+run in terminal not in browser.
+
+Nodejs is a cross platform javascript runtime thats mean it can use in macOS,android,linux,ios
+So we can crrate software for android and ios only writing code for one time 
+than build for different platform.....
+
+;) that's crazy!!!!
+for example react native for creating cross platform mobile app
+ios + android
+
+electronjs is for creating desktop software for macOS and windows and linux
