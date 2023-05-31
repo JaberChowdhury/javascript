@@ -22,4 +22,4 @@ const {
 console.log(firstName);
 console.log(lastName);
 console.log(midd);
-p0
+p0;
