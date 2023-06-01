@@ -1,4 +1,4 @@
-export const x = "cute";
-export const y = "crush";
-const z = "ommah";
+export const x = "I";
+export const y = "Love";
+const z = "myself";
 export default z;
