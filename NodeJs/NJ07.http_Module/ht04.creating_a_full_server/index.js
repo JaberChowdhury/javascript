@@ -43,7 +43,7 @@ app.handleServer = (req, res) => {
 
 const handleRoute = (search, query, path, pathname, href) => {
   const route = path.toString().split("/")[1];
-  const length = query.split("=")[1];
+  const length = query?.split("=")[1] || 10;
 
   if (route.toLowerCase() === "color") {
     app.state.responseData = data(length);
