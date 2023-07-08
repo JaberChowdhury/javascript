@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ExpressJs calculator app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+        font-weight: 400;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+        text-decoration: none;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        background-color: #fde689;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .container {
+        width: 100%;
+        position: relative;
+        display: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+        flex-direction: column;
+      }
+      .box {
+        width: 90%;
+        padding: 5px 15px 5px 15px;
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        margin: 5px 0px 5px 0px;
+      }
+      .method {
+        width: 80px;
+        text-align: center;
+        color: #fde689;
+        font-weight: bold;
+        background-color: green;
+        padding: 2px 15px 2px 15px;
+        border-radius: 10px;
+      }
+      .url {
+        font-weight: 500;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script type="text/javascript" charset="utf-8">
+      const container = document.querySelector(".container");
+      const data = [
+        {
+          url: "/",
+          method: "get",
+        },
+        {
+          url: "/calculator",
+          method: "get",
+        },
+        {
+          url: "/calculator/area",
+          method: "get&post",
+        },
+        {
+          url: "/calculator/triangle",
+          method: "get&post",
+        },
+      ];
+      let final = "";
+      for (let i = 0; i < data.length; i++) {
+        final += `
+      <a href=${data[i].url} class="box">
+      <div class="method">${data[i].method.toUpperCase()}</div>
+      <div class="url">${data[i].url}</div>
+      </a>
+      `;
+      }
+      container.innerHTML = final;
+    </script>
+  </body>
+</html>
