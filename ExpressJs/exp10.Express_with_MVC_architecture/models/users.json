@@ -1,0 +1,100 @@
+{
+  "title": {
+    "head": "experiencing MVC pattern",
+    "description": "all the information of users will store here"
+  },
+  "body": {
+    "users": [
+      {
+        "uuid": "4a5b87fa-3b2a-4e25-8030-caf1fb863a4b",
+        "updated": "12/07/2023, 22:35:47",
+        "name": "Black_Light",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "fb1b44d5-5319-4e03-abb4-e08741731376",
+        "updated": "7/13/2023, 10:42:56 AM",
+        "name": "Black_Light",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "f710497f-74ba-4f02-a9f3-f8f9ee2832ce",
+        "updated": "7/13/2023, 10:43:07 AM",
+        "name": "Black_Light",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "aa06dfcf-0e59-47e2-ac4a-01c451aca1e1",
+        "updated": "7/13/2023, 10:43:08 AM",
+        "name": "Black_Light",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "49b502da-f884-4ea7-b49b-1c28ad650664",
+        "updated": "7/13/2023, 10:43:10 AM",
+        "name": "Black_Light",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "1debc2f4-f71c-4abe-ae9c-89736f47761e",
+        "updated": "7/13/2023, 10:43:11 AM",
+        "name": "Black_Light",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "7366261e-f404-43d7-9cae-77f218dfb60f",
+        "updated": "7/13/2023, 10:43:12 AM",
+        "name": "Black_Light",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "35f8582a-80f6-448c-ba0e-9d675271031e",
+        "updated": "7/13/2023, 10:43:14 AM",
+        "name": "Black_Light",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "5be2ee14-c25c-4a76-9774-622eb531b7d4",
+        "updated": "7/13/2023, 10:43:23 AM",
+        "name": "wow",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "5b98def7-08d6-4138-a8b8-719173bda9c1",
+        "updated": "7/13/2023, 10:43:24 AM",
+        "name": "wow",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "562030ce-d561-4329-86b2-4ccf8a3979f7",
+        "updated": "7/13/2023, 10:44:01 AM",
+        "name": "wow",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "d4db5f6c-e7b4-41ea-ae50-4d44d9c87371",
+        "updated": "7/13/2023, 10:44:03 AM",
+        "name": "wow",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "15230734-7566-44eb-ba07-9437d0f3e7ae",
+        "updated": "7/13/2023, 10:44:39 AM",
+        "name": "Diue",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "cffef295-52bf-40d8-acdd-fd216e4c0a33",
+        "updated": "7/13/2023, 10:52:56 AM",
+        "name": "Suis",
+        "email": "jaberhc2002@gmail.com"
+      },
+      {
+        "uuid": "3bc3abc9-192f-4478-8494-1fc06a3d659a",
+        "updated": "7/13/2023, 10:55:00 AM",
+        "name": "Sjjs",
+        "email": "jaberhc2002@gmail.com"
+      }
+    ]
+  }
+}

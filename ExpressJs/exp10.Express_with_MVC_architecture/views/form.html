@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>user form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css" media="all">
+      /*Style css*/
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+        font-weight: 400;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+        text-decoration: none;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        background-color: #fbd34d;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+      }
+      .form {
+        width: 95%;
+        padding: 5px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        background: white;
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+      .form > div {
+        width: 100%;
+        padding: 2px;
+        margin: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+      .form > div > label {
+        width: 20%;
+        text-align: center;
+        font-weight: bold;
+      }
+      .form > div > input {
+        width: 80%;
+        height: 30px;
+        padding: 5px;
+      }
+      button {
+        padding: 5px 20px 5px 20px;
+        background-color: #10b982;
+        outline: none;
+        border: none;
+        border-radius: 2px;
+        font-weight: bold;
+        font-size: 20px;
+        box-shadow: 0.5px 0.5px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <h1><strong>User form</strong></h1>
+      <div>
+        <a href="/"
+          ><h1><strong>Home</strong></h1></a
+        >
+      </div>
+    </div>
+    <form class="form" action="/form" method="POST" accept-charset="utf-8">
+      <div>
+        <label htmlFor="name">Name</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div>
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" id="email" required />
+      </div>
+      <button type="submit">Add user</button>
+    </form>
+  </body>
+</html>
