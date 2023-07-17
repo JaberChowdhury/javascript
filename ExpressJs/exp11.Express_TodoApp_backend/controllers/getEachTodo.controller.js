@@ -11,13 +11,16 @@
 const fs = require("fs");
 
 const getEachTodo = (req, res) => {
-  const fileName = __dirname.slice(0, -11) + "models/todos.json";
+  const fileName = __dirname.slice(0, -11) + "models/todos.json.txt";
   // Read the database
   fs.readFile(fileName, (error, buffer) => {
     if (!error) {
       const database = JSON.parse(buffer.toString());
       const todos = database.body.todos;
-      if (todos.length > Number(req.params.id)) {
+      if (todos.length > parseFloat(req.params.id)) {
+        console.log({
+          message: `One todo has sended ${todos[req.params.id]}`,
+        });
         res.json({
           todo: todos[req.params.id],
         });

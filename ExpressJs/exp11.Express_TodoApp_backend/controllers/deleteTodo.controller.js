@@ -22,7 +22,7 @@ const findId = (todos, id) => {
 };
 
 const deleteTodo = (req, res) => {
-  const fileName = __dirname.slice(0, -11) + "models/todos.json";
+  const fileName = __dirname.slice(0, -11) + "models/todos.json.txt";
   // read the database
   fs.readFile(fileName, (readError, buffer) => {
     if (!readError) {
@@ -38,6 +38,9 @@ const deleteTodo = (req, res) => {
         fs.writeFile(fileName, JSON.stringify(database), (writeError) => {
           if (!writeError) {
             // final success 🙌
+            console.log({
+              message: "todo has been deleted",
+            });
             res.json({
               message: "todo has been deleted",
             });

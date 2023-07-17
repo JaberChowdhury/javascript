@@ -9,12 +9,14 @@
 
 // Dependency
 const express = require("express");
+const cors = require("cors");
 const todoRoute = require("./routes/todo.route.js");
 const error = require("./views/error.view.js");
 
 // initial
 const app = express();
 const PORT = 4000;
+app.use(cors());
 app.use(
   express.urlencoded({
     extended: true,
