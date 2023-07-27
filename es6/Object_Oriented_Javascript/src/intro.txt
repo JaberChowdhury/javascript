@@ -1,0 +1,46 @@
+/**
+*
+* 🫒 Title : OOP
+* 🫒 Description : Introduction to Object Oriented Programming in javascript
+* 🫒 Author : Md Jaber Hossain Chowdhury
+* 🫒 Date : 25 July 2023
+*
+**/
+
+
+OOP = Object Oriented Programming
+
+oop is a coding pattern to write c9de in a better and same way.
+It helps us to make stabilisation in team work.So that
+programmer's can write code in the same way that other coders do.
+
+There are 4 pillars in OOP :
+1 -> Encapsulation
+2 -> Inheritance
+3 -> Abstraction
+4 -> Polymorphism
+
+[Encapsulation]
+------Centralise all common property and method
+using class and constructor.Than create objects
+by calling those classes using new keywords and
+variables.
+
+[Inheritance]
+------After centralising all property and methods
+we can call them to create object.
+If we need the same object with some extra property or
+methods we can extends them.This is what called Inheritance.
+
+[Abstraction]
+------Reducing implementation by hiding the actual algorithm
+than make it user friendly. for example : Remote controller,
+we don't know what type complex logic is working inside the
+remote ,we just click on button to work with remote devices like TV or Toys.
+
+[Polymorphism]
+------Polymorphism occurs when we change something inside methods
+after extended it.But one important rule is that the
+return type must be similar to parents methods return type.
+for example if parents method return an array than extended class method
+must have to return an array.
