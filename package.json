@@ -30,6 +30,6 @@
   },
   "homepage": "https://github.com/Blacklegion69/javascript#readme",
   "devDependencies": {
-    "prettier": "2.8.3"
+    "prettier": "3.2.5"
   }
 }
