@@ -64,7 +64,7 @@ const IamAFunction = (
   a: number,
   b: string,
   c: (number | string)[],
-  d: Country
+  d: Country,
 ): object => {
   return {
     a,

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "yarn prettier --check .",
+    "fmt": "pnpm dlx prettier --cache -w .",
     "build": "zip -r ./build/build.zip ./*"
   },
   "repository": {

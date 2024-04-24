@@ -23,7 +23,9 @@ body {
   background-color: #0066ff;
   color: #00ffde;
   border-radius: 4px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 .container {
   width: 90%;
@@ -40,7 +42,9 @@ body {
 .board {
   width: 100%;
   border-radius: 4px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
   padding: 1px;
   display: grid;
   justify-content: center;
@@ -60,7 +64,9 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 .final {
   width: 100%;
@@ -68,7 +74,9 @@ body {
   margin: 3px;
   font-size: 30px;
   background-color: #cacaca;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
   border-radius: 4px;
   text-align: center;
 }
@@ -89,7 +97,9 @@ button {
   border: none;
   outline: none;
   font-size: 30px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
   margin: 4px;
   color: white;
   -webkit-text-stroke: 0.5px black;
@@ -118,7 +128,9 @@ button:active {
   align-items: center;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
   border-radius: 4px;
 }
 .resultDashboard {

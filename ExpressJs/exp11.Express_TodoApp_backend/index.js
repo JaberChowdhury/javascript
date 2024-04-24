@@ -20,7 +20,7 @@ app.use(cors());
 app.use(
   express.urlencoded({
     extended: true,
-  })
+  }),
 );
 
 app.use("/api/v1/todo", todoRoute);
@@ -39,8 +39,8 @@ app.get("/api/v4/css", (req, res) => {
 app.use((req, res) => {
   res.send(
     error(
-      `Route didn't found. || http://localhost:3000${req.path} || doesn't exist`
-    )
+      `Route didn't found. || http://localhost:3000${req.path} || doesn't exist`,
+    ),
   );
 });
 

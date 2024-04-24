@@ -17,7 +17,7 @@ const data = (
   body: object = {
     x: 18,
   },
-  title: string = "Wow"
+  title: string = "Wow",
 ): string | object => {
   return `ID : ${id} | BODY : ${body} | TITLE :${title}`;
 };

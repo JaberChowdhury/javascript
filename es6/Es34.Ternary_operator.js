@@ -20,6 +20,6 @@ let final =
   input > 10
     ? "Greater than 10"
     : input < 10
-    ? "less than 10"
-    : "statement doesn't match";
+      ? "less than 10"
+      : "statement doesn't match";
 console.log(final);

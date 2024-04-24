@@ -36,10 +36,10 @@
             "default",
             e && e.__esModule && "default" in e
               ? { get: () => e.default, enumerable: !0 }
-              : { value: e, enumerable: !0 }
-          )
+              : { value: e, enumerable: !0 },
+          ),
         ),
-        e
+        e,
       ),
     m = d(() => {
       e = { platform: "", env: {}, versions: { node: "14.17.6" } };
@@ -105,8 +105,8 @@
           return this.cache.has(e)
             ? this.cache.get(e)
             : this.oldCache.has(e)
-            ? this.oldCache.get(e)
-            : void 0;
+              ? this.oldCache.get(e)
+              : void 0;
         }
         delete(e) {
           let t = this.cache.delete(e);
@@ -163,10 +163,10 @@
     return "0" === (e = `${e}`)
       ? "0"
       : /^[+-]?(\d+|\d*\.\d+)(e[+-]?\d+)?(%|\w+)?$/.test(e)
-      ? e.replace(/^[+-]?/, (e) => ("-" === e ? "" : "-"))
-      : e.includes("var(") || e.includes("calc(")
-      ? `calc(${e} * -1)`
-      : void 0;
+        ? e.replace(/^[+-]?/, (e) => ("-" === e ? "" : "-"))
+        : e.includes("var(") || e.includes("calc(")
+          ? `calc(${e} * -1)`
+          : void 0;
   }
   var R,
     $ = d(() => {
@@ -1641,8 +1641,8 @@
     return Array.isArray(e)
       ? e.map((e) => ne(e))
       : "object" == typeof e && null !== e
-      ? Object.fromEntries(Object.entries(e).map(([e, t]) => [e, ne(t)]))
-      : e;
+        ? Object.fromEntries(Object.entries(e).map(([e, t]) => [e, ne(t)]))
+        : e;
   }
   var oe = d(() => {
       m();
@@ -1987,7 +1987,7 @@
             };
           }
           throw new TypeError(
-            "Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+            "Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.",
           );
         }
         return (r = e[Symbol.iterator]()).next.bind(r);
@@ -2364,12 +2364,12 @@
                   ? "\\" + f
                   : "\\" + h.toString(16).toUpperCase() + " "
                 : /[\t\n\f\r\x0B]/.test(f)
-                ? "\\" + h.toString(16).toUpperCase() + " "
-                : "\\" == f ||
-                  (!l && (('"' == f && a == f) || ("'" == f && a == f))) ||
-                  (l && n.test(f))
-                ? "\\" + f
-                : f;
+                  ? "\\" + h.toString(16).toUpperCase() + " "
+                  : "\\" == f ||
+                      (!l && (('"' == f && a == f) || ("'" == f && a == f))) ||
+                      (l && n.test(f))
+                    ? "\\" + f
+                    : f;
             u += m;
           }
           return (
@@ -2737,12 +2737,18 @@
       }
       var c = Oe(),
         u = /^('|")([^]*)\1$/,
-        d = c(function () {},
-        "Assigning an attribute a value containing characters that might need to be escaped is deprecated. Call attribute.setValue() instead."),
-        p = c(function () {},
-        "Assigning attr.quoted is deprecated and has no effect. Assign to attr.quoteMark instead."),
-        f = c(function () {},
-        "Constructing an Attribute selector with a value without specifying quoteMark is deprecated. Note: The value should be unescaped now.");
+        d = c(
+          function () {},
+          "Assigning an attribute a value containing characters that might need to be escaped is deprecated. Call attribute.setValue() instead.",
+        ),
+        p = c(
+          function () {},
+          "Assigning attr.quoted is deprecated and has no effect. Assign to attr.quoteMark instead.",
+        ),
+        f = c(
+          function () {},
+          "Constructing an Attribute selector with a value without specifying quoteMark is deprecated. Note: The value should be unescaped now.",
+        );
       function h(e) {
         var t = !1,
           r = null,
@@ -2775,7 +2781,7 @@
                     (e.quoteMark = r),
                     e
                   );
-                })(t)
+                })(t),
               ) || this),
             (r.type = o.ATTRIBUTE),
             (r.raws = r.raws || {}),
@@ -2833,8 +2839,8 @@
             return o === n
               ? this.preferredQuoteMark(e)
               : o < n
-              ? t.DOUBLE_QUOTE
-              : t.SINGLE_QUOTE;
+                ? t.DOUBLE_QUOTE
+                : t.SINGLE_QUOTE;
           }),
           (i.preferredQuoteMark = function (e) {
             var r = e.preferCurrentQuoteMark ? this.quoteMark : e.quoteMark;
@@ -2920,8 +2926,8 @@
                           (r.before = " "),
                         y(t, r)
                       );
-                    }
-                  )
+                    },
+                  ),
                 )),
               t.push("]"),
               t.push(this.rawSpaceAfter),
@@ -2957,7 +2963,7 @@
               key: "qualifiedAttribute",
               get: function () {
                 return this.qualifiedName(
-                  this.raws.attribute || this.attribute
+                  this.raws.attribute || this.attribute,
                 );
               },
             },
@@ -3289,8 +3295,8 @@
                     (o = p),
                     (n = d - f))
                   : t === i.slash
-                  ? ((m = t), (o = v), (n = x - w), (k = (d = x) + 1))
-                  : ((d = u(b, x)), (m = i.word), (o = v), (n = d - w)),
+                    ? ((m = t), (o = v), (n = x - w), (k = (d = x) + 1))
+                    : ((d = u(b, x)), (m = i.word), (o = v), (n = d - w)),
                   (k = d + 1);
             }
             g.push([m, v, x - w, o, n, x, k]),
@@ -3480,7 +3486,7 @@
           e[y.FIELDS.START_LINE],
           e[y.FIELDS.START_COL],
           e[y.FIELDS.END_LINE],
-          e[y.FIELDS.END_COL]
+          e[y.FIELDS.END_COL],
         );
       }
       function j(e, t) {
@@ -3489,7 +3495,7 @@
             e[y.FIELDS.START_LINE],
             e[y.FIELDS.START_COL],
             t[y.FIELDS.END_LINE],
-            t[y.FIELDS.END_COL]
+            t[y.FIELDS.END_COL],
           );
       }
       function I(e, t) {
@@ -3549,7 +3555,7 @@
             if (this.currToken[y.FIELDS.TYPE] !== w.closeSquare)
               return this.expected(
                 "closing square bracket",
-                this.currToken[y.FIELDS.START_POS]
+                this.currToken[y.FIELDS.START_POS],
               );
             var r = e.length,
               i = {
@@ -3676,7 +3682,7 @@
                             i,
                             "raws",
                             "spaces",
-                            "insensitive"
+                            "insensitive",
                           ),
                           (i.raws.spaces.insensitive.before = s),
                           (s = "")));
@@ -3687,7 +3693,7 @@
                   if (!i.attribute || !i.operator)
                     return this.error(
                       "Expected an attribute followed by an operator preceding the string.",
-                      { index: c[y.FIELDS.START_POS] }
+                      { index: c[y.FIELDS.START_POS] },
                     );
                   var S = (0, p.unescapeValue)(u),
                     C = S.unescaped,
@@ -3705,7 +3711,7 @@
                   if (i.value)
                     return this.error(
                       'Unexpected "=" found; an operator was already defined.',
-                      { index: c[y.FIELDS.START_POS] }
+                      { index: c[y.FIELDS.START_POS] },
                     );
                   (i.operator = i.operator ? i.operator + u : u),
                     (a = "operator"),
@@ -3775,11 +3781,11 @@
                       s[y.FIELDS.START_LINE],
                       s[y.FIELDS.START_COL],
                       l[y.FIELDS.END_LINE],
-                      l[y.FIELDS.END_COL]
+                      l[y.FIELDS.END_COL],
                     ),
                     sourceIndex: s[y.FIELDS.START_POS],
                     spaces: { before: i, after: "" },
-                  })
+                  }),
                 );
               }
             return r;
@@ -3826,7 +3832,7 @@
                   this.currToken[y.FIELDS.START_LINE],
                   this.currToken[y.FIELDS.START_COL],
                   this.tokens[this.position + 2][y.FIELDS.END_LINE],
-                  this.tokens[this.position + 2][y.FIELDS.END_COL]
+                  this.tokens[this.position + 2][y.FIELDS.END_COL],
                 ),
                 sourceIndex: this.currToken[y.FIELDS.START_POS],
                 raws: r,
@@ -3849,13 +3855,15 @@
                 this.isNamedCombinator()
                   ? (r = this.namedCombinator())
                   : this.currToken[y.FIELDS.TYPE] === w.combinator
-                  ? ((r = new h.default({
-                      value: this.content(),
-                      source: D(this.currToken),
-                      sourceIndex: this.currToken[y.FIELDS.START_POS],
-                    })),
-                    this.position++)
-                  : _[this.currToken[y.FIELDS.TYPE]] || n || this.unexpected(),
+                    ? ((r = new h.default({
+                        value: this.content(),
+                        source: D(this.currToken),
+                        sourceIndex: this.currToken[y.FIELDS.START_POS],
+                      })),
+                      this.position++)
+                    : _[this.currToken[y.FIELDS.TYPE]] ||
+                      n ||
+                      this.unexpected(),
                 r)
               ) {
                 if (n) {
@@ -3875,8 +3883,8 @@
                   ? ((d.before = c.slice(0, c.length - 1)),
                     (p.spaces.before = u.slice(0, u.length - 1)))
                   : c.startsWith(" ") && u.startsWith(" ")
-                  ? ((d.after = c.slice(1)), (p.spaces.after = u.slice(1)))
-                  : (p.value = u),
+                    ? ((d.after = c.slice(1)), (p.spaces.after = u.slice(1)))
+                    : (p.value = u),
                   (r = new h.default({
                     value: " ",
                     source: j(i, this.tokens[this.position - 1]),
@@ -3923,7 +3931,7 @@
                 value: this.content(),
                 source: D(e),
                 sourceIndex: e[y.FIELDS.START_POS],
-              })
+              }),
             ),
               this.position++;
           }),
@@ -3938,13 +3946,13 @@
           (t.missingParenthesis = function () {
             return this.expected(
               "opening parenthesis",
-              this.currToken[y.FIELDS.START_POS]
+              this.currToken[y.FIELDS.START_POS],
             );
           }),
           (t.missingSquareBracket = function () {
             return this.expected(
               "opening square bracket",
-              this.currToken[y.FIELDS.START_POS]
+              this.currToken[y.FIELDS.START_POS],
             );
           }),
           (t.unexpected = function () {
@@ -3952,7 +3960,7 @@
               "Unexpected '" +
                 this.content() +
                 "'. Escaping special characters with \\ may help.",
-              this.currToken[y.FIELDS.START_POS]
+              this.currToken[y.FIELDS.START_POS],
             );
           }),
           (t.namespace = function () {
@@ -3960,8 +3968,8 @@
             return this.nextToken[y.FIELDS.TYPE] === w.word
               ? (this.position++, this.word(e))
               : this.nextToken[y.FIELDS.TYPE] === w.asterisk
-              ? (this.position++, this.universal(e))
-              : void 0;
+                ? (this.position++, this.universal(e))
+                : void 0;
           }),
           (t.nesting = function () {
             if (this.nextToken && "|" === this.content(this.nextToken))
@@ -3972,7 +3980,7 @@
                 value: this.content(),
                 source: D(e),
                 sourceIndex: e[y.FIELDS.START_POS],
-              })
+              }),
             ),
               this.position++;
           }),
@@ -4017,16 +4025,16 @@
                         s[y.FIELDS.START_LINE],
                         s[y.FIELDS.START_COL],
                         n[y.FIELDS.END_LINE],
-                        n[y.FIELDS.END_COL]
+                        n[y.FIELDS.END_COL],
                       ),
                       sourceIndex: s[y.FIELDS.START_POS],
-                    })
+                    }),
                   );
             }
             if (t)
               return this.expected(
                 "closing parenthesis",
-                this.currToken[y.FIELDS.START_POS]
+                this.currToken[y.FIELDS.START_POS],
               );
           }),
           (t.pseudo = function () {
@@ -4040,7 +4048,7 @@
               ? this.currToken[y.FIELDS.TYPE] !== w.word
                 ? this.expected(
                     ["pseudo-class", "pseudo-element"],
-                    this.currToken[y.FIELDS.START_POS]
+                    this.currToken[y.FIELDS.START_POS],
                   )
                 : void this.splitWord(!1, function (i, n) {
                     (t += i),
@@ -4049,7 +4057,7 @@
                           value: t,
                           source: j(r, e.currToken),
                           sourceIndex: r[y.FIELDS.START_POS],
-                        })
+                        }),
                       ),
                       n > 1 &&
                         e.nextToken &&
@@ -4060,7 +4068,7 @@
                   })
               : this.expected(
                   ["pseudo-class", "pseudo-element"],
-                  this.position - 1
+                  this.position - 1,
                 );
           }),
           (t.space = function () {
@@ -4073,11 +4081,11 @@
             })
               ? ((this.spaces = this.optionalSpace(e)), this.position++)
               : this.position === this.tokens.length - 1 ||
-                this.nextToken[y.FIELDS.TYPE] === w.comma ||
-                this.nextToken[y.FIELDS.TYPE] === w.closeParenthesis
-              ? ((this.current.last.spaces.after = this.optionalSpace(e)),
-                this.position++)
-              : this.combinator();
+                  this.nextToken[y.FIELDS.TYPE] === w.comma ||
+                  this.nextToken[y.FIELDS.TYPE] === w.closeParenthesis
+                ? ((this.current.last.spaces.after = this.optionalSpace(e)),
+                  this.position++)
+                : this.combinator();
           }),
           (t.string = function () {
             var e = this.currToken;
@@ -4086,7 +4094,7 @@
                 value: this.content(),
                 source: D(e),
                 sourceIndex: e[y.FIELDS.START_POS],
-              })
+              }),
             ),
               this.position++;
           }),
@@ -4101,7 +4109,7 @@
                 source: D(r),
                 sourceIndex: r[y.FIELDS.START_POS],
               }),
-              e
+              e,
             ),
               this.position++;
           }),
@@ -4141,7 +4149,7 @@
                 return e.filter(function (t, r) {
                   return r === e.indexOf(t);
                 });
-              })([0].concat(u, d))
+              })([0].concat(u, d)),
             );
             f.forEach(function (i, o) {
               var a = f[o + 1] || n.length,
@@ -4234,7 +4242,7 @@
             return r
               ? this.error(
                   "Expected " + n + " " + e + ', found "' + r + '" instead.',
-                  { index: t }
+                  { index: t },
                 )
               : this.error("Expected " + n + " " + e + ".", { index: t });
           }),
@@ -4372,7 +4380,7 @@
               i = this.func(r);
             if (i && "function" == typeof i.then)
               throw new Error(
-                "Selector processor returned a promise to a synchronous call."
+                "Selector processor returned a promise to a synchronous call.",
               );
             var n = void 0;
             return (
@@ -4794,14 +4802,14 @@
       return { mode: "rgb", color: Ge.default[e].map((e) => e.toString()) };
     let r = e
       .replace(He, (e, t, r, i, n) =>
-        ["#", t, t, r, r, i, i, n ? n + n : ""].join("")
+        ["#", t, t, r, r, i, i, n ? n + n : ""].join(""),
       )
       .match(Ye);
     if (null !== r)
       return {
         mode: "rgb",
         color: [parseInt(r[1], 16), parseInt(r[2], 16), parseInt(r[3], 16)].map(
-          (e) => e.toString()
+          (e) => e.toString(),
         ),
         alpha: r[4] ? (parseInt(r[4], 16) / 255).toString() : void 0,
       };
@@ -4836,10 +4844,10 @@
         (Xe = /\s*[,/]\s*/),
         (Ke = /var\(--(?:[^ )]*?)\)/),
         (Ze = new RegExp(
-          `^(rgb)a?\\(\\s*(${Qe.source}|${Ke.source})(?:${Je.source}(${Qe.source}|${Ke.source}))?(?:${Je.source}(${Qe.source}|${Ke.source}))?(?:${Xe.source}(${Qe.source}|${Ke.source}))?\\s*\\)$`
+          `^(rgb)a?\\(\\s*(${Qe.source}|${Ke.source})(?:${Je.source}(${Qe.source}|${Ke.source}))?(?:${Je.source}(${Qe.source}|${Ke.source}))?(?:${Xe.source}(${Qe.source}|${Ke.source}))?\\s*\\)$`,
         )),
         (et = new RegExp(
-          `^(hsl)a?\\(\\s*((?:${Qe.source})(?:deg|rad|grad|turn)?|${Ke.source})(?:${Je.source}(${Qe.source}|${Ke.source}))?(?:${Je.source}(${Qe.source}|${Ke.source}))?(?:${Xe.source}(${Qe.source}|${Ke.source}))?\\s*\\)$`
+          `^(hsl)a?\\(\\s*((?:${Qe.source})(?:deg|rad|grad|turn)?|${Ke.source})(?:${Je.source}(${Qe.source}|${Ke.source}))?(?:${Je.source}(${Qe.source}|${Ke.source}))?(?:${Xe.source}(${Qe.source}|${Ke.source}))?\\s*\\)$`,
         ));
     });
   function rt(e, t, r) {
@@ -4856,7 +4864,7 @@
           i.map((t) => [
             t,
             e({ opacityVariable: r, opacityValue: `var(${r})` }),
-          ])
+          ]),
         ),
       };
     let n = Ve(e);
@@ -4865,7 +4873,7 @@
       : {
           [r]: "1",
           ...Object.fromEntries(
-            i.map((e) => [e, qe({ ...n, alpha: `var(${r})` })])
+            i.map((e) => [e, qe({ ...n, alpha: `var(${r})` })]),
           ),
         };
   }
@@ -4874,7 +4882,7 @@
   });
   function ot(e) {
     return (e = (e = Array.isArray(e) ? e : [e]).map((e) =>
-      e instanceof RegExp ? e.source : e
+      e instanceof RegExp ? e.source : e,
     )).join("");
   }
   function st(e) {
@@ -4935,16 +4943,16 @@
           !n.has("KEYWORD") && yt.has(e)
             ? ((r.keyword = e), n.add("KEYWORD"))
             : vt.test(e)
-            ? n.has("X")
-              ? n.has("Y")
-                ? n.has("BLUR")
-                  ? n.has("SPREAD") || ((r.spread = e), n.add("SPREAD"))
-                  : ((r.blur = e), n.add("BLUR"))
-                : ((r.y = e), n.add("Y"))
-              : ((r.x = e), n.add("X"))
-            : r.color
-            ? (r.unknown || (r.unknown = []), r.unknown.push(e))
-            : (r.color = e);
+              ? n.has("X")
+                ? n.has("Y")
+                  ? n.has("BLUR")
+                    ? n.has("SPREAD") || ((r.spread = e), n.add("SPREAD"))
+                    : ((r.blur = e), n.add("BLUR"))
+                  : ((r.y = e), n.add("Y"))
+                : ((r.x = e), n.add("X"))
+              : r.color
+                ? (r.unknown || (r.unknown = []), r.unknown.push(e))
+                : (r.color = e);
       return (r.valid = void 0 !== r.x && void 0 !== r.y), r;
     });
   }
@@ -4955,7 +4963,7 @@
           ? [e.keyword, e.x, e.y, e.blur, e.spread, e.color]
               .filter(Boolean)
               .join(" ")
-          : e.raw
+          : e.raw,
       )
       .join(", ");
   }
@@ -4984,8 +4992,8 @@
         (e = e.replace(/(calc|min|max|clamp)\(.+\)/g, (e) =>
           e.replace(
             /(-?\d*\.?\d(?!\b-.+[,)](?![^+\-/*])\D)(?:%|[a-z]+)?|\))([+\-/*])/g,
-            "$1 $2 "
-          )
+            "$1 $2 ",
+          ),
         )));
   }
   function St(e) {
@@ -5001,7 +5009,7 @@
       .split(Mt)
       .every(
         (e) =>
-          /%$/g.test(e) || Bt.some((t) => new RegExp(`^${t}\\(.+?%`).test(e))
+          /%$/g.test(e) || Bt.some((t) => new RegExp(`^${t}\\(.+?%`).test(e)),
       );
   }
   function _t(e) {
@@ -5011,7 +5019,7 @@
         (e) =>
           "0" === e ||
           new RegExp(`${Lt}$`).test(e) ||
-          Bt.some((t) => new RegExp(`^${t}\\(.+?${Lt}`).test(e))
+          Bt.some((t) => new RegExp(`^${t}\\(.+?${Lt}`).test(e)),
       );
   }
   function Ot(e) {
@@ -5030,7 +5038,7 @@
         .every(
           (e) =>
             !!(e = kt(e)).startsWith("var(") ||
-            (null !== Ve(e, { loose: !0 }) && (t++, !0))
+            (null !== Ve(e, { loose: !0 }) && (t++, !0)),
         ) && t > 0
     );
   }
@@ -5048,10 +5056,10 @@
               return !1;
             })(e) ||
             ["element(", "image(", "cross-fade(", "image-set("].some((t) =>
-              e.startsWith(t)
+              e.startsWith(t),
             )
           ) &&
-            (t++, !0))
+            (t++, !0)),
       ) && t > 0
     );
   }
@@ -5063,7 +5071,7 @@
         .every(
           (e) =>
             !!(e = kt(e)).startsWith("var(") ||
-            (!!(Nt.has(e) || _t(e) || At(e)) && (t++, !0))
+            (!!(Nt.has(e) || _t(e) || At(e)) && (t++, !0)),
         ) && t > 0
     );
   }
@@ -5079,7 +5087,7 @@
               (e.includes(" ") && !/(['"])([^"']+)\1/g.test(e)) ||
               /^\d/g.test(e)
             ) &&
-              (t++, !0))
+              (t++, !0)),
         ) && t > 0
     );
   }
@@ -5182,15 +5190,15 @@
     return void 0 !== i
       ? i
       : t.supportsNegativeValues && e.startsWith("-")
-      ? (function (e, t = {}, r) {
-          let i = t[e];
-          if (void 0 !== i) return I(i);
-          if (Jt(e)) {
-            let t = Ht(e, r);
-            return void 0 === t ? void 0 : I(t);
-          }
-        })(e.slice(1), t.values, r)
-      : Ht(e, r);
+        ? (function (e, t = {}, r) {
+            let i = t[e];
+            if (void 0 !== i) return I(i);
+            if (Jt(e)) {
+              let t = Ht(e, r);
+              return void 0 === t ? void 0 : I(t);
+            }
+          })(e.slice(1), t.values, r)
+        : Ht(e, r);
   }
   function Jt(e) {
     return e.startsWith("[") && e.endsWith("]");
@@ -5218,8 +5226,8 @@
           Jt(n)
             ? rt(e, n.slice(1, -1))
             : void 0 === r.theme?.opacity?.[n]
-            ? void 0
-            : rt(e, r.theme.opacity[n]));
+              ? void 0
+              : rt(e, r.theme.opacity[n]));
     }
     return Qt(e, t, { validate: Tt });
   }
@@ -5305,9 +5313,9 @@
     return e.reduce(
       (e, { extend: t }) =>
         ur(e, t, (e, t) =>
-          void 0 === e ? [t] : Array.isArray(e) ? [t, ...e] : [t, e]
+          void 0 === e ? [t] : Array.isArray(e) ? [t, ...e] : [t, e],
         ),
-      {}
+      {},
     );
   }
   function pr(e) {
@@ -5317,10 +5325,10 @@
     return Array.isArray(e) && cr(e[0])
       ? e.concat(t)
       : Array.isArray(t) && cr(t[0]) && cr(e)
-      ? [e, ...t]
-      : Array.isArray(t)
-      ? t
-      : void 0;
+        ? [e, ...t]
+        : Array.isArray(t)
+          ? t
+          : void 0;
   }
   function hr({ extend: e, ...t }) {
     return ur(t, e, (e, t) =>
@@ -5331,11 +5339,11 @@
               ...[e, ...t].map((e) =>
                 (function (e, ...t) {
                   return lr(e) ? e(...t) : e;
-                })(e, r, i)
+                })(e, r, i),
               ),
-              fr
+              fr,
             )
-        : ur({}, e, ...t, fr)
+        : ur({}, e, ...t, fr),
     );
   }
   function mr(e) {
@@ -5372,7 +5380,7 @@
       Object.assign(t, { theme: t, ...xr }),
       Object.keys(e).reduce(
         (r, i) => ((r[i] = lr(e[i]) ? e[i](t, xr) : e[i]), r),
-        {}
+        {},
       )
     );
   }
@@ -5400,16 +5408,16 @@
               return void 0 === e
                 ? t
                 : Array.isArray(e)
-                ? e
-                : [
-                    ...new Set(
-                      t
-                        .filter((t) => !1 !== e && !1 !== e[t])
-                        .concat(Object.keys(e).filter((t) => !1 !== e[t]))
-                    ),
-                  ];
+                  ? e
+                  : [
+                      ...new Set(
+                        t
+                          .filter((t) => !1 !== e && !1 !== e[t])
+                          .concat(Object.keys(e).filter((t) => !1 !== e[t])),
+                      ),
+                    ];
             })(t, e),
-      R
+      R,
     );
   }
   function yr(e) {
@@ -5441,12 +5449,12 @@
               !(
                 "string" != typeof e?.raw ||
                 (e?.extension && "string" != typeof e?.extension)
-              )
+              ),
           );
         if ("object" == typeof e.content && null !== e.content) {
           if (
             Object.keys(e.content).some(
-              (e) => !["files", "extract", "transform"].includes(e)
+              (e) => !["files", "extract", "transform"].includes(e),
             )
           )
             return !1;
@@ -5458,7 +5466,7 @@
                   !(
                     "string" != typeof e?.raw ||
                     (e?.extension && "string" != typeof e?.extension)
-                  )
+                  ),
               )
             )
               return !1;
@@ -5493,12 +5501,12 @@
           return Array.isArray(i)
             ? i
             : Array.isArray(t?.safelist)
-            ? t.safelist
-            : Array.isArray(r?.safelist)
-            ? r.safelist
-            : Array.isArray(r?.options?.safelist)
-            ? r.options.safelist
-            : [];
+              ? t.safelist
+              : Array.isArray(r?.safelist)
+                ? r.safelist
+                : Array.isArray(r?.options?.safelist)
+                  ? r.options.safelist
+                  : [];
         })()),
         "function" == typeof e.prefix
           ? (q.warn("prefix-function", [
@@ -5514,35 +5522,35 @@
             return Array.isArray(r)
               ? r
               : Array.isArray(r?.content)
-              ? r.content
-              : Array.isArray(t)
-              ? t
-              : Array.isArray(t?.content)
-              ? t.content
-              : Array.isArray(t?.files)
-              ? t.files
-              : [];
+                ? r.content
+                : Array.isArray(t)
+                  ? t
+                  : Array.isArray(t?.content)
+                    ? t.content
+                    : Array.isArray(t?.files)
+                      ? t.files
+                      : [];
           })(),
           extract: (() => {
             let t = e.purge?.extract
                 ? e.purge.extract
                 : e.content?.extract
-                ? e.content.extract
-                : e.purge?.extract?.DEFAULT
-                ? e.purge.extract.DEFAULT
-                : e.content?.extract?.DEFAULT
-                ? e.content.extract.DEFAULT
-                : e.purge?.options?.extractors
-                ? e.purge.options.extractors
-                : e.content?.options?.extractors
-                ? e.content.options.extractors
-                : {},
+                  ? e.content.extract
+                  : e.purge?.extract?.DEFAULT
+                    ? e.purge.extract.DEFAULT
+                    : e.content?.extract?.DEFAULT
+                      ? e.content.extract.DEFAULT
+                      : e.purge?.options?.extractors
+                        ? e.purge.options.extractors
+                        : e.content?.options?.extractors
+                          ? e.content.options.extractors
+                          : {},
               r = {},
               i = e.purge?.options?.defaultExtractor
                 ? e.purge.options.defaultExtractor
                 : e.content?.options?.defaultExtractor
-                ? e.content.options.defaultExtractor
-                : void 0;
+                  ? e.content.options.defaultExtractor
+                  : void 0;
             if ((void 0 !== i && (r.DEFAULT = i), "function" == typeof t))
               r.DEFAULT = t;
             else if (Array.isArray(t))
@@ -5555,12 +5563,12 @@
             let t = e.purge?.transform
                 ? e.purge.transform
                 : e.content?.transform
-                ? e.content.transform
-                : e.purge?.transform?.DEFAULT
-                ? e.purge.transform.DEFAULT
-                : e.content?.transform?.DEFAULT
-                ? e.content.transform.DEFAULT
-                : {},
+                  ? e.content.transform
+                  : e.purge?.transform?.DEFAULT
+                    ? e.purge.transform.DEFAULT
+                    : e.content?.transform?.DEFAULT
+                      ? e.content.transform.DEFAULT
+                      : {},
               r = {};
             return (
               "function" == typeof t && (r.DEFAULT = t),
@@ -5573,10 +5581,10 @@
         if ("string" == typeof t && /{([^,]*?)}/g.test(t)) {
           q.warn("invalid-glob-braces", [
             `The glob pattern ${W(
-              t
+              t,
             )} in your Tailwind CSS configuration is invalid.`,
             `Update it to ${W(
-              t.replace(/{([^,]*?)}/g, "$1")
+              t.replace(/{([^,]*?)}/g, "$1"),
             )} to silence this warning.`,
           ]);
           break;
@@ -5589,8 +5597,8 @@
           corePlugins: br(t.map((e) => e.corePlugins)),
           plugins: yr(e.map((e) => e?.plugins ?? [])),
         },
-        ...t
-      )
+        ...t,
+      ),
     );
   }
   var vr,
@@ -5635,7 +5643,7 @@
     return "all" === e.experimental
       ? _r.experimental
       : Object.keys(e?.experimental ?? {}).filter(
-          (t) => _r.experimental.includes(t) && e.experimental[t]
+          (t) => _r.experimental.includes(t) && e.experimental[t],
         );
   }
   var Ar,
@@ -5839,7 +5847,7 @@
             throw new Error(
               "Unknown AST node type " +
                 e.type +
-                ". Maybe you need to change PostCSS stringifier."
+                ". Maybe you need to change PostCSS stringifier.",
             );
           this[e.type](e, t);
         }
@@ -6070,10 +6078,10 @@
             "decl" === e.type
               ? this.raw(e, null, "beforeDecl")
               : "comment" === e.type
-              ? this.raw(e, null, "beforeComment")
-              : "before" === t
-              ? this.raw(e, null, "beforeRule")
-              : this.raw(e, null, "beforeClose");
+                ? this.raw(e, null, "beforeComment")
+                : "before" === t
+                  ? this.raw(e, null, "beforeRule")
+                  : this.raw(e, null, "beforeClose");
           let i = e.parent,
             n = 0;
           for (; i && "root" !== i.type; ) (n += 1), (i = i.parent);
@@ -6115,10 +6123,10 @@
           "parent" === i && "object" === o
             ? t && (r[i] = t)
             : "source" === i
-            ? (r[i] = n)
-            : Array.isArray(n)
-            ? (r[i] = n.map((e) => a(e, r)))
-            : ("object" === o && null !== n && (n = a(n)), (r[i] = n));
+              ? (r[i] = n)
+              : Array.isArray(n)
+                ? (r[i] = n.map((e) => a(e, r)))
+                : ("object" === o && null !== n && (n = a(n)), (r[i] = n));
         }
         return r;
       }
@@ -6141,7 +6149,7 @@
               e,
               { line: r.line, column: r.column },
               { line: i.line, column: i.column },
-              t
+              t,
             );
           }
           return new n(e);
@@ -6193,8 +6201,8 @@
               i === this
                 ? (r = !0)
                 : r
-                ? (this.parent.insertAfter(t, i), (t = i))
-                : this.parent.insertBefore(t, i);
+                  ? (this.parent.insertAfter(t, i), (t = i))
+                  : this.parent.insertBefore(t, i);
             r || this.remove();
           }
           return this;
@@ -6243,7 +6251,7 @@
             let i = this[e];
             if (Array.isArray(i))
               r[e] = i.map((e) =>
-                "object" == typeof e && e.toJSON ? e.toJSON(null, t) : e
+                "object" == typeof e && e.toJSON ? e.toJSON(null, t) : e,
               );
             else if ("object" == typeof i && i.toJSON) r[e] = i.toJSON(null, t);
             else if ("source" === e) {
@@ -6294,8 +6302,8 @@
               e.end
                 ? (r = { line: e.end.line, column: e.end.column })
                 : e.endIndex
-                ? (r = this.positionInside(e.endIndex))
-                : e.index && (r = this.positionInside(e.index + 1));
+                  ? (r = this.positionInside(e.endIndex))
+                  : e.index && (r = this.positionInside(e.index + 1));
           return (
             (r.line < t.line || (r.line === t.line && r.column <= t.column)) &&
               (r = { line: t.line, column: t.column + 1 }),
@@ -6320,8 +6328,8 @@
               "proxyOf" === t
                 ? e
                 : "root" === t
-                ? () => e.root().toProxy()
-                : e[t],
+                  ? () => e.root().toProxy()
+                  : e[t],
           };
         }
         toProxy() {
@@ -6339,7 +6347,7 @@
             let t = this.source;
             e.stack = e.stack.replace(
               /\n\s{4}at /,
-              `$&${t.input.from}:${t.start.line}:${t.start.column}$&`
+              `$&${t.input.from}:${t.start.line}:${t.start.column}$&`,
             );
           }
           return e;
@@ -6412,7 +6420,7 @@
         c = ri();
       function u(e) {
         return e.map(
-          (e) => (e.nodes && (e.nodes = u(e.nodes)), delete e.source, e)
+          (e) => (e.nodes && (e.nodes = u(e.nodes)), delete e.source, e),
         );
       }
       function d(e) {
@@ -6609,7 +6617,7 @@
                 (e.raws.before = t.raws.before.replace(/\S/g, "")),
               (e.parent = this.proxyOf),
               e
-            )
+            ),
           );
         }
         getProxyProcessor() {
@@ -6625,25 +6633,26 @@
               "proxyOf" === t
                 ? e
                 : e[t]
-                ? "each" === t || ("string" == typeof t && t.startsWith("walk"))
-                  ? (...r) =>
-                      e[t](
-                        ...r.map((e) =>
-                          "function" == typeof e
-                            ? (t, r) => e(t.toProxy(), r)
-                            : e
+                  ? "each" === t ||
+                    ("string" == typeof t && t.startsWith("walk"))
+                    ? (...r) =>
+                        e[t](
+                          ...r.map((e) =>
+                            "function" == typeof e
+                              ? (t, r) => e(t.toProxy(), r)
+                              : e,
+                          ),
                         )
-                      )
-                  : "every" === t || "some" === t
-                  ? (r) => e[t]((e, ...t) => r(e.toProxy(), ...t))
-                  : "root" === t
-                  ? () => e.root().toProxy()
-                  : "nodes" === t
-                  ? e.nodes.map((e) => e.toProxy())
-                  : "first" === t || "last" === t
-                  ? e[t].toProxy()
-                  : e[t]
-                : e[t],
+                    : "every" === t || "some" === t
+                      ? (r) => e[t]((e, ...t) => r(e.toProxy(), ...t))
+                      : "root" === t
+                        ? () => e.root().toProxy()
+                        : "nodes" === t
+                          ? e.nodes.map((e) => e.toProxy())
+                          : "first" === t || "last" === t
+                            ? e[t].toProxy()
+                            : e[t]
+                  : e[t],
           };
         }
         getIterator() {
@@ -6669,10 +6678,10 @@
           "atrule" === e.type
             ? Object.setPrototypeOf(e, n.prototype)
             : "rule" === e.type
-            ? Object.setPrototypeOf(e, i.prototype)
-            : "decl" === e.type
-            ? Object.setPrototypeOf(e, a.prototype)
-            : "comment" === e.type && Object.setPrototypeOf(e, l.prototype),
+              ? Object.setPrototypeOf(e, i.prototype)
+              : "decl" === e.type
+                ? Object.setPrototypeOf(e, a.prototype)
+                : "comment" === e.type && Object.setPrototypeOf(e, l.prototype),
             (e[s] = !0),
             e.nodes &&
               e.nodes.forEach((e) => {
@@ -6734,8 +6743,8 @@
                 word: this.word,
               }).message
             : this.plugin
-            ? this.plugin + ": " + this.text
-            : this.text;
+              ? this.plugin + ": " + this.text
+              : this.text;
         }
       };
       (t.exports = r), (r.default = r);
@@ -7018,16 +7027,16 @@
             l
               ? (l = !1)
               : "\\" === r
-              ? (l = !0)
-              : a
-              ? r === a && (a = !1)
-              : '"' === r || "'" === r
-              ? (a = r)
-              : "(" === r
-              ? (s += 1)
-              : ")" === r
-              ? s > 0 && (s -= 1)
-              : 0 === s && t.includes(r) && (o = !0),
+                ? (l = !0)
+                : a
+                  ? r === a && (a = !1)
+                  : '"' === r || "'" === r
+                    ? (a = r)
+                    : "(" === r
+                      ? (s += 1)
+                      : ")" === r
+                        ? s > 0 && (s -= 1)
+                        : 0 === s && t.includes(r) && (o = !0),
               o ? ("" !== n && i.push(n.trim()), (n = ""), (o = !1)) : (n += r);
           return (r || "" !== n) && i.push(n.trim()), i;
         },
@@ -7197,7 +7206,7 @@
                         i = r[3] || r[2];
                       if (i) return i;
                     }
-                  })(e)
+                  })(e),
               );
             "word" !== e[0][0];
 
@@ -7276,8 +7285,8 @@
               "(" === r || "[" === r
                 ? c.push("(" === r ? ")" : "]")
                 : "{" === r && c.length > 0
-                ? c.push("}")
-                : r === c[c.length - 1] && c.pop(),
+                  ? c.push("}")
+                  : r === c[c.length - 1] && c.pop(),
               0 === c.length)
             ) {
               if (";" === r) {
@@ -7445,21 +7454,21 @@
           throw this.input.error(
             "Unclosed bracket",
             { offset: e[2] },
-            { offset: e[2] + 1 }
+            { offset: e[2] + 1 },
           );
         }
         unknownWord(e) {
           throw this.input.error(
             "Unknown word",
             { offset: e[0][2] },
-            { offset: e[0][2] + e[0][1].length }
+            { offset: e[0][2] + e[0][1].length },
           );
         }
         unexpectedClose(e) {
           throw this.input.error(
             "Unexpected }",
             { offset: e[2] },
-            { offset: e[2] + 1 }
+            { offset: e[2] + 1 },
           );
         }
         unclosedBlock() {
@@ -7470,14 +7479,14 @@
           throw this.input.error(
             "Double colon",
             { offset: e[2] },
-            { offset: e[2] + e[1].length }
+            { offset: e[2] + e[1].length },
           );
         }
         unnamedAtrule(e, t) {
           throw this.input.error(
             "At-rule without name",
             { offset: t[2] },
-            { offset: t[2] + t[1].length }
+            { offset: t[2] + t[1].length },
           );
         }
         precheckMissedSemicolon() {}
@@ -7493,7 +7502,7 @@
           );
           throw this.input.error(
             "Missed semicolon",
-            "word" === r[0] ? r[3] + 1 : r[2]
+            "word" === r[0] ? r[3] + 1 : r[2],
           );
         }
       };
@@ -7623,7 +7632,7 @@
                       : { line: l.endLine, column: l.endColumn },
                     l.source,
                     l.file,
-                    i.plugin
+                    i.plugin,
                   )
                 : new u(
                     e,
@@ -7631,7 +7640,7 @@
                     void 0 === s ? r : { line: s, column: a },
                     this.css,
                     this.file,
-                    i.plugin
+                    i.plugin,
                   )),
               (n.input = {
                 line: t,
@@ -7659,7 +7668,7 @@
                 ? o(u.source)
                 : new URL(
                     u.source,
-                    this.map.consumer().sourceRoot || o(this.map.mapFile)
+                    this.map.consumer().sourceRoot || o(this.map.mapFile),
                   ));
             let d = {
               url: l.toString(),
@@ -7671,7 +7680,7 @@
             if ("file:" === l.protocol) {
               if (!n)
                 throw new Error(
-                  "file: protocol is not available in this PostCSS build"
+                  "file: protocol is not available in this PostCSS build",
                 );
               d.file = n(l);
             }
@@ -7769,10 +7778,10 @@
           t && e.append
             ? [r, r + "-" + t, 0, r + "Exit", r + "Exit-" + t]
             : t
-            ? [r, r + "-" + t, r + "Exit", r + "Exit-" + t]
-            : e.append
-            ? [r, 0, r + "Exit"]
-            : [r, r + "Exit"]
+              ? [r, r + "-" + t, r + "Exit", r + "Exit-" + t]
+              : e.append
+                ? [r, 0, r + "Exit"]
+                : [r, r + "Exit"]
         );
       }
       function b(e) {
@@ -7782,8 +7791,8 @@
             "document" === e.type
               ? ["Document", 0, "DocumentExit"]
               : "root" === e.type
-              ? ["Root", 0, "RootExit"]
-              : g(e)),
+                ? ["Root", 0, "RootExit"]
+                : g(e)),
           {
             node: e,
             events: t,
@@ -7832,7 +7841,7 @@
               (this.plugins = this.processor.plugins.map((e) =>
                 "object" == typeof e && e.prepare
                   ? { ...e, ...e.prepare(this.result) }
-                  : e
+                  : e,
               ));
           }
           get [Symbol.toStringTag]() {
@@ -7878,9 +7887,9 @@
             return this.error
               ? Promise.reject(this.error)
               : this.processed
-              ? Promise.resolve(this.result)
-              : (this.processing || (this.processing = this.runAsync()),
-                this.processing);
+                ? Promise.resolve(this.result)
+                : (this.processing || (this.processing = this.runAsync()),
+                  this.processing);
           }
           sync() {
             if (this.error) throw this.error;
@@ -7949,7 +7958,7 @@
               if ("object" == typeof e && e.Once) {
                 if ("document" === this.result.root.type) {
                   let t = this.result.root.nodes.map((t) =>
-                    e.Once(t, this.helpers)
+                    e.Once(t, this.helpers),
                   );
                   return h(t[0]) ? Promise.all(t) : t;
                 }
@@ -7963,7 +7972,7 @@
           }
           getAsyncError() {
             throw new Error(
-              "Use process(css).then(cb) to work with async plugins"
+              "Use process(css).then(cb) to work with async plugins",
             );
           }
           handleError(e, t) {
@@ -8033,7 +8042,7 @@
                 for (let r in t) {
                   if (!p[r] && /^[A-Z]/.test(r))
                     throw new Error(
-                      `Unknown event ${r} in ${t.postcssPlugin}. Try to update PostCSS (${this.processor.version} now).`
+                      `Unknown event ${r} in ${t.postcssPlugin}. Try to update PostCSS (${this.processor.version} now).`,
                     );
                   if (!f[r])
                     if ("object" == typeof t[r])
@@ -8041,7 +8050,7 @@
                         e(
                           t,
                           "*" === i ? r : r + "-" + i.toLowerCase(),
-                          t[r][i]
+                          t[r][i],
                         );
                     else "function" == typeof t[r] && e(t, r, t[r]);
                 }
@@ -8289,13 +8298,13 @@
             ((n = !0),
             console.warn(
               t +
-                ": postcss.plugin was deprecated. Migration guide:\nhttps://evilmartians.com/chronicles/postcss-8-plugin-migration"
+                ": postcss.plugin was deprecated. Migration guide:\nhttps://evilmartians.com/chronicles/postcss-8-plugin-migration",
             ),
             e.env.LANG &&
               e.env.LANG.startsWith("cn") &&
               console.warn(
                 t +
-                  ": 里面 postcss.plugin 被弃用. 迁移指南:\nhttps://www.w3ctech.com/topic/2226"
+                  ": 里面 postcss.plugin 被弃用. 迁移指南:\nhttps://www.w3ctech.com/topic/2226",
               ));
           let o = r(...i);
           return (o.postcssPlugin = t), (o.postcssVersion = new a().version), o;
@@ -8382,32 +8391,34 @@
           e
         )
       : [
-          "fontFamily",
-          "boxShadow",
-          "transitionProperty",
-          "transitionDuration",
-          "transitionDelay",
-          "transitionTimingFunction",
-          "backgroundImage",
-          "backgroundSize",
-          "backgroundColor",
-          "cursor",
-          "animation",
-        ].includes(e)
-      ? (e) => (
-          "function" == typeof e && (e = e({})),
-          Array.isArray(e) && (e = e.join(", ")),
-          e
-        )
-      : ["gridTemplateColumns", "gridTemplateRows", "objectPosition"].includes(
-          e
-        )
-      ? (e) => (
-          "function" == typeof e && (e = e({})),
-          "string" == typeof e && (e = Qr.list.comma(e).join(" ")),
-          e
-        )
-      : (e, t = {}) => ("function" == typeof e && (e = e(t)), e);
+            "fontFamily",
+            "boxShadow",
+            "transitionProperty",
+            "transitionDuration",
+            "transitionDelay",
+            "transitionTimingFunction",
+            "backgroundImage",
+            "backgroundSize",
+            "backgroundColor",
+            "cursor",
+            "animation",
+          ].includes(e)
+        ? (e) => (
+            "function" == typeof e && (e = e({})),
+            Array.isArray(e) && (e = e.join(", ")),
+            e
+          )
+        : [
+              "gridTemplateColumns",
+              "gridTemplateRows",
+              "objectPosition",
+            ].includes(e)
+          ? (e) => (
+              "function" == typeof e && (e = e({})),
+              "string" == typeof e && (e = Qr.list.comma(e).join(" ")),
+              e
+            )
+          : (e, t = {}) => ("function" == typeof e && (e = e(t)), e);
   }
   var Pi,
     Di,
@@ -8430,8 +8441,8 @@
               ? t.error("Missed semicolon")
               : r
             : t
-            ? t.error(r.message)
-            : r;
+              ? t.error(r.message)
+              : r;
         }
         return i.at(0);
       }
@@ -8495,9 +8506,9 @@
                   "comment" === i.type || "decl" === i.type
                     ? s.push(i)
                     : "rule" === i.type && n
-                    ? (i.selectors = o(r, i))
-                    : "atrule" === i.type &&
-                      (i.nodes && e[i.name] ? t(r, i, !0) : s.push(i));
+                      ? (i.selectors = o(r, i))
+                      : "atrule" === i.type &&
+                        (i.nodes && e[i.name] ? t(r, i, !0) : s.push(i));
                 }),
                 n && s.length)
               ) {
@@ -8515,7 +8526,7 @@
               "-webkit-keyframes",
               "-moz-keyframes",
             ],
-            e.unwrap
+            e.unwrap,
           ),
           n = e.preserveEmpty;
         return {
@@ -8554,13 +8565,13 @@
                       u.after(n),
                       (u = n))
                     : i[n.name]
-                    ? ((d = !0),
-                      (c = !0),
-                      r(e, n, !1),
-                      (u = s(n.prev(), u)),
-                      u.after(n),
-                      (u = n))
-                    : d && p.push(n);
+                      ? ((d = !0),
+                        (c = !0),
+                        r(e, n, !1),
+                        (u = s(n.prev(), u)),
+                        u.after(n),
+                        (u = n))
+                      : d && p.push(n);
               else "decl" === n.type && d && p.push(n);
             }),
               p.length && (u = a(e.selector, p, u, l)),
@@ -8580,8 +8591,8 @@
         "float" === (e = e.toLowerCase())
           ? "cssFloat"
           : e.startsWith("-ms-")
-          ? e.substr(1).replace(r, i)
-          : e.replace(r, i);
+            ? e.substr(1).replace(r, i)
+            : e.replace(r, i);
     }),
     $i = p((e, t) => {
       m();
@@ -8624,8 +8635,8 @@
                 void 0 === s[t]
                   ? (s[t] = n(e))
                   : Array.isArray(s[t])
-                  ? s[t].push(n(e))
-                  : (s[t] = [s[t], n(e)]);
+                    ? s[t].push(n(e))
+                    : (s[t] = [s[t], n(e)]);
             else if ("rule" === e.type) {
               let t = o(e);
               if (s[e.selector]) for (let r in t) s[e.selector][r] = t[r];
@@ -8638,8 +8649,8 @@
                 void 0 === s[t]
                   ? (s[t] = n)
                   : Array.isArray(s[t])
-                  ? s[t].push(n)
-                  : (s[t] = [s[t], n]);
+                    ? s[t].push(n)
+                    : (s[t] = [s[t], n]);
             }
           }),
           s
@@ -8780,7 +8791,7 @@
           (e) =>
             Qr([(0, Wi.default)({ bubble: ["screen"] })]).process(e, {
               parser: Di,
-            }).root.nodes
+            }).root.nodes,
         )
       : Ni([e]);
   }
@@ -8819,10 +8830,10 @@
     return "DEFAULT" === t
       ? e
       : "-" === t || "-DEFAULT" === t
-      ? `-${e}`
-      : t.startsWith("-")
-      ? `-${e}${t}`
-      : `${e}-${t}`;
+        ? `-${e}`
+        : t.startsWith("-")
+          ? `-${e}${t}`
+          : `${e}-${t}`;
   }
   var en = d(() => {
     m(), Ji(), Ne();
@@ -8847,19 +8858,19 @@
                       Array.isArray(r)
                         ? Object.assign(t, { [r[0]]: r[1] })
                         : Object.assign(t, { [r]: n(e) }),
-                    {}
+                    {},
                   ),
               }),
-            {}
+            {},
           ),
           {
             ...i,
             values: r
               ? Object.fromEntries(
-                  Object.entries(s(e) ?? {}).filter(([e]) => "DEFAULT" !== e)
+                  Object.entries(s(e) ?? {}).filter(([e]) => "DEFAULT" !== e),
                 )
               : s(e),
-          }
+          },
         );
       }
     };
@@ -8878,8 +8889,8 @@
                 e.max && `(max-width: ${e.max})`,
               ]
                 .filter(Boolean)
-                .join(" and ")
-        )
+                .join(" and "),
+        ),
       )
       .join(", ");
   }
@@ -8931,8 +8942,8 @@
                   ? Object.entries(yn(t)).map(([t, r]) => ({
                       [e + ("DEFAULT" === t ? "" : `-${t}`)]: r,
                     }))
-                  : [{ [`${e}`]: t }]
-              )
+                  : [{ [`${e}`]: t }],
+              ),
             ));
     }),
     Sn = d(() => {
@@ -8951,8 +8962,8 @@
             "string" == typeof i
               ? { name: r, values: [{ min: i, max: void 0 }] }
               : Array.isArray(i)
-              ? { name: r, values: i.map((e) => An(e)) }
-              : { name: r, values: [An(i)] }
+                ? { name: r, values: i.map((e) => An(e)) }
+                : { name: r, values: [An(i)] }
           );
         })
       : Cn(Object.entries(e ?? {}), !1);
@@ -9029,11 +9040,11 @@
                           Qr.decl({
                             prop: "content",
                             value: "var(--tw-content)",
-                          })
+                          }),
                         );
                   }),
                   "&::before"
-                )
+                ),
               ),
               e(
                 "after",
@@ -9048,11 +9059,11 @@
                           Qr.decl({
                             prop: "content",
                             value: "var(--tw-content)",
-                          })
+                          }),
                         );
                   }),
                   "&::after"
-                )
+                ),
               );
           },
           pseudoClassVariants: ({ addVariant: e, config: t }) => {
@@ -9110,15 +9121,15 @@
               e(`group-${t}`, (e) =>
                 ("function" == typeof i ? i(e) : i).replace(
                   /&(\S+)/,
-                  ":merge(.group)$1 &"
-                )
+                  ":merge(.group)$1 &",
+                ),
               );
             for (let [t, i] of r)
               e(`peer-${t}`, (e) =>
                 ("function" == typeof i ? i(e) : i).replace(
                   /&(\S+)/,
-                  ":merge(.peer)$1 ~ &"
-                )
+                  ":merge(.peer)$1 ~ &",
+                ),
               );
           },
           directionVariants: ({ addVariant: e }) => {
@@ -9130,7 +9141,7 @@
                   "Preview features are not covered by semver, and may be improved in breaking ways at any time.",
                 ]),
                 '[dir="ltr"] &'
-              )
+              ),
             ),
               e(
                 "rtl",
@@ -9140,7 +9151,7 @@
                     "Preview features are not covered by semver, and may be improved in breaking ways at any time.",
                   ]),
                   '[dir="rtl"] &'
-                )
+                ),
               );
           },
           reducedMotionVariants: ({ addVariant: e }) => {
@@ -9212,7 +9223,7 @@
         (jn = {
           preflight: ({ addBase: e }) => {
             let t = Qr.parse(
-              '*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:theme(\'borderColor.DEFAULT\', currentColor)}::after,::before{--tw-content:\'\'}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:theme(\'fontFamily.sans\', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji")}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:theme(\'fontFamily.mono\', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:theme(\'colors.gray.4\', #9ca3af)}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}'
+              '*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:theme(\'borderColor.DEFAULT\', currentColor)}::after,::before{--tw-content:\'\'}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:theme(\'fontFamily.sans\', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji")}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:theme(\'fontFamily.mono\', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:theme(\'colors.gray.4\', #9ca3af)}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}',
             );
             e([
               Qr.comment({
@@ -9252,7 +9263,7 @@
                   : {};
               },
               s = Array.from(
-                new Set(i.slice().sort((e, t) => parseInt(e) - parseInt(t)))
+                new Set(i.slice().sort((e, t) => parseInt(e) - parseInt(t))),
               ).map((e) => ({
                 [`@media (min-width: ${e})`]: {
                   ".container": { "max-width": e, ...o(e) },
@@ -9265,7 +9276,7 @@
                   t("container.center", !1)
                     ? { marginRight: "auto", marginLeft: "auto" }
                     : {},
-                  o(0)
+                  o(0),
                 ),
               },
               ...s,
@@ -9332,7 +9343,7 @@
                 ["left", ["left"]],
               ],
             ],
-            { supportsNegativeValues: !0 }
+            { supportsNegativeValues: !0 },
           ),
           isolation: ({ addUtilities: e }) => {
             e({
@@ -9382,7 +9393,7 @@
                 ["ml", ["margin-left"]],
               ],
             ],
-            { supportsNegativeValues: !0 }
+            { supportsNegativeValues: !0 },
           ),
           boxSizing: ({ addUtilities: e }) => {
             e({
@@ -9471,7 +9482,7 @@
                       "var(--tw-border-spacing-x) var(--tw-border-spacing-y)",
                   }),
                 },
-                { values: r("borderSpacing") }
+                { values: r("borderSpacing") },
               );
           },
           transformOrigin: nn("transformOrigin", [
@@ -9499,7 +9510,7 @@
                 ],
               ],
             ],
-            { supportsNegativeValues: !0 }
+            { supportsNegativeValues: !0 },
           ),
           rotate: nn(
             "rotate",
@@ -9509,7 +9520,7 @@
                 [["@defaults transform", {}], "--tw-rotate", ["transform", Tn]],
               ],
             ],
-            { supportsNegativeValues: !0 }
+            { supportsNegativeValues: !0 },
           ),
           skew: nn(
             "skew",
@@ -9533,7 +9544,7 @@
                 ],
               ],
             ],
-            { supportsNegativeValues: !0 }
+            { supportsNegativeValues: !0 },
           ),
           scale: nn(
             "scale",
@@ -9566,7 +9577,7 @@
                 ],
               ],
             ],
-            { supportsNegativeValues: !0 }
+            { supportsNegativeValues: !0 },
           ),
           transform: ({ addDefaults: e, addUtilities: t }) => {
             e("transform", {
@@ -9584,7 +9595,7 @@
                 ".transform-gpu": {
                   transform: Tn.replace(
                     "translate(var(--tw-translate-x), var(--tw-translate-y))",
-                    "translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)"
+                    "translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)",
                   ),
                 },
                 ".transform-none": { transform: "none" },
@@ -9596,7 +9607,7 @@
                 Object.entries(t("keyframes") ?? {}).map(([e, t]) => [
                   e,
                   { [`@keyframes ${i(e)}`]: t },
-                ])
+                ]),
               );
             e(
               {
@@ -9611,23 +9622,26 @@
                         !n.has("DIRECTIONS") && ln.has(e)
                           ? ((r.direction = e), n.add("DIRECTIONS"))
                           : !n.has("PLAY_STATES") && cn.has(e)
-                          ? ((r.playState = e), n.add("PLAY_STATES"))
-                          : !n.has("FILL_MODES") && un.has(e)
-                          ? ((r.fillMode = e), n.add("FILL_MODES"))
-                          : n.has("ITERATION_COUNTS") ||
-                            (!dn.has(e) && !bn.test(e))
-                          ? (!n.has("TIMING_FUNCTION") && pn.has(e)) ||
-                            (!n.has("TIMING_FUNCTION") &&
-                              fn.some((t) => e.startsWith(`${t}(`)))
-                            ? ((r.timingFunction = e), n.add("TIMING_FUNCTION"))
-                            : !n.has("DURATION") && gn.test(e)
-                            ? ((r.duration = e), n.add("DURATION"))
-                            : !n.has("DELAY") && gn.test(e)
-                            ? ((r.delay = e), n.add("DELAY"))
-                            : n.has("NAME")
-                            ? (r.unknown || (r.unknown = []), r.unknown.push(e))
-                            : ((r.name = e), n.add("NAME"))
-                          : ((r.iterationCount = e), n.add("ITERATION_COUNTS"));
+                            ? ((r.playState = e), n.add("PLAY_STATES"))
+                            : !n.has("FILL_MODES") && un.has(e)
+                              ? ((r.fillMode = e), n.add("FILL_MODES"))
+                              : n.has("ITERATION_COUNTS") ||
+                                  (!dn.has(e) && !bn.test(e))
+                                ? (!n.has("TIMING_FUNCTION") && pn.has(e)) ||
+                                  (!n.has("TIMING_FUNCTION") &&
+                                    fn.some((t) => e.startsWith(`${t}(`)))
+                                  ? ((r.timingFunction = e),
+                                    n.add("TIMING_FUNCTION"))
+                                  : !n.has("DURATION") && gn.test(e)
+                                    ? ((r.duration = e), n.add("DURATION"))
+                                    : !n.has("DELAY") && gn.test(e)
+                                      ? ((r.delay = e), n.add("DELAY"))
+                                      : n.has("NAME")
+                                        ? (r.unknown || (r.unknown = []),
+                                          r.unknown.push(e))
+                                        : ((r.name = e), n.add("NAME"))
+                                : ((r.iterationCount = e),
+                                  n.add("ITERATION_COUNTS"));
                       return r;
                     });
                   })(e);
@@ -9638,14 +9652,14 @@
                         .map(({ name: e, value: t }) =>
                           void 0 === e || void 0 === n[e]
                             ? t
-                            : t.replace(e, i(e))
+                            : t.replace(e, i(e)),
                         )
                         .join(", "),
                     },
                   ];
                 },
               },
-              { values: t("animation") }
+              { values: t("animation") },
             );
           },
           cursor: nn("cursor"),
@@ -9768,7 +9782,7 @@
                 ["scroll-ml", ["scroll-margin-left"]],
               ],
             ],
-            { supportsNegativeValues: !0 }
+            { supportsNegativeValues: !0 },
           ),
           scrollPadding: nn("scrollPadding", [
             ["scroll-p", ["scroll-padding"]],
@@ -9945,7 +9959,7 @@
                   },
                 }),
               },
-              { values: r("space"), supportsNegativeValues: !0 }
+              { values: r("space"), supportsNegativeValues: !0 },
             ),
               t({
                 ".space-y-reverse > :not([hidden]) ~ :not([hidden])": {
@@ -9980,7 +9994,7 @@
                   },
                 }),
               },
-              { values: r("divideWidth"), type: ["line-width", "length"] }
+              { values: r("divideWidth"), type: ["line-width", "length"] },
             ),
               t({
                 ".divide-y-reverse > :not([hidden]) ~ :not([hidden])": {
@@ -10033,7 +10047,7 @@
               {
                 values: (({ DEFAULT: e, ...t }) => t)(wn(t("divideColor"))),
                 type: "color",
-              }
+              },
             );
           },
           divideOpacity: ({ matchUtilities: e, theme: t }) => {
@@ -10045,7 +10059,7 @@
                   },
                 }),
               },
-              { values: t("divideOpacity") }
+              { values: t("divideOpacity") },
             );
           },
           placeSelf: ({ addUtilities: e }) => {
@@ -10213,7 +10227,7 @@
                 ],
               ],
             ],
-            { type: ["line-width", "length"] }
+            { type: ["line-width", "length"] },
           ),
           borderStyle: ({ addUtilities: e }) => {
             e({
@@ -10240,7 +10254,7 @@
               {
                 values: (({ DEFAULT: e, ...t }) => t)(wn(t("borderColor"))),
                 type: ["color"],
-              }
+              },
             ),
               e(
                 {
@@ -10270,7 +10284,7 @@
                 {
                   values: (({ DEFAULT: e, ...t }) => t)(wn(t("borderColor"))),
                   type: "color",
-                }
+                },
               ),
               e(
                 {
@@ -10310,7 +10324,7 @@
                 {
                   values: (({ DEFAULT: e, ...t }) => t)(wn(t("borderColor"))),
                   type: "color",
-                }
+                },
               );
           },
           borderOpacity: nn("borderOpacity", [
@@ -10332,7 +10346,7 @@
                       })
                     : { "background-color": sr(e) },
               },
-              { values: wn(t("backgroundColor")), type: "color" }
+              { values: wn(t("backgroundColor")), type: "color" },
             );
           },
           backgroundOpacity: nn("backgroundOpacity", [
@@ -10341,7 +10355,7 @@
           backgroundImage: nn(
             "backgroundImage",
             [["bg", ["background-image"]]],
-            { type: ["lookup", "image", "url"] }
+            { type: ["lookup", "image", "url"] },
           ),
           gradientColorStops: (() => {
             function e(e) {
@@ -10364,18 +10378,18 @@
                     };
                   },
                 },
-                i
+                i,
               ),
                 t(
                   {
                     via: (t) => ({
                       "--tw-gradient-to": e(t),
                       "--tw-gradient-stops": `var(--tw-gradient-from), ${sr(
-                        t
+                        t,
                       )}, var(--tw-gradient-to)`,
                     }),
                   },
-                  i
+                  i,
                 ),
                 t({ to: (e) => ({ "--tw-gradient-to": sr(e) }) }, i);
             };
@@ -10409,7 +10423,7 @@
           backgroundPosition: nn(
             "backgroundPosition",
             [["bg", ["background-position"]]],
-            { type: ["lookup", "position"] }
+            { type: ["lookup", "position"] },
           ),
           backgroundRepeat: ({ addUtilities: e }) => {
             e({
@@ -10431,13 +10445,13 @@
           fill: ({ matchUtilities: e, theme: t }) => {
             e(
               { fill: (e) => ({ fill: sr(e) }) },
-              { values: wn(t("fill")), type: ["color", "any"] }
+              { values: wn(t("fill")), type: ["color", "any"] },
             );
           },
           stroke: ({ matchUtilities: e, theme: t }) => {
             e(
               { stroke: (e) => ({ stroke: sr(e) }) },
-              { values: wn(t("stroke")), type: ["color", "url"] }
+              { values: wn(t("stroke")), type: ["color", "url"] },
             );
           },
           strokeWidth: nn("strokeWidth", [["stroke", ["stroke-width"]]], {
@@ -10523,7 +10537,7 @@
                   "length",
                   "percentage",
                 ],
-              }
+              },
             );
           },
           fontWeight: nn("fontWeight", [["font", ["fontWeight"]]], {
@@ -10601,7 +10615,7 @@
           letterSpacing: nn(
             "letterSpacing",
             [["tracking", ["letterSpacing"]]],
-            { supportsNegativeValues: !0 }
+            { supportsNegativeValues: !0 },
           ),
           textColor: ({ matchUtilities: e, theme: t, corePlugins: r }) => {
             e(
@@ -10615,7 +10629,7 @@
                       })
                     : { color: sr(e) },
               },
-              { values: wn(t("textColor")), type: "color" }
+              { values: wn(t("textColor")), type: "color" },
             );
           },
           textOpacity: nn("textOpacity", [
@@ -10632,7 +10646,7 @@
           textDecorationColor: ({ matchUtilities: e, theme: t }) => {
             e(
               { decoration: (e) => ({ "text-decoration-color": sr(e) }) },
-              { values: wn(t("textDecorationColor")), type: ["color"] }
+              { values: wn(t("textDecorationColor")), type: ["color"] },
             );
           },
           textDecorationStyle: ({ addUtilities: e }) => {
@@ -10647,12 +10661,12 @@
           textDecorationThickness: nn(
             "textDecorationThickness",
             [["decoration", ["text-decoration-thickness"]]],
-            { type: ["length", "percentage"] }
+            { type: ["length", "percentage"] },
           ),
           textUnderlineOffset: nn(
             "textUnderlineOffset",
             [["underline-offset", ["text-underline-offset"]]],
-            { type: ["length", "percentage"] }
+            { type: ["length", "percentage"] },
           ),
           fontSmoothing: ({ addUtilities: e }) => {
             e({
@@ -10684,7 +10698,7 @@
                       }
                     : { "&::placeholder": { color: sr(e) } },
               },
-              { values: wn(t("placeholderColor")), type: ["color", "any"] }
+              { values: wn(t("placeholderColor")), type: ["color", "any"] },
             );
           },
           placeholderOpacity: ({ matchUtilities: e, theme: t }) => {
@@ -10694,19 +10708,19 @@
                   "&::placeholder": { "--tw-placeholder-opacity": e },
                 }),
               },
-              { values: t("placeholderOpacity") }
+              { values: t("placeholderOpacity") },
             );
           },
           caretColor: ({ matchUtilities: e, theme: t }) => {
             e(
               { caret: (e) => ({ "caret-color": sr(e) }) },
-              { values: wn(t("caretColor")), type: ["color", "any"] }
+              { values: wn(t("caretColor")), type: ["color", "any"] },
             );
           },
           accentColor: ({ matchUtilities: e, theme: t }) => {
             e(
               { accent: (e) => ({ "accent-color": sr(e) }) },
-              { values: wn(t("accentColor")), type: ["color", "any"] }
+              { values: wn(t("accentColor")), type: ["color", "any"] },
             );
           },
           opacity: nn("opacity", [["opacity", ["opacity"]]]),
@@ -10782,7 +10796,7 @@
                       };
                     },
                   },
-                  { values: n("boxShadow"), type: ["shadow"] }
+                  { values: n("boxShadow"), type: ["shadow"] },
                 );
             };
           })(),
@@ -10794,7 +10808,7 @@
                   "--tw-shadow": "var(--tw-shadow-colored)",
                 }),
               },
-              { values: wn(t("boxShadowColor")), type: ["color"] }
+              { values: wn(t("boxShadowColor")), type: ["color"] },
             );
           },
           outlineStyle: ({ addUtilities: e }) => {
@@ -10816,12 +10830,12 @@
           outlineOffset: nn(
             "outlineOffset",
             [["outline-offset", ["outline-offset"]]],
-            { type: ["length", "number", "percentage"] }
+            { type: ["length", "number", "percentage"] },
           ),
           outlineColor: ({ matchUtilities: e, theme: t }) => {
             e(
               { outline: (e) => ({ "outline-color": sr(e) }) },
-              { values: wn(t("outlineColor")), type: ["color"] }
+              { values: wn(t("outlineColor")), type: ["color"] },
             );
           },
           ringWidth: ({
@@ -10863,7 +10877,7 @@
                     ].join(", "),
                   }),
                 },
-                { values: i("ringWidth"), type: "length" }
+                { values: i("ringWidth"), type: "length" },
               ),
               r({
                 ".ring-inset": {
@@ -10887,11 +10901,11 @@
               {
                 values: Object.fromEntries(
                   Object.entries(wn(t("ringColor"))).filter(
-                    ([e]) => "DEFAULT" !== e
-                  )
+                    ([e]) => "DEFAULT" !== e,
+                  ),
                 ),
                 type: "color",
-              }
+              },
             );
           },
           ringOpacity: (e) => {
@@ -10899,18 +10913,18 @@
             return nn(
               "ringOpacity",
               [["ring-opacity", ["--tw-ring-opacity"]]],
-              { filterDefault: !Sr(t(), "respectDefaultRingColorOpacity") }
+              { filterDefault: !Sr(t(), "respectDefaultRingColorOpacity") },
             )(e);
           },
           ringOffsetWidth: nn(
             "ringOffsetWidth",
             [["ring-offset", ["--tw-ring-offset-width"]]],
-            { type: "length" }
+            { type: "length" },
           ),
           ringOffsetColor: ({ matchUtilities: e, theme: t }) => {
             e(
               { "ring-offset": (e) => ({ "--tw-ring-offset-color": sr(e) }) },
-              { values: wn(t("ringOffsetColor")), type: "color" }
+              { values: wn(t("ringOffsetColor")), type: "color" },
             );
           },
           blur: ({ matchUtilities: e, theme: t }) => {
@@ -10922,7 +10936,7 @@
                   filter: Pn,
                 }),
               },
-              { values: t("blur") }
+              { values: t("blur") },
             );
           },
           brightness: ({ matchUtilities: e, theme: t }) => {
@@ -10934,7 +10948,7 @@
                   filter: Pn,
                 }),
               },
-              { values: t("brightness") }
+              { values: t("brightness") },
             );
           },
           contrast: ({ matchUtilities: e, theme: t }) => {
@@ -10946,7 +10960,7 @@
                   filter: Pn,
                 }),
               },
-              { values: t("contrast") }
+              { values: t("contrast") },
             );
           },
           dropShadow: ({ matchUtilities: e, theme: t }) => {
@@ -10960,7 +10974,7 @@
                   filter: Pn,
                 }),
               },
-              { values: t("dropShadow") }
+              { values: t("dropShadow") },
             );
           },
           grayscale: ({ matchUtilities: e, theme: t }) => {
@@ -10972,7 +10986,7 @@
                   filter: Pn,
                 }),
               },
-              { values: t("grayscale") }
+              { values: t("grayscale") },
             );
           },
           hueRotate: ({ matchUtilities: e, theme: t }) => {
@@ -10984,7 +10998,7 @@
                   filter: Pn,
                 }),
               },
-              { values: t("hueRotate"), supportsNegativeValues: !0 }
+              { values: t("hueRotate"), supportsNegativeValues: !0 },
             );
           },
           invert: ({ matchUtilities: e, theme: t }) => {
@@ -10996,7 +11010,7 @@
                   filter: Pn,
                 }),
               },
-              { values: t("invert") }
+              { values: t("invert") },
             );
           },
           saturate: ({ matchUtilities: e, theme: t }) => {
@@ -11008,7 +11022,7 @@
                   filter: Pn,
                 }),
               },
-              { values: t("saturate") }
+              { values: t("saturate") },
             );
           },
           sepia: ({ matchUtilities: e, theme: t }) => {
@@ -11020,7 +11034,7 @@
                   filter: Pn,
                 }),
               },
-              { values: t("sepia") }
+              { values: t("sepia") },
             );
           },
           filter: ({ addDefaults: e, addUtilities: t }) => {
@@ -11049,7 +11063,7 @@
                   "backdrop-filter": Dn,
                 }),
               },
-              { values: t("backdropBlur") }
+              { values: t("backdropBlur") },
             );
           },
           backdropBrightness: ({ matchUtilities: e, theme: t }) => {
@@ -11061,7 +11075,7 @@
                   "backdrop-filter": Dn,
                 }),
               },
-              { values: t("backdropBrightness") }
+              { values: t("backdropBrightness") },
             );
           },
           backdropContrast: ({ matchUtilities: e, theme: t }) => {
@@ -11073,7 +11087,7 @@
                   "backdrop-filter": Dn,
                 }),
               },
-              { values: t("backdropContrast") }
+              { values: t("backdropContrast") },
             );
           },
           backdropGrayscale: ({ matchUtilities: e, theme: t }) => {
@@ -11085,7 +11099,7 @@
                   "backdrop-filter": Dn,
                 }),
               },
-              { values: t("backdropGrayscale") }
+              { values: t("backdropGrayscale") },
             );
           },
           backdropHueRotate: ({ matchUtilities: e, theme: t }) => {
@@ -11097,7 +11111,7 @@
                   "backdrop-filter": Dn,
                 }),
               },
-              { values: t("backdropHueRotate"), supportsNegativeValues: !0 }
+              { values: t("backdropHueRotate"), supportsNegativeValues: !0 },
             );
           },
           backdropInvert: ({ matchUtilities: e, theme: t }) => {
@@ -11109,7 +11123,7 @@
                   "backdrop-filter": Dn,
                 }),
               },
-              { values: t("backdropInvert") }
+              { values: t("backdropInvert") },
             );
           },
           backdropOpacity: ({ matchUtilities: e, theme: t }) => {
@@ -11121,7 +11135,7 @@
                   "backdrop-filter": Dn,
                 }),
               },
-              { values: t("backdropOpacity") }
+              { values: t("backdropOpacity") },
             );
           },
           backdropSaturate: ({ matchUtilities: e, theme: t }) => {
@@ -11133,7 +11147,7 @@
                   "backdrop-filter": Dn,
                 }),
               },
-              { values: t("backdropSaturate") }
+              { values: t("backdropSaturate") },
             );
           },
           backdropSepia: ({ matchUtilities: e, theme: t }) => {
@@ -11145,7 +11159,7 @@
                   "backdrop-filter": Dn,
                 }),
               },
-              { values: t("backdropSepia") }
+              { values: t("backdropSepia") },
             );
           },
           backdropFilter: ({ addDefaults: e, addUtilities: t }) => {
@@ -11183,7 +11197,7 @@
                       }),
                 }),
               },
-              { values: t("transitionProperty") }
+              { values: t("transitionProperty") },
             );
           },
           transitionDelay: nn("transitionDelay", [
@@ -11192,12 +11206,12 @@
           transitionDuration: nn(
             "transitionDuration",
             [["duration", ["transitionDuration"]]],
-            { filterDefault: !0 }
+            { filterDefault: !0 },
           ),
           transitionTimingFunction: nn(
             "transitionTimingFunction",
             [["ease", ["transitionTimingFunction"]]],
-            { filterDefault: !0 }
+            { filterDefault: !0 },
           ),
           willChange: nn("willChange", [["will-change", ["will-change"]]]),
           content: nn("content", [
@@ -11255,10 +11269,10 @@
       isArbitraryVariant: n,
       base: o = r
         .split(
-          new RegExp(`\\${i?.tailwindConfig?.separator ?? ":"}(?![^[]*\\])`)
+          new RegExp(`\\${i?.tailwindConfig?.separator ?? ":"}(?![^[]*\\])`),
         )
         .pop(),
-    }
+    },
   ) {
     let s = (0, qn.default)().astSync(t);
     i?.tailwindConfig?.prefix && !n && (e = qi(i.tailwindConfig.prefix, e)),
@@ -11297,8 +11311,8 @@
       ("combinator" === e.type) ^ ("combinator" === t.type)
       ? 0
       : ("pseudo" === e.type) ^ ("pseudo" === t.type)
-      ? ("pseudo" === e.type) - ("pseudo" === t.type)
-      : Wn(e) - Wn(t);
+        ? ("pseudo" === e.type) - ("pseudo" === t.type)
+        : Wn(e) - Wn(t);
   }
   function Wn(e) {
     return (
@@ -11412,7 +11426,7 @@
                           return Zn(t);
                         },
                         selector: t,
-                      })
+                      }),
                     ));
                 }),
                 p
@@ -11628,11 +11642,11 @@
                     .slice(1, -1)
                     .map((e) => e.trim())
                     .map((e) => `      ${e}`)
-                    .join("\n")
+                    .join("\n"),
                 )
                 .join("\n\n");
               r.push(
-                `  Use \`${e.replace("[", `[${t}:`)}\` for \`${n.trim()}\``
+                `  Use \`${e.replace("[", `[${t}:`)}\` for \`${n.trim()}\``,
               );
               break;
             }
@@ -11667,8 +11681,8 @@
                 base: e
                   .split(
                     new RegExp(
-                      `\\${t?.tailwindConfig?.separator ?? ":"}(?![^[]*\\])`
-                    )
+                      `\\${t?.tailwindConfig?.separator ?? ":"}(?![^[]*\\])`,
+                    ),
                   )
                   .pop(),
                 isArbitraryVariant: i[0].isArbitraryVariant,
@@ -11707,10 +11721,10 @@
             });
           }
         : "string" == typeof n
-        ? (e) => {
-            e.selectors = e.selectors.map((e) => `${n} ${e}`);
-          }
-        : void 0;
+          ? (e) => {
+              e.selectors = e.selectors.map((e) => `${n} ${e}`);
+            }
+          : void 0;
     var n;
     return r.flat(1).map(([{ sort: e, layer: r, options: n }, o]) => {
       if (n.respectImportant && i) {
@@ -11747,7 +11761,7 @@
         mt(),
         Or(),
         (ho = (0, fo.default)(
-          (e) => e.first.filter(({ type: e }) => "class" === e).pop().value
+          (e) => e.first.filter(({ type: e }) => "class" === e).pop().value,
         )),
         (mo = /^[a-z_-]/);
     });
@@ -11845,7 +11859,7 @@
       (e = e
         .replace(/\n+/g, "")
         .replace(/\s{1,}/g, " ")
-        .trim())
+        .trim()),
     )
       .map((e) => {
         if (!e.startsWith("@")) return ({ format: t }) => t(e);
@@ -11860,7 +11874,7 @@
   function _o(
     e,
     t,
-    { variantList: r, variantMap: i, offsets: n, classList: o }
+    { variantList: r, variantMap: i, offsets: n, classList: o },
   ) {
     function s(t, r) {
       return t ? (0, jo.default)(e, t, r) : e;
@@ -11911,7 +11925,7 @@
           r = Object.assign(
             {},
             { preserveSource: !1, respectPrefix: !0, respectImportant: !1 },
-            Array.isArray(r) ? {} : r
+            Array.isArray(r) ? {} : r,
           );
           for (let [i, s] of So(e)) {
             let e = a(i, r);
@@ -11929,7 +11943,7 @@
           r = Object.assign(
             {},
             { preserveSource: !1, respectPrefix: !0, respectImportant: !0 },
-            Array.isArray(r) ? {} : r
+            Array.isArray(r) ? {} : r,
           );
           for (let [i, s] of So(e)) {
             let e = a(i, r);
@@ -11954,11 +11968,11 @@
                 return void 0 === s
                   ? []
                   : (o.includes(a) || r) && $n(s)
-                  ? []
-                      .concat(u(s))
-                      .filter(Boolean)
-                      .map((e) => ({ [Ki(n, t)]: e }))
-                  : [];
+                    ? []
+                        .concat(u(s))
+                        .filter(Boolean)
+                        .map((e) => ({ [Ki(n, t)]: e }))
+                    : [];
               },
               c = a(n, i),
               u = r[n];
@@ -11983,7 +11997,7 @@
                     `Unnecessary typehint \`${a}\` in \`${n}-${t}\`.`,
                     `You can safely update it to \`${n}-${t.replace(
                       a + ":",
-                      ""
+                      "",
                     )}\`.`,
                   ]);
                 }
@@ -12017,12 +12031,12 @@
                   c = t(
                     Object.assign(
                       { modifySelectors: n, container: o, separator: s },
-                      t[Ro] && { args: i, wrap: a, format: l }
-                    )
+                      t[Ro] && { args: i, wrap: a, format: l },
+                    ),
                   );
                 if ("string" == typeof c && !Co(c))
                   throw new Error(
-                    `Your custom variant \`${e}\` has an invalid format string. Make sure it's an at-rule or contains a \`&\` placeholder.`
+                    `Your custom variant \`${e}\` has an invalid format string. Make sure it's an at-rule or contains a \`&\` placeholder.`,
                   );
                 return Array.isArray(c)
                   ? c.filter((e) => "string" == typeof e).map((e) => Ao(e))
@@ -12030,7 +12044,7 @@
               };
             if (!Co(t))
               throw new Error(
-                `Your custom variant \`${e}\` has an invalid format string. Make sure it's an at-rule or contains a \`&\` placeholder.`
+                `Your custom variant \`${e}\` has an invalid format string. Make sure it's an at-rule or contains a \`&\` placeholder.`,
               );
             return Ao(t);
           })),
@@ -12055,7 +12069,7 @@
             u.addVariant(
               r,
               Object.assign(({ args: t }) => e[r](t), { [Ro]: !0 }),
-              t
+              t,
             );
           }
         }),
@@ -12134,14 +12148,14 @@
       n = (function (e, t) {
         let r = Object.entries({ ...En, ...jn })
             .map(([t, r]) =>
-              e.tailwindConfig.corePlugins.includes(t) ? r : null
+              e.tailwindConfig.corePlugins.includes(t) ? r : null,
             )
             .filter(Boolean),
           i = e.tailwindConfig.plugins.map(
             (e) => (
               e.__isOptionsFunction && (e = e()),
               "function" == typeof e ? e : e.handler
-            )
+            ),
           ),
           n = Po(t);
         return [
@@ -12181,7 +12195,7 @@
           if (Array.isArray(t)) for (let e of t) e(s);
           else t?.(s);
         let a = [n.base, n.defaults, n.components, n.utilities, n.user].reduce(
-            (e, t) => (t > e ? t : e)
+            (e, t) => (t > e ? t : e),
           ),
           l = BigInt(a.toString(2).length);
         (t.arbitraryPropertiesSort = ((1n << l) << 0n) - 1n),
@@ -12201,14 +12215,14 @@
                 n = (1n << BigInt(t + c)) << l;
               return (c += r - 1), [e, n];
             })
-            .sort(([, e], [, t]) => tn(e - t))
+            .sort(([, e], [, t]) => tn(e - t)),
         )),
           (t.minimumScreen = [...t.variantOrder.values()].shift());
         for (let [e, r] of i.entries()) {
           let i = t.variantOrder.get(e);
           t.variantMap.set(
             e,
-            r.map((e, t) => [i << BigInt(t), e])
+            r.map((e, t) => [i << BigInt(t), e]),
           );
         }
         let u = (t.tailwindConfig.safelist ?? []).filter(Boolean);
@@ -12244,8 +12258,8 @@
                           ...o,
                           ...o.flatMap((e) =>
                             Object.keys(t.tailwindConfig.theme.opacity).map(
-                              (t) => `${e}/${t}`
-                            )
+                              (t) => `${e}/${t}`,
+                            ),
                           ),
                         ]),
                       o
@@ -12578,7 +12592,7 @@
                     /(?:\/[^\s'"`\\$]*)?/,
                   ]),
                   /[-\/][^\s'"`\\$={><]*/,
-                ])
+                ]),
               ),
             ]),
           ]),
@@ -12602,7 +12616,7 @@
             r ? at([st([/\(/, n, ct([/,/, n]), /\)/]), n]) : n,
           ]);
         yield /[^<>"'`\s.(){}[\]#=%$]*[^<>"'`\s.(){}[\]#=%:$]/g;
-      })(e)
+      })(e),
     );
     return (e) => {
       let r = [];
@@ -12618,7 +12632,7 @@
     i = Array.from(i).flatMap((e) => {
       let [, ...t] = e;
       return t.map((t, r) =>
-        Object.assign([], e, { index: e.index + r, 0: t })
+        Object.assign([], e, { index: e.index + r, 0: t }),
       );
     });
     for (let n of i) {
@@ -12715,14 +12729,14 @@
             e >= t.minimumScreen
               ? i.variants.add(n)
               : e & t.layerOrder.base
-              ? i.base.add(n)
-              : e & t.layerOrder.defaults
-              ? i.defaults.add(n)
-              : e & t.layerOrder.components
-              ? i.components.add(n)
-              : e & t.layerOrder.utilities
-              ? i.utilities.add(n)
-              : e & t.layerOrder.user && i.user.add(n);
+                ? i.base.add(n)
+                : e & t.layerOrder.defaults
+                  ? i.defaults.add(n)
+                  : e & t.layerOrder.components
+                    ? i.components.add(n)
+                    : e & t.layerOrder.utilities
+                      ? i.utilities.add(n)
+                      : e & t.layerOrder.user && i.user.add(n);
           return i;
         })([...e.ruleCache], e);
       }
@@ -12739,12 +12753,12 @@
         r.base.remove()),
         r.components &&
           (r.components.before(
-            rs([...c], r.components.source, { layer: "components" })
+            rs([...c], r.components.source, { layer: "components" }),
           ),
           r.components.remove()),
         r.utilities &&
           (r.utilities.before(
-            rs([...u], r.utilities.source, { layer: "utilities" })
+            rs([...u], r.utilities.source, { layer: "utilities" }),
           ),
           r.utilities.remove());
       let p = Array.from(d).filter((e) => {
@@ -12861,7 +12875,7 @@
       if (t.classCache.has(r)) {
         t.applyClassCache.set(
           r,
-          t.classCache.get(r).map(([e, t]) => [e, t.clone()])
+          t.classCache.get(r).map(([e, t]) => [e, t.clone()]),
         );
         continue;
       }
@@ -12919,11 +12933,11 @@
           throw e.error(
             `@apply is not supported within nested at-rules like @screen. We suggest you write this as @apply ${i
               .map((e) => `${t}:${e}`)
-              .join(" ")} instead.`
+              .join(" ")} instead.`,
           );
         }
         throw e.error(
-          `@apply is not supported within nested at-rules like @${e.parent.name}. You can fix this by un-nesting @${e.parent.name}.`
+          `@apply is not supported within nested at-rules like @${e.parent.name}. You can fix this by un-nesting @${e.parent.name}.`,
         );
       }
       for (let s of i) {
@@ -12931,7 +12945,7 @@
           throw e.error(`@apply should not be used with the '${s}' utility`);
         if (!o.has(s))
           throw e.error(
-            `The \`${s}\` class does not exist. If \`${s}\` is a custom class, make sure it is defined within a \`@layer\` directive.`
+            `The \`${s}\` class does not exist. If \`${s}\` is a custom class, make sure it is defined within a \`@layer\` directive.`,
           );
         let i = o.get(s);
         r.push([s, n, i]);
@@ -12950,7 +12964,7 @@
             l.some((e) => d.includes(e)))
           )
             throw u.error(
-              `You cannot \`@apply\` the \`${o}\` utility here because it creates a circular dependency.`
+              `You cannot \`@apply\` the \`${o}\` utility here because it creates a circular dependency.`,
             );
           let p = Qr.root({ nodes: [u.clone()] });
           p.walk((e) => {
@@ -13026,10 +13040,10 @@
               null !== s && null !== a
                 ? Math.min(s, a)
                 : null !== s
-                ? s
-                : null !== a
-                ? a
-                : null;
+                  ? s
+                  : null !== a
+                    ? a
+                    : null;
             var l,
               c,
               u,
@@ -13087,11 +13101,11 @@
                 a < c || a > u
                   ? (d[s][a] = i + 1)
                   : t.charAt(s - 1) === e.charAt(a - 1)
-                  ? (d[s][a] = d[s - 1][a - 1])
-                  : (d[s][a] = Math.min(
-                      d[s - 1][a - 1] + 1,
-                      Math.min(d[s][a - 1] + 1, d[s - 1][a] + 1)
-                    )),
+                    ? (d[s][a] = d[s - 1][a - 1])
+                    : (d[s][a] = Math.min(
+                        d[s - 1][a - 1] + 1,
+                        Math.min(d[s][a - 1] + 1, d[s - 1][a] + 1),
+                      )),
                   d[s][a] < l && (l = d[s][a]);
               if (l > i) return i + 1;
             }
@@ -13148,19 +13162,20 @@
               _ === i && T
                 ? (j = b)
                 : g && "div" === g.type
-                ? ((g.after = b), (g.sourceEndIndex += b.length))
-                : _ === l ||
-                  _ === c ||
-                  (_ === a &&
-                    C.charCodeAt(t + 1) !== u &&
-                    (!k || (k && "function" === k.type && "calc" !== k.value)))
-                ? (D = b)
-                : S.push({
-                    type: "space",
-                    sourceIndex: A,
-                    sourceEndIndex: t,
-                    value: b,
-                  }),
+                  ? ((g.after = b), (g.sourceEndIndex += b.length))
+                  : _ === l ||
+                      _ === c ||
+                      (_ === a &&
+                        C.charCodeAt(t + 1) !== u &&
+                        (!k ||
+                          (k && "function" === k.type && "calc" !== k.value)))
+                    ? (D = b)
+                    : S.push({
+                        type: "space",
+                        sourceIndex: A,
+                        sourceEndIndex: t,
+                        value: b,
+                      }),
               (A = t);
           } else if (_ === n || _ === o) {
             (t = A),
@@ -13307,20 +13322,20 @@
                 r === _
                   ? (P = b)
                   : (d !== b.charCodeAt(0) && p !== b.charCodeAt(0)) ||
-                    f !== b.charCodeAt(1) ||
-                    !h.test(b.slice(2))
-                  ? S.push({
-                      type: "word",
-                      sourceIndex: A,
-                      sourceEndIndex: t,
-                      value: b,
-                    })
-                  : S.push({
-                      type: "unicode-range",
-                      sourceIndex: A,
-                      sourceEndIndex: t,
-                      value: b,
-                    }),
+                      f !== b.charCodeAt(1) ||
+                      !h.test(b.slice(2))
+                    ? S.push({
+                        type: "word",
+                        sourceIndex: A,
+                        sourceEndIndex: t,
+                        value: b,
+                      })
+                    : S.push({
+                        type: "unicode-range",
+                        sourceIndex: A,
+                        sourceEndIndex: t,
+                        value: b,
+                      }),
                 (A = t);
             }
           else
@@ -13361,24 +13376,24 @@
         return t && void 0 !== (n = t(e))
           ? n
           : "word" === o || "space" === o
-          ? s
-          : "string" === o
-          ? (r = e.quote || "") + s + (e.unclosed ? "" : r)
-          : "comment" === o
-          ? "/*" + s + (e.unclosed ? "" : "*/")
-          : "div" === o
-          ? (e.before || "") + s + (e.after || "")
-          : Array.isArray(e.nodes)
-          ? ((r = i(e.nodes, t)),
-            "function" !== o
-              ? r
-              : s +
-                "(" +
-                (e.before || "") +
-                r +
-                (e.after || "") +
-                (e.unclosed ? "" : ")"))
-          : s;
+            ? s
+            : "string" === o
+              ? (r = e.quote || "") + s + (e.unclosed ? "" : r)
+              : "comment" === o
+                ? "/*" + s + (e.unclosed ? "" : "*/")
+                : "div" === o
+                  ? (e.before || "") + s + (e.after || "")
+                  : Array.isArray(e.nodes)
+                    ? ((r = i(e.nodes, t)),
+                      "function" !== o
+                        ? r
+                        : s +
+                          "(" +
+                          (e.before || "") +
+                          r +
+                          (e.after || "") +
+                          (e.unclosed ? "" : ")"))
+                    : s;
       }
       function i(e, t) {
         var i, n;
@@ -13477,7 +13492,7 @@
       : e.reduce(
           (e, t, r) =>
             t.includes(".") ? `${e}[${t}]` : 0 === r ? t : `${e}.${t}`,
-          ""
+          "",
         );
   }
   function Fs(e) {
@@ -13568,15 +13583,15 @@
             (function* (e) {
               let t,
                 r = (e = e.replace(/^['"]+|['"]+$/g, "")).match(
-                  /^([^\s]+)(?![^\[]*\])(?:\s*\/\s*([^\/\s]+))$/
+                  /^([^\s]+)(?![^\[]*\])(?:\s*\/\s*([^\/\s]+))$/,
                 );
               yield [e, void 0], r && ((e = r[1]), (t = r[2]), yield [e, t]);
-            })(t)
+            })(t),
           ).map(([t, i]) =>
             Object.assign(Ws(e, t, r, { opacityValue: i }), {
               resolvedPath: t,
               alpha: i,
-            })
+            }),
           );
           return i.find((e) => e.isValid) ?? i[0];
         })(e, r, i.length ? i : void 0);
@@ -13665,7 +13680,7 @@
                         ":after",
                         ":first-line",
                         ":first-letter",
-                      ].includes(e.value)
+                      ].includes(e.value),
                   )
                   .reverse(),
                 r = new Set(["tag", "class", "id", "attribute"]),
@@ -13675,14 +13690,16 @@
                 o = ea[n.type] ? ea[n.type](n) : n;
               t = t.slice(0, i);
               let s = t.findIndex(
-                (e) => "combinator" === e.type && ">" === e.value
+                (e) => "combinator" === e.type && ">" === e.value,
               );
               return (
                 -1 !== s && (t.splice(0, s), t.unshift(Zs.default.universal())),
                 [o, ...t.reverse()].join("").trim()
               );
-            })(e.split((e) => "combinator" === e.type && " " === e.value).pop())
-          )
+            })(
+              e.split((e) => "combinator" === e.type && " " === e.value).pop(),
+            ),
+          ),
         )),
         (ra = new Map());
     });
@@ -13696,12 +13713,12 @@
         "atrule" === e.type && "font-face" === e.name
           ? (r = e)
           : t.every(
-              (t) =>
-                (e[t] ?? "").replace(/\s+/g, " ") ===
-                (r[t] ?? "").replace(/\s+/g, " ")
-            )
-          ? (e.nodes && r.append(e.nodes), e.remove())
-          : (r = e);
+                (t) =>
+                  (e[t] ?? "").replace(/\s+/g, " ") ===
+                  (r[t] ?? "").replace(/\s+/g, " "),
+              )
+            ? (e.nodes && r.append(e.nodes), e.remove())
+            : (r = e);
       }),
         t.each((t) => {
           "atrule" === t.type && e(t);
@@ -13775,16 +13792,16 @@
                 "'tailwindcss/base'" === e.params
                   ? ((e.name = "tailwind"), (e.params = "base"))
                   : '"tailwindcss/components"' === e.params ||
-                    "'tailwindcss/components'" === e.params
-                  ? ((e.name = "tailwind"), (e.params = "components"))
-                  : '"tailwindcss/utilities"' === e.params ||
-                    "'tailwindcss/utilities'" === e.params
-                  ? ((e.name = "tailwind"), (e.params = "utilities"))
-                  : ('"tailwindcss/screens"' === e.params ||
-                      "'tailwindcss/screens'" === e.params ||
-                      '"tailwindcss/variants"' === e.params ||
-                      "'tailwindcss/variants'" === e.params) &&
-                    ((e.name = "tailwind"), (e.params = "variants"))),
+                      "'tailwindcss/components'" === e.params
+                    ? ((e.name = "tailwind"), (e.params = "components"))
+                    : '"tailwindcss/utilities"' === e.params ||
+                        "'tailwindcss/utilities'" === e.params
+                      ? ((e.name = "tailwind"), (e.params = "utilities"))
+                      : ('"tailwindcss/screens"' === e.params ||
+                          "'tailwindcss/screens'" === e.params ||
+                          '"tailwindcss/variants"' === e.params ||
+                          "'tailwindcss/variants'" === e.params) &&
+                        ((e.name = "tailwind"), (e.params = "variants"))),
               "tailwind" === e.name &&
                 ("screens" === e.params && (e.params = "variants"),
                 t.add(e.params)),
@@ -13806,16 +13823,16 @@
             ) {
               if (!t.has(e.params))
                 throw e.error(
-                  `\`@layer ${e.params}\` is used but no matching \`@tailwind ${e.params}\` directive is present.`
+                  `\`@layer ${e.params}\` is used but no matching \`@tailwind ${e.params}\` directive is present.`,
                 );
             } else if ("responsive" === e.name) {
               if (!t.has("utilities"))
                 throw e.error(
-                  "`@responsive` is used but `@tailwind utilities` is missing."
+                  "`@responsive` is used but `@tailwind utilities` is missing.",
                 );
             } else if ("variants" === e.name && !t.has("utilities"))
               throw e.error(
-                "`@variants` is used but `@tailwind utilities` is missing."
+                "`@variants` is used but `@tailwind utilities` is missing.",
               );
         return { tailwindDirectives: t, applyDirectives: i };
       })(r);
@@ -13833,10 +13850,10 @@
                     "Nested @tailwind rules were detected, but are not supported.",
                     "Consider using a prefix to scope Tailwind's classes: https://tailwindcss.com/docs/configuration#prefix",
                     "Alternatively, use the important selector strategy: https://tailwindcss.com/docs/configuration#selector-strategy",
-                  ].join("\n")
+                  ].join("\n"),
                 ),
                 !1)
-              : void 0)
+              : void 0),
         ),
           e.walkRules((e) => {
             if (r) return !1;
@@ -13849,10 +13866,10 @@
                     "Nested CSS was detected, but CSS nesting has not been configured correctly.",
                     "Please enable a CSS nesting plugin *before* Tailwind in your configuration.",
                     "See how here: https://tailwindcss.com/docs/using-with-preprocessors#nesting",
-                  ].join("\n")
+                  ].join("\n"),
                 ),
                 !1
-              )
+              ),
             );
           });
       })(r, i),
@@ -13867,7 +13884,7 @@
       })(r, i);
       if ("-" === s.tailwindConfig.separator)
         throw new Error(
-          "The '-' character cannot be used as a custom separator in JIT mode due to parsing ambiguity. Please use another character like '_' instead."
+          "The '-' character cannot be used as a custom separator in JIT mode due to parsing ambiguity. Please use another character like '_' instead.",
         );
       (function (t) {
         if (void 0 === e.env.JEST_WORKER_ID && Cr(t).length > 0) {
@@ -14588,13 +14605,14 @@
           "parent" === i && "object" == typeof n
             ? t && (r[i] = t)
             : "source" === i || null === i
-            ? (r[i] = n)
-            : Array.isArray(n)
-            ? (r[i] = n.map((e) => o(e, r)))
-            : "_autoprefixerPrefix" !== i &&
-              "_autoprefixerValues" !== i &&
-              "proxyCache" !== i &&
-              ("object" == typeof n && null !== n && (n = o(n, r)), (r[i] = n));
+              ? (r[i] = n)
+              : Array.isArray(n)
+                ? (r[i] = n.map((e) => o(e, r)))
+                : "_autoprefixerPrefix" !== i &&
+                  "_autoprefixerValues" !== i &&
+                  "proxyCache" !== i &&
+                  ("object" == typeof n && null !== n && (n = o(n, r)),
+                  (r[i] = n));
         }
         return r;
       }
@@ -14624,15 +14642,15 @@
               void 0 !== e._autoprefixerPrefix
                 ? e._autoprefixerPrefix
                 : "decl" === e.type && "-" === e.prop[0]
-                ? i.prefix(e.prop)
-                : "root" !== e.type &&
-                  ("rule" === e.type &&
-                  e.selector.includes(":-") &&
-                  /:(-\w+-)/.test(e.selector)
-                    ? e.selector.match(/:(-\w+-)/)[1]
-                    : "atrule" === e.type && "-" === e.name[0]
-                    ? i.prefix(e.name)
-                    : this.parentPrefix(e.parent))),
+                  ? i.prefix(e.prop)
+                  : "root" !== e.type &&
+                    ("rule" === e.type &&
+                    e.selector.includes(":-") &&
+                    /:(-\w+-)/.test(e.selector)
+                      ? e.selector.match(/:(-\w+-)/)[1]
+                      : "atrule" === e.type && "-" === e.name[0]
+                        ? i.prefix(e.name)
+                        : this.parentPrefix(e.parent))),
             r.prefixes().includes(t) || (t = !1),
             (e._autoprefixerPrefix = t),
             e._autoprefixerPrefix
@@ -14781,7 +14799,7 @@
                 this.bad.push(this.prefixName(e, "max"));
           }
           e.params = n.editList(e.params, (e) =>
-            e.filter((e) => this.bad.every((t) => !e.includes(t)))
+            e.filter((e) => this.bad.every((t) => !e.includes(t))),
           );
         }
         process(e) {
@@ -14893,7 +14911,7 @@
               n &&
               t.warn(
                 e,
-                "Replace transition-property to transition, because Autoprefixer could not support any cases of transition-property and other transition-*"
+                "Replace transition-property to transition, because Autoprefixer could not support any cases of transition-property and other transition-*",
               );
         }
         remove(e) {
@@ -14907,7 +14925,7 @@
           if (0 === t.length) return void e.remove();
           let i = e.parent.some((t) => t.prop === e.prop && t.value === r),
             n = e.parent.some(
-              (t) => t !== e && t.prop === e.prop && t.value.length > r.length
+              (t) => t !== e && t.prop === e.prop && t.value.length > r.length,
             );
           i || n ? e.remove() : (e.value = r);
         }
@@ -15033,7 +15051,7 @@
             let d = s.replace(/\s+/, " ");
             if (
               u.some(
-                (e) => e.prop === t.prop && e.value.replace(/\s+/, " ") === d
+                (e) => e.prop === t.prop && e.value.replace(/\s+/, " ") === d,
               )
             ) {
               i.push(a);
@@ -15101,7 +15119,7 @@
         ];
       function d(e) {
         return e.parent.some(
-          (e) => "grid-template" === e.prop || "grid-template-areas" === e.prop
+          (e) => "grid-template" === e.prop || "grid-template-areas" === e.prop,
         );
       }
       r.exports = class {
@@ -15159,7 +15177,7 @@
                       ("under" === l || "over" === l) &&
                         t.warn(
                           "You should use 2 values for text-emphasis-position For example, `under left` instead of just `under`.",
-                          { node: e }
+                          { node: e },
                         );
                     else if (
                       /^(align|justify|place)-(items|content)$/.test(o) &&
@@ -15167,19 +15185,19 @@
                         return e.parent.some(
                           (e) =>
                             "display" === e.prop &&
-                            /(inline-)?flex/.test(e.value)
+                            /(inline-)?flex/.test(e.value),
                         );
                       })(e)
                     )
                       ("start" === l || "end" === l) &&
                         t.warn(
                           `${l} value has mixed support, consider using flex-${l} instead`,
-                          { node: e }
+                          { node: e },
                         );
                     else if ("text-decoration-skip" === o && "ink" === l)
                       t.warn(
                         "Replace text-decoration-skip: ink to text-decoration-skip-ink: auto, because spec had been changed",
-                        { node: e }
+                        { node: e },
                       );
                     else {
                       if (h && this.gridStatus(e, t))
@@ -15191,7 +15209,7 @@
                           let r = o.replace("-items", "-self");
                           t.warn(
                             `IE does not support ${o} on grid containers. Try using ${r} on child elements instead: ${e.parent.selector} > * { ${r}: ${e.value} }`,
-                            { node: e }
+                            { node: e },
                           );
                         } else if (
                           /^(align|justify|place)-content$/.test(o) &&
@@ -15199,23 +15217,23 @@
                         )
                           t.warn(
                             `IE does not support ${e.prop} on grid containers`,
-                            { node: e }
+                            { node: e },
                           );
                         else {
                           if ("display" === o && "contents" === e.value)
                             return void t.warn(
                               "Please do not use display: contents; if you have grid setting enabled",
-                              { node: e }
+                              { node: e },
                             );
                           if ("grid-gap" === e.prop) {
                             let r = this.gridStatus(e, t);
                             "autoplace" !== r ||
                             (function (e) {
                               let t = e.parent.some(
-                                  (e) => "grid-template-rows" === e.prop
+                                  (e) => "grid-template-rows" === e.prop,
                                 ),
                                 r = e.parent.some(
-                                  (e) => "grid-template-columns" === e.prop
+                                  (e) => "grid-template-columns" === e.prop,
                                 );
                               return t && r;
                             })(e) ||
@@ -15224,62 +15242,62 @@
                                 !d(e) &&
                                 t.warn(
                                   "grid-gap only works if grid-template(-areas) is being used",
-                                  { node: e }
+                                  { node: e },
                                 )
                               : t.warn(
                                   "grid-gap only works if grid-template(-areas) is being used or both rows and columns have been declared and cells have not been manually placed inside the explicit grid",
-                                  { node: e }
+                                  { node: e },
                                 );
                           } else {
                             if ("grid-auto-columns" === o)
                               return void t.warn(
                                 "grid-auto-columns is not supported by IE",
-                                { node: e }
+                                { node: e },
                               );
                             if ("grid-auto-rows" === o)
                               return void t.warn(
                                 "grid-auto-rows is not supported by IE",
-                                { node: e }
+                                { node: e },
                               );
                             if ("grid-auto-flow" === o) {
                               let r = n.some(
-                                  (e) => "grid-template-rows" === e.prop
+                                  (e) => "grid-template-rows" === e.prop,
                                 ),
                                 i = n.some(
-                                  (e) => "grid-template-columns" === e.prop
+                                  (e) => "grid-template-columns" === e.prop,
                                 );
                               return void (d(e)
                                 ? t.warn(
                                     "grid-auto-flow is not supported by IE",
-                                    { node: e }
+                                    { node: e },
                                   )
                                 : l.includes("dense")
-                                ? t.warn(
-                                    "grid-auto-flow: dense is not supported by IE",
-                                    { node: e }
-                                  )
-                                : !r &&
-                                  !i &&
-                                  t.warn(
-                                    "grid-auto-flow works only if grid-template-rows and grid-template-columns are present in the same rule",
-                                    { node: e }
-                                  ));
+                                  ? t.warn(
+                                      "grid-auto-flow: dense is not supported by IE",
+                                      { node: e },
+                                    )
+                                  : !r &&
+                                    !i &&
+                                    t.warn(
+                                      "grid-auto-flow works only if grid-template-rows and grid-template-columns are present in the same rule",
+                                      { node: e },
+                                    ));
                             }
                             if (l.includes("auto-fit"))
                               return void t.warn(
                                 "auto-fit value is not supported by IE",
-                                { node: e, word: "auto-fit" }
+                                { node: e, word: "auto-fit" },
                               );
                             if (l.includes("auto-fill"))
                               return void t.warn(
                                 "auto-fill value is not supported by IE",
-                                { node: e, word: "auto-fill" }
+                                { node: e, word: "auto-fill" },
                               );
                             o.startsWith("grid-template") &&
                               l.includes("[") &&
                               t.warn(
                                 "Autoprefixer currently does not support line names. Try using grid-template-areas instead.",
-                                { node: e, word: "[" }
+                                { node: e, word: "[" },
                               );
                           }
                         }
@@ -15287,7 +15305,7 @@
                         if (a.test(e.value))
                           t.warn(
                             "Gradient has outdated direction syntax. New syntax is like `closest-side at 0 0` instead of `0 0, closest-side`.",
-                            { node: e }
+                            { node: e },
                           );
                         else {
                           let r = i(l);
@@ -15301,19 +15319,19 @@
                                   ("cover" === r.value
                                     ? t.warn(
                                         "Gradient has outdated direction syntax. Replace `cover` to `farthest-corner`.",
-                                        { node: e }
+                                        { node: e },
                                       )
                                     : "contain" === r.value &&
                                       t.warn(
                                         "Gradient has outdated direction syntax. Replace `contain` to `closest-side`.",
-                                        { node: e }
+                                        { node: e },
                                       ));
                         }
                       l.includes("linear-gradient") &&
                         s.test(l) &&
                         t.warn(
                           "Gradient has outdated direction syntax. New syntax is like `to left` instead of `right`.",
-                          { node: e }
+                          { node: e },
                         );
                     }
                     if (
@@ -15322,15 +15340,15 @@
                           (e.value.includes("fill-available")
                             ? t.warn(
                                 "Replace fill-available to stretch, because spec had been changed",
-                                { node: e }
+                                { node: e },
                               )
                             : e.value.includes("fill") &&
                               i(l).nodes.some(
-                                (e) => "word" === e.type && "fill" === e.value
+                                (e) => "word" === e.type && "fill" === e.value,
                               ) &&
                               t.warn(
                                 "Replace fill to stretch, because spec had been changed",
-                                { node: e }
+                                { node: e },
                               ))),
                       "transition" === e.prop ||
                         "transition-property" === e.prop)
@@ -15367,17 +15385,17 @@
                   } else
                     t.warn(
                       "You should write display: flex by final spec instead of display: box",
-                      { node: e }
+                      { node: e },
                     );
                 else
                   t.warn(
                     "grid-column-span is not part of final Grid Layout. Use grid-column.",
-                    { node: e }
+                    { node: e },
                   );
               else
                 t.warn(
                   "grid-row-span is not part of final Grid Layout. Use grid-row.",
-                  { node: e }
+                  { node: e },
                 );
             }),
             this.gridStatus(e, t) && o(e, this.disabled),
@@ -15498,7 +15516,7 @@
                 (void 0 !== i
                   ? t.warn(
                       "Second Autoprefixer control comment was ignored. Autoprefixer applies control comment to whole block, not to next rules.",
-                      { node: e }
+                      { node: e },
                     )
                   : (i = /on/i.test(e.text)));
             }),
@@ -15548,7 +15566,7 @@
                 void 0 !== e
                   ? r.warn(
                       "Second Autoprefixer grid control comment was ignored. Autoprefixer applies control comments to the whole block, not to the next rules.",
-                      { node: t }
+                      { node: t },
                     )
                   : (e = i ? "autoplace" : !!n || /on/i.test(t.text));
               }
@@ -15672,7 +15690,7 @@
             (this.prefixerCache = new this.Prefixes(
               this.all.data,
               t,
-              this.all.options
+              this.all.options,
             )),
             this.prefixerCache
           );
@@ -15746,8 +15764,8 @@
             "object" != typeof e
               ? e
               : 1 === e.length && "object" == typeof e[0]
-              ? this.cleanBrackets(e[0])
-              : this.cleanBrackets(e)
+                ? this.cleanBrackets(e[0])
+                : this.cleanBrackets(e),
           );
         }
         convert(e) {
@@ -15869,7 +15887,7 @@
             let t = e ? this.prefixed(e) : this.name;
             this.regexpCache.set(
               e,
-              new RegExp(`(^|[^:"'=])${s.escapeRegexp(t)}`, "gi")
+              new RegExp(`(^|[^:"'=])${s.escapeRegexp(t)}`, "gi"),
             );
           }
           return this.regexpCache.get(e);
@@ -15951,8 +15969,8 @@
             return "-webkit-" === e
               ? ":-webkit-full-screen"
               : "-moz-" === e
-              ? ":-moz-full-screen"
-              : `:${e}fullscreen`;
+                ? ":-moz-full-screen"
+                : `:${e}fullscreen`;
           }
         };
       (i.names = [":fullscreen"]), (t.exports = i);
@@ -15968,12 +15986,12 @@
             return "-webkit-" === e
               ? "::-webkit-input-placeholder"
               : "-ms-" === e
-              ? "::-ms-input-placeholder"
-              : "-ms- old" === e
-              ? ":-ms-input-placeholder"
-              : "-moz- old" === e
-              ? ":-moz-placeholder"
-              : `::${e}placeholder`;
+                ? "::-ms-input-placeholder"
+                : "-ms- old" === e
+                  ? ":-ms-input-placeholder"
+                  : "-moz- old" === e
+                    ? ":-moz-placeholder"
+                    : `::${e}placeholder`;
           }
         };
       (i.names = ["::placeholder"]), (t.exports = i);
@@ -16016,8 +16034,8 @@
             "-webkit- 2009" === e || "-moz-" === e
               ? (t = 2009)
               : "-ms-" === e
-              ? (t = 2012)
-              : "-webkit-" === e && (t = "final"),
+                ? (t = 2012)
+                : "-webkit-" === e && (t = "final"),
             "-webkit- 2009" === e && (e = "-webkit-"),
             [t, e]
           );
@@ -16072,8 +16090,8 @@
               2009 === i
                 ? t + "box-ordinal-group"
                 : 2012 === i
-                ? t + "flex-order"
-                : super.prefixed(e, t)
+                  ? t + "flex-order"
+                  : super.prefixed(e, t)
             );
           }
           normalize() {
@@ -16162,7 +16180,7 @@
               0 === o.length ||
               e.parent.some(
                 (e) =>
-                  e.prop === t + "box-orient" || e.prop === t + "box-direction"
+                  e.prop === t + "box-orient" || e.prop === t + "box-direction",
               )
             )
               return;
@@ -16200,8 +16218,8 @@
               2009 === i
                 ? t + "box-flex"
                 : 2012 === i
-                ? t + "flex-positive"
-                : super.prefixed(e, t)
+                  ? t + "flex-positive"
+                  : super.prefixed(e, t)
             );
           }
         };
@@ -16304,8 +16322,8 @@
             return 2012 === i
               ? ((e.value = n.oldValues[e.value] || e.value), super.set(e, t))
               : "final" === i
-              ? super.set(e, t)
-              : void 0;
+                ? super.set(e, t)
+                : void 0;
           }
         };
       (n.names = ["align-self", "flex-item-align"]),
@@ -16321,7 +16339,7 @@
             super(e, t, r),
               this.prefixes &&
                 (this.prefixes = i.uniq(
-                  this.prefixes.map((e) => ("-ms-" === e ? "-webkit-" : e))
+                  this.prefixes.map((e) => ("-ms-" === e ? "-webkit-" : e)),
                 ));
           }
         };
@@ -16427,7 +16445,7 @@
         }),
         (i.regexp = new RegExp(
           `\\s+(${Object.keys(i.oldValues).join("|")})\\b(?!\\))\\s*(?=[,])`,
-          "ig"
+          "ig",
         )),
         (t.exports = i);
     }),
@@ -16443,8 +16461,8 @@
               2009 === i
                 ? t + "box-align"
                 : 2012 === i
-                ? t + "flex-align"
-                : super.prefixed(e, t)
+                  ? t + "flex-align"
+                  : super.prefixed(e, t)
             );
           }
           normalize() {
@@ -16513,8 +16531,8 @@
             return e.includes("inside")
               ? "break-inside"
               : e.includes("before")
-              ? "break-before"
-              : "break-after";
+                ? "break-before"
+                : "break-after";
           }
           set(e, t) {
             return (
@@ -16528,8 +16546,8 @@
             return "break-inside" !== e.prop
               ? super.insert(e, t, r)
               : /region/i.test(e.value) || /page/i.test(e.value)
-              ? void 0
-              : super.insert(e, t, r);
+                ? void 0
+                : super.insert(e, t, r);
           }
         };
       (i.names = [
@@ -16627,8 +16645,8 @@
             return 2012 === i
               ? ((e.value = n.oldValues[e.value] || e.value), super.set(e, t))
               : "final" === i
-              ? super.set(e, t)
-              : void 0;
+                ? super.set(e, t)
+                : void 0;
           }
         };
       (n.names = ["align-content", "flex-line-pack"]),
@@ -16739,7 +16757,7 @@
           normalize(e) {
             return e.replace(
               /(margin|padding|border)-(start|end)/,
-              "$1-inline-$2"
+              "$1-inline-$2",
             );
           }
         };
@@ -16839,7 +16857,7 @@
             if (
               e.parent.some(
                 (e) =>
-                  e.prop === t + "box-orient" || e.prop === t + "box-direction"
+                  e.prop === t + "box-orient" || e.prop === t + "box-direction",
               )
             )
               return;
@@ -16913,7 +16931,7 @@
             super(e, t, r),
               this.prefixes &&
                 (this.prefixes = i.uniq(
-                  this.prefixes.map((e) => ("-ms-" === e ? "-webkit-" : e))
+                  this.prefixes.map((e) => ("-ms-" === e ? "-webkit-" : e)),
                 ));
           }
         };
@@ -16928,7 +16946,7 @@
             super(e, t, r),
               this.prefixes &&
                 (this.prefixes = i.uniq(
-                  this.prefixes.map((e) => ("-ms-" === e ? "-webkit-" : e))
+                  this.prefixes.map((e) => ("-ms-" === e ? "-webkit-" : e)),
                 ));
           }
           check(e) {
@@ -16969,8 +16987,8 @@
               2009 === i
                 ? t + "box-pack"
                 : 2012 === i
-                ? t + "flex-pack"
-                : super.prefixed(e, t)
+                  ? t + "flex-pack"
+                  : super.prefixed(e, t)
             );
           }
           normalize() {
@@ -17061,7 +17079,8 @@
               h = d.includes("columns"),
               m = u.some(
                 (e) =>
-                  "grid-template" === e.prop || "grid-template-areas" === e.prop
+                  "grid-template" === e.prop ||
+                  "grid-template-areas" === e.prop,
               );
             if (m && f) return !1;
             let g = new l({ options: {} }),
@@ -17083,13 +17102,13 @@
               if (!t && !m)
                 return void e.warn(
                   c,
-                  "Autoplacement does not work without grid-template-rows property"
+                  "Autoplacement does not work without grid-template-rows property",
                 );
               !u.nodes.find((e) => "grid-template-columns" === e.prop) &&
                 !m &&
                 e.warn(
                   c,
-                  "Autoplacement does not work without grid-template-columns property"
+                  "Autoplacement does not work without grid-template-columns property",
                 ),
                 h && !m && o(e, c, y, k);
             }
@@ -17291,7 +17310,7 @@
               .map((e) =>
                 " " === e
                   ? { type: "space", value: e }
-                  : { type: "word", value: e }
+                  : { type: "word", value: e },
               )
               .concat(e.slice(1));
           }
@@ -17314,11 +17333,11 @@
               "0deg" === e[0].value
                 ? (e = this.replaceFirst(e, "to", " ", "top"))
                 : "90deg" === e[0].value
-                ? (e = this.replaceFirst(e, "to", " ", "right"))
-                : "180deg" === e[0].value
-                ? (e = this.replaceFirst(e, "to", " ", "bottom"))
-                : "270deg" === e[0].value &&
-                  (e = this.replaceFirst(e, "to", " ", "left")),
+                  ? (e = this.replaceFirst(e, "to", " ", "right"))
+                  : "180deg" === e[0].value
+                    ? (e = this.replaceFirst(e, "to", " ", "bottom"))
+                    : "270deg" === e[0].value &&
+                      (e = this.replaceFirst(e, "to", " ", "left")),
               e
             );
           }
@@ -17327,7 +17346,7 @@
               return e;
             e.unshift(
               { type: "word", value: "to" },
-              { type: "space", value: " " }
+              { type: "space", value: " " },
             );
             for (let t = 2; t < e.length && "div" !== e[t].type; t++)
               "word" === e[t].type &&
@@ -17352,8 +17371,8 @@
                 ("to" === e[0].value
                   ? this.fixDirection(e)
                   : e[0].value.includes("deg")
-                  ? this.fixAngle(e)
-                  : this.isRadial(e) && this.fixRadial(e)),
+                    ? this.fixAngle(e)
+                    : this.isRadial(e) && this.fixRadial(e)),
               e
             );
           }
@@ -17427,7 +17446,7 @@
             return (
               e.nodes.unshift(
                 { type: "word", value: "linear" },
-                this.cloneDiv(e.nodes)
+                this.cloneDiv(e.nodes),
               ),
               (e.value = "-webkit-gradient"),
               !0
@@ -17559,8 +17578,8 @@
           return "-moz-" === t && this.isStretch()
             ? e.replace(this.regexp(), "$1-moz-available$3")
             : "-webkit-" === t && this.isStretch()
-            ? e.replace(this.regexp(), "$1-webkit-fill-available$3")
-            : super.replace(e, t);
+              ? e.replace(this.regexp(), "$1-webkit-fill-available$3")
+              : super.replace(e, t);
         }
         old(e) {
           let t = e + this.name;
@@ -17596,15 +17615,15 @@
             return "-webkit-" === t
               ? e.replace(this.regexp(), "$1-webkit-optimize-contrast")
               : "-moz-" === t
-              ? e.replace(this.regexp(), "$1-moz-crisp-edges")
-              : super.replace(e, t);
+                ? e.replace(this.regexp(), "$1-moz-crisp-edges")
+                : super.replace(e, t);
           }
           old(e) {
             return "-webkit-" === e
               ? new r(this.name, "-webkit-optimize-contrast")
               : "-moz-" === e
-              ? new r(this.name, "-moz-crisp-edges")
-              : super.old(e);
+                ? new r(this.name, "-moz-crisp-edges")
+                : super.old(e);
           }
         };
       (n.names = ["pixelated"]), (t.exports = n);
@@ -17670,8 +17689,8 @@
               2009 === t
                 ? (i = "flex" === this.name ? "box" : "inline-box")
                 : 2012 === t
-                ? (i = "flex" === this.name ? "flexbox" : "inline-flexbox")
-                : "final" === t && (i = this.name),
+                  ? (i = "flex" === this.name ? "flexbox" : "inline-flexbox")
+                  : "final" === t && (i = this.name),
               e + i
             );
           }
@@ -17840,7 +17859,7 @@
               (this.browsers = t),
               (this.options = r),
               ([this.add, this.remove] = this.preprocess(
-                this.select(this.data)
+                this.select(this.data),
               )),
               (this.transition = new o(this)),
               (this.processor = new s(this));
@@ -18612,19 +18631,19 @@
           })(t[0])
             ? ((r = t[0]), (t = void 0))
             : 0 === t.length || (1 === t.length && !t[0])
-            ? (t = void 0)
-            : t.length <= 2 && (Array.isArray(t[0]) || !t[0])
-            ? ((r = t[1]), (t = t[0]))
-            : "object" == typeof t[t.length - 1] && (r = t.pop()),
+              ? (t = void 0)
+              : t.length <= 2 && (Array.isArray(t[0]) || !t[0])
+                ? ((r = t[1]), (t = t[0]))
+                : "object" == typeof t[t.length - 1] && (r = t.pop()),
           r || (r = {}),
           r.browser)
         )
           throw new Error(
-            "Change `browser` option to `overrideBrowserslist` in Autoprefixer"
+            "Change `browser` option to `overrideBrowserslist` in Autoprefixer",
           );
         if (r.browserslist)
           throw new Error(
-            "Change `browserslist` option to `overrideBrowserslist` in Autoprefixer"
+            "Change `browserslist` option to `overrideBrowserslist` in Autoprefixer",
           );
         r.overrideBrowserslist
           ? (t = r.overrideBrowserslist)
@@ -18634,8 +18653,8 @@
               (o.red
                 ? console.warn(
                     o.red(
-                      d.replace(/`[^`]+`/g, (e) => o.yellow(e.slice(1, -1)))
-                    )
+                      d.replace(/`[^`]+`/g, (e) => o.yellow(e.slice(1, -1))),
+                    ),
                   )
                 : console.warn(d)),
             (t = r.browsers));
@@ -18661,7 +18680,7 @@
                     (t.add.selectors.length > 0 ||
                       Object.keys(t.add).length > 2 ||
                       e.warn(
-                        "Autoprefixer target browsers do not need any prefixes.You do not need Autoprefixer anymore.\nCheck your Browserslist config to be sure that your targets are set up correctly.\n\n  Learn more at:\n  https://github.com/postcss/autoprefixer#readme\n  https://github.com/browserslist/browserslist#readme\n\n"
+                        "Autoprefixer target browsers do not need any prefixes.You do not need Autoprefixer anymore.\nCheck your Browserslist config to be sure that your targets are set up correctly.\n\n  Learn more at:\n  https://github.com/postcss/autoprefixer#readme\n  https://github.com/browserslist/browserslist#readme\n\n",
                       ));
                 })(e, t),
                   !1 !== r.remove && t.processor.remove(i, e),
@@ -18739,7 +18758,7 @@
     return e && e.__esModule ? e : { default: e };
   }
   console.warn(
-    "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+    "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation",
   );
   var kc,
     Sc,
@@ -18794,7 +18813,7 @@
         }),
         (0, hc.default)({ remove: !1 }),
       ]).process(
-        `@tailwind base;@tailwind components;@tailwind utilities;${t}`
+        `@tailwind base;@tailwind components;@tailwind utilities;${t}`,
       ).css;
       (!kc || !kc.isConnected) &&
         ((kc = document.createElement("style")), document.head.append(kc)),
@@ -18810,7 +18829,7 @@
       plugin: wc.default,
       resolveConfig: vc.default,
     },
-    Dc(!0)
+    Dc(!0),
   )),
     new MutationObserver(async (e) => {
       let t = !1;

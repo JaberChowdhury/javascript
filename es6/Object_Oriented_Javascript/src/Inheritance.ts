@@ -19,7 +19,7 @@ class Performer {
     age: number,
     matchPlayed: number,
     matchDate: string,
-    salary: number
+    salary: number,
   ) {
     this.name = name;
     this.age = age;
@@ -47,7 +47,7 @@ class Cricketer extends Performer {
     matchDate: string,
     salary: number,
     dateOfBirth: string,
-    totalSix: number
+    totalSix: number,
   ) {
     super(name, age, matchPlayed, matchDate, salary);
     this.name = name;
@@ -67,7 +67,7 @@ class Footballer extends Performer {
     matchDate: string,
     salary: number,
     dateOfBirth: string,
-    totalGoal: number
+    totalGoal: number,
   ) {
     super(name, age, matchPlayed, matchDate, salary);
     this.name = name;
@@ -85,7 +85,7 @@ const SakibAllHasan = new Cricketer(
   "2023-1-23",
   200000,
   "1987-3-21",
-  55
+  55,
 );
 const Ronaldo = new Cricketer(
   "Ronaldo",
@@ -94,7 +94,7 @@ const Ronaldo = new Cricketer(
   "2022-1-23",
   20000000,
   "1927-3-21",
-  55
+  55,
 );
 
 console.log(SakibAllHasan);

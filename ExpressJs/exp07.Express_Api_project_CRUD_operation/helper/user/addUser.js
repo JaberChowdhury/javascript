@@ -55,7 +55,7 @@ const addUser = (req, res) => {
         });
       } else {
         res.send(
-          `We already have the same user in our database uuid:--${uuid}`
+          `We already have the same user in our database uuid:--${uuid}`,
         );
       }
     } else {

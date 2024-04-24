@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Hexadecimal color generator</title>
@@ -84,11 +84,11 @@
           dom += `
       <div class="box">
          <div style="background-color:${final[i].one};color:${
-            final[i].two
-          };" class="code">${final[i].one}</div>
+           final[i].two
+         };" class="code">${final[i].one}</div>
          <div style="background-color:${final[i].two};color:${
-            final[i].one
-          };" class="code">${final[i].two}</div>
+           final[i].one
+         };" class="code">${final[i].two}</div>
          <div class="code">${generateVariant(final[i].one)}</div>
          <div class="code">${generateVariant(final[i].two)}</div>
       </div>
@@ -102,7 +102,7 @@
         for (let i = 0; i < HexadecimalCodes.length; i++) {
           final += `
           <div style="background-color:#${HexadecimalCodes[i]}${value.slice(
-            2
+            2,
           )};" class="small">#${HexadecimalCodes[i]}${value.slice(2)}</div>
           `;
         }

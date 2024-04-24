@@ -56,7 +56,7 @@ const updateUser = (req, res) => {
       res.json(
         JSON.stringify({
           err,
-        })
+        }),
       );
     }
   });

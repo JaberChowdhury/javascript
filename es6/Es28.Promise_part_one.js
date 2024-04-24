@@ -49,7 +49,7 @@ const promise5 = new Promise((resolve, reject) => {
 Promise.all([promise1, promise2, promise3, promise4, promise5])
   .then(([res1, res2, res3, res4, res5]) => console.log(res1))
   .catch(([err1, err2, err3, err4, err5]) =>
-    console.log(err1, err2, err3, err4, err5)
+    console.log(err1, err2, err3, err4, err5),
   );
 
 // Promise, Promise.all() , Promise.race()
@@ -73,7 +73,7 @@ const taskOne = (personName) => {
       {
         personName: personName,
       },
-      1000
+      1000,
     );
   });
 };
@@ -87,7 +87,7 @@ const taskTwo = (person) => {
         age: 29,
         phone: 040675,
       },
-      2000
+      2000,
     );
   });
 };
@@ -123,7 +123,7 @@ const taskTwo = (person) => {
 
 Promise.all([taskOne, taskTwo]).then((res) => console.log(res));
 Promise.all([taskOne, taskTwo]).then(([res1, res2]) =>
-  console.log("Results : ", res1, res2)
+  console.log("Results : ", res1, res2),
 );
 
 // Promise.race([taskOne, taskTwo, taskThree]).then((result) =>

@@ -2,7 +2,7 @@
 
 const message = ({ id, message, name }) => {
   console.log(
-    `Hello ${name} id= ${id} please read your message your message: ${message}`
+    `Hello ${name} id= ${id} please read your message your message: ${message}`,
   );
 };
 

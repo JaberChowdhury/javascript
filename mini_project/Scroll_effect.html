@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title></title>
@@ -29,8 +29,11 @@
         border-radius: 50%;
         position: absolute;
         pointer-events: none;
-        box-shadow: 1px 1px 1px 1px white, -1px 1px 1px 1px white,
-          1px -1px 1px 1px white, -1px -1px 1px 1px white;
+        box-shadow:
+          1px 1px 1px 1px white,
+          -1px 1px 1px 1px white,
+          1px -1px 1px 1px white,
+          -1px -1px 1px 1px white;
         animation: animate 2s linear 1;
       }
       /*
@@ -50,14 +53,20 @@ animation: animate 1.5s linear 1 0.5s;
       @keyframes animate {
         50% {
           opacity: 10%;
-          box-shadow: 44px 44px 1px 1px white, -44px 44px 1px 1px white,
-            44px -44px 1px 1px white, -44px -44px 1px 1px white;
+          box-shadow:
+            44px 44px 1px 1px white,
+            -44px 44px 1px 1px white,
+            44px -44px 1px 1px white,
+            -44px -44px 1px 1px white;
         }
         100% {
           transform: scale(2.3);
           opacity: 0;
-          box-shadow: 90px 90px 1px 1px white, -90px 90px 1px 1px white,
-            90px -90px 1px 1px white, -90px -90px 1px 1px white;
+          box-shadow:
+            90px 90px 1px 1px white,
+            -90px 90px 1px 1px white,
+            90px -90px 1px 1px white,
+            -90px -90px 1px 1px white;
         }
       }
     </style>

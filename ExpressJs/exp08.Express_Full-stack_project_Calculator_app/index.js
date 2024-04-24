@@ -34,7 +34,7 @@ app.use((req, res) => {
 app.listen(PORT, () => {
   console.log(
     chalk.bgYellow.black(
-      ` App is successfully running at port ${chalk.bgGreen(PORT)} `
-    )
+      ` App is successfully running at port ${chalk.bgGreen(PORT)} `,
+    ),
   );
 });

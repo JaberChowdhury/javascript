@@ -34,7 +34,7 @@ const getUser = (req, res) => {
       res.json(
         JSON.parse({
           error,
-        })
+        }),
       );
     }
   });

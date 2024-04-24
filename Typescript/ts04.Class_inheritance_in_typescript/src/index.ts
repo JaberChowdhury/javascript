@@ -32,7 +32,7 @@ class Boy extends Human {
     body: string,
     skin: string,
     mind: string,
-    dedication: boolean
+    dedication: boolean,
   ) {
     super(hair, body, skin, mind);
     this.dedication = dedication;

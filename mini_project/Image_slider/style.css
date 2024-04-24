@@ -21,7 +21,9 @@ h1 {
   height: 200px;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 4px 4px 8px rgb(189 200 213), -4px -4px 8px rgb(255 255 255);
+  box-shadow:
+    4px 4px 8px rgb(189 200 213),
+    -4px -4px 8px rgb(255 255 255);
 }
 .container > img {
   background-size: cover;

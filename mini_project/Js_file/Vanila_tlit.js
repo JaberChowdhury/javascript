@@ -42,10 +42,10 @@ export default class VanillaTilt {
     this.reverse = this.settings.reverse ? -1 : 1;
     this.glare = VanillaTilt.isSettingTrue(this.settings.glare);
     this.glarePrerender = VanillaTilt.isSettingTrue(
-      this.settings["glare-prerender"]
+      this.settings["glare-prerender"],
     );
     this.fullPageListening = VanillaTilt.isSettingTrue(
-      this.settings["full-page-listening"]
+      this.settings["full-page-listening"],
     );
     this.gyroscope = VanillaTilt.isSettingTrue(this.settings.gyroscope);
     this.gyroscopeSamples = this.settings.gyroscopeSamples;
@@ -80,7 +80,7 @@ export default class VanillaTilt {
 
     if (typeof this.settings["mouse-event-element"] === "string") {
       const mouseEventElement = document.querySelector(
-        this.settings["mouse-event-element"]
+        this.settings["mouse-event-element"],
       );
 
       if (mouseEventElement) {
@@ -117,7 +117,7 @@ export default class VanillaTilt {
     if (this.gyroscope) {
       window.addEventListener(
         "deviceorientation",
-        this.onDeviceOrientationBind
+        this.onDeviceOrientationBind,
       );
     }
   }
@@ -128,18 +128,18 @@ export default class VanillaTilt {
   removeEventListeners() {
     this.elementListener.removeEventListener(
       "mouseenter",
-      this.onMouseEnterBind
+      this.onMouseEnterBind,
     );
     this.elementListener.removeEventListener(
       "mouseleave",
-      this.onMouseLeaveBind
+      this.onMouseLeaveBind,
     );
     this.elementListener.removeEventListener("mousemove", this.onMouseMoveBind);
 
     if (this.gyroscope) {
       window.removeEventListener(
         "deviceorientation",
-        this.onDeviceOrientationBind
+        this.onDeviceOrientationBind,
       );
     }
 
@@ -326,7 +326,7 @@ export default class VanillaTilt {
     let angle =
       Math.atan2(
         this.event.clientX - (this.left + this.width / 2),
-        -(this.event.clientY - (this.top + this.height / 2))
+        -(this.event.clientY - (this.top + this.height / 2)),
       ) *
       (180 / Math.PI);
 
@@ -379,7 +379,7 @@ export default class VanillaTilt {
     this.element.dispatchEvent(
       new CustomEvent("tiltChange", {
         detail: values,
-      })
+      }),
     );
 
     this.updateCall = null;
