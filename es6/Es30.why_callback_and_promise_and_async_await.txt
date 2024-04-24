@@ -1,7 +1,0 @@
-In the callback function we have so many nested function 
-sometimes it's hard to understand 
-so we can use promise/promise chain to simplify this work
-but after es6 that's mean in es7 we can use async await 
-async await is more simplified way to solve our work
-
-that's  why we will use async await for this.

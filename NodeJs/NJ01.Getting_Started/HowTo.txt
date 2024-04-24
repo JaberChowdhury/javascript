@@ -1,5 +1,0 @@
-we have to install nodejs from their website
-
-first download nodejs than install it like a .exe software 
-
-that's it
