@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Canvas Animation with Anime.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #050505;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        .ui-layer {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            z-index: 10;
+            width: 100%;
+            pointer-events: none; 
+        }
+
+        .controls {
+            pointer-events: auto;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .sub-controls {
+            pointer-events: auto;
+            margin-top: 10px;
+            display: none; /* Hidden by default */
+            justify-content: center;
+            gap: 10px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .sub-controls.visible {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        button {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 8px 16px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover, button.active {
+            background: rgba(255,255,255,0.1);
+            border-color: #00ffcc;
+            color: #00ffcc;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+        }
+        
+        button.algo-btn {
+            border-color: rgba(255, 200, 0, 0.3);
+            color: rgba(255, 200, 0, 0.8);
+        }
+        
+        button.algo-btn:hover, button.algo-btn.active {
+            border-color: #ffcc00;
+            color: #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 0 5px 0;
+        }
+
+        p {
+            font-size: 11px;
+            margin: 0;
+        }
+
+        #status {
+            color: #00ffcc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="c"></canvas>
+
+    <div class="ui-layer">
+        <h1>Anime.js + HTML5 Canvas</h1>
+        <p>Mode: <span id="status">Initializing...</span></p>
+        
+        <div class="controls">
+            <button id="btn-morph" class="active" onclick="switchMode('morph')">Morph System</button>
+            <button id="btn-hero" onclick="switchMode('hero')">Neural Network</button>
+            <button id="btn-sorting" onclick="switchMode('sorting')">Sorting Visualizer</button>
+        </div>
+
+        <div id="sort-controls" class="sub-controls">
+            <button class="algo-btn" onclick="startSort('bubble')">Bubble</button>
+            <button class="algo-btn" onclick="startSort('insertion')">Insertion</button>
+            <button class="algo-btn" onclick="startSort('selection')">Selection</button>
+            <button class="algo-btn" onclick="startSort('merge')">Merge</button>
+            <button class="algo-btn" onclick="initSortingMode()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        // --- Configuration ---
+        const canvas = document.getElementById('c');
+        const ctx = canvas.getContext('2d');
+        const statusEl = document.getElementById('status');
+        const sortControls = document.getElementById('sort-controls');
+        
+        let canvasWidth, canvasHeight;
+        let particles = []; // Shared array for particles
+        let animationMode = 'morph'; // 'morph', 'hero', 'sorting'
+        
+        // State management
+        let activeTimeline = null;
+        let activeTimeouts = [];
+        let isSorting = false; // Flag to stop async sorts on mode switch
+        let mouse = { x: -1000, y: -1000 };
+
+        // --- Resize Handling ---
+        function resize() {
+            canvasWidth = canvas.width = window.innerWidth;
+            canvasHeight = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        resize();
+
+        // --- Utilities ---
+        function clearState() {
+            isSorting = false; // Kill any running sort loops
+            
+            if (activeTimeline) activeTimeline.pause();
+            anime.remove(particles);
+            
+            activeTimeouts.forEach(t => clearTimeout(t));
+            activeTimeouts = [];
+            
+            particles = [];
+        }
+        
+        // Helper to pause execution for animation
+        const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+
+        // ==========================================
+        // MODE 1: MORPH SYSTEM
+        // ==========================================
+        
+        const MORPH_COUNT = 900; 
+
+        function initMorphMode() {
+            statusEl.innerText = "Quantum Grid";
+            sortControls.classList.remove('visible');
+            
+            for (let i = 0; i < MORPH_COUNT; i++) {
+                particles.push({
+                    x: canvasWidth / 2,
+                    y: canvasHeight / 2,
+                    alpha: 1,
+                    color: '#fff',
+                    scale: 1
+                });
+            }
+            runMorphSequence();
+        }
+
+        function getGridTargets() {
+            const cols = Math.floor(Math.sqrt(MORPH_COUNT));
+            const rows = Math.ceil(MORPH_COUNT / cols);
+            const spacing = 40;
+            const offsetX = (canvasWidth - (cols * spacing)) / 2 + (spacing / 2);
+            const offsetY = (canvasHeight - (rows * spacing)) / 2 + (spacing / 2);
+
+            return particles.map((p, i) => {
+                const col = i % cols;
+                const row = Math.floor(i / cols);
+                return { x: offsetX + col * spacing, y: offsetY + row * spacing, scale: 1, color: '#00ffcc' };
+            });
+        }
+
+        function getCircleTargets() {
+            const radius = Math.min(canvasWidth, canvasHeight) * 0.35;
+            return particles.map((p, i) => {
+                const angle = (i / MORPH_COUNT) * Math.PI * 2;
+                return {
+                    x: canvasWidth / 2 + Math.cos(angle) * radius,
+                    y: canvasHeight / 2 + Math.sin(angle) * radius,
+                    scale: 1.5,
+                    color: '#ff0066'
+                };
+            });
+        }
+
+        function getSpiralTargets() {
+            return particles.map((p, i) => {
+                const angle = i * 0.1;
+                const radius = (i * 0.6);
+                return {
+                    x: canvasWidth / 2 + Math.cos(angle) * radius,
+                    y: canvasHeight / 2 + Math.sin(angle) * radius,
+                    scale: (i / MORPH_COUNT) * 2,
+                    color: '#ffcc00'
+                };
+            });
+        }
+
+        function getRandomTargets() {
+             return particles.map(() => ({
+                x: Math.random() * canvasWidth,
+                y: Math.random() * canvasHeight,
+                scale: Math.random() * 2,
+                color: '#ffffff'
+            }));
+        }
+
+        function animateTo(layoutName, getTargetsFunc) {
+            if (animationMode !== 'morph') return;
+            statusEl.innerText = layoutName;
+            const targets = getTargetsFunc();
+
+            activeTimeline = anime({
+                targets: particles,
+                x: (p, i) => targets[i].x,
+                y: (p, i) => targets[i].y,
+                scale: (p, i) => targets[i].scale,
+                color: (p, i) => targets[i].color,
+                easing: 'easeInOutExpo',
+                duration: 2000,
+                delay: anime.stagger(2, {from: 'center'})
+            });
+        }
+
+        function runMorphSequence() {
+            const sequence = [
+                { name: "Quantum Grid", func: getGridTargets },
+                { name: "Solar Ring", func: getCircleTargets },
+                { name: "Golden Spiral", func: getSpiralTargets },
+                { name: "Chaos Field", func: getRandomTargets }
+            ];
+            let step = 0;
+            function next() {
+                if (animationMode !== 'morph') return;
+                const current = sequence[step % sequence.length];
+                animateTo(current.name, current.func);
+                step++;
+                activeTimeouts.push(setTimeout(next, 4000));
+            }
+            next();
+        }
+
+        function drawMorph() {
+             particles.forEach(p => {
+                ctx.globalAlpha = p.alpha;
+                ctx.fillStyle = p.color;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 3 * p.scale, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        }
+
+
+        // ==========================================
+        // MODE 2: NEURAL NETWORK
+        // ==========================================
+        
+        const HERO_COUNT = 120;
+        const CONNECTION_DIST = 150;
+
+        function initHeroMode() {
+            statusEl.innerText = "Neural Network";
+            sortControls.classList.remove('visible');
+            
+            for (let i = 0; i < HERO_COUNT; i++) {
+                particles.push({
+                    x: Math.random() * canvasWidth,
+                    y: Math.random() * canvasHeight,
+                    radius: Math.random() * 2 + 1,
+                    alpha: Math.random() * 0.5 + 0.2,
+                    color: '#00ffcc'
+                });
+            }
+            particles.forEach(p => moveParticleRandomly(p));
+        }
+
+        function moveParticleRandomly(p) {
+            if (animationMode !== 'hero') return;
+            anime({
+                targets: p,
+                x: anime.random(0, canvasWidth),
+                y: anime.random(0, canvasHeight),
+                easing: 'easeInOutQuad',
+                duration: anime.random(3000, 8000),
+                complete: () => moveParticleRandomly(p)
+            });
+        }
+
+        function drawHero() {
+            ctx.lineWidth = 0.5;
+            for (let i = 0; i < particles.length; i++) {
+                const p1 = particles[i];
+                const distMouse = Math.hypot(p1.x - mouse.x, p1.y - mouse.y);
+                
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+
+                    if (dist < CONNECTION_DIST) {
+                        const opacity = 1 - (dist / CONNECTION_DIST);
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        if (distMouse < 200) ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+                        else ctx.strokeStyle = `rgba(0, 255, 204, ${opacity * 0.4})`;
+                        ctx.stroke();
+                    }
+                }
+            }
+            particles.forEach(p => {
+                ctx.globalAlpha = p.alpha;
+                ctx.fillStyle = p.color;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        }
+
+
+        // ==========================================
+        // MODE 3: SORTING VISUALIZER
+        // ==========================================
+
+        const SORT_COUNT = 50; // Fewer particles for clear bars
+        let barWidth;
+
+        function initSortingMode() {
+            statusEl.innerText = "Sorting Visualizer: Select Algorithm";
+            sortControls.classList.add('visible');
+            isSorting = false; // Stop any current sorts
+
+            // Initialize random bars
+            barWidth = (canvasWidth * 0.8) / SORT_COUNT;
+            const startX = canvasWidth * 0.1;
+
+            // Create particles representing bars
+            for (let i = 0; i < SORT_COUNT; i++) {
+                const value = Math.random(); // 0 to 1
+                particles.push({
+                    x: startX + i * barWidth,
+                    y: canvasHeight - 100, // Bottom aligned
+                    height: value * (canvasHeight * 0.6), // Max height 60% of screen
+                    value: value,
+                    color: '#ffffff',
+                    width: barWidth - 2 // Gap
+                });
+            }
+        }
+
+        function drawSorting() {
+            particles.forEach(p => {
+                ctx.fillStyle = p.color;
+                // Draw bars growing upwards from y
+                ctx.fillRect(p.x, p.y - p.height, p.width, p.height);
+            });
+        }
+
+        async function startSort(type) {
+            if (isSorting) return; // Prevent double click
+            isSorting = true;
+            statusEl.innerText = `Running: ${type.charAt(0).toUpperCase() + type.slice(1)} Sort`;
+
+            if (type === 'bubble') await bubbleSort();
+            else if (type === 'insertion') await insertionSort();
+            else if (type === 'selection') await selectionSort();
+            else if (type === 'merge') await mergeSortWrapper();
+
+            if (isSorting) {
+                statusEl.innerText = "Sorting Complete";
+                anime({
+                    targets: particles,
+                    color: '#00ffcc',
+                    easing: 'easeInOutQuad',
+                    delay: anime.stagger(20)
+                });
+            }
+            isSorting = false;
+        }
+
+        // --- Sorting Algorithms ---
+
+        async function bubbleSort() {
+            const len = particles.length;
+            for (let i = 0; i < len; i++) {
+                for (let j = 0; j < len - i - 1; j++) {
+                    if (!isSorting) return;
+
+                    particles[j].color = '#ff0066'; // Compare color
+                    particles[j+1].color = '#ff0066';
+                    
+                    if (particles[j].value > particles[j+1].value) {
+                        await swap(j, j+1);
+                    } else {
+                        await delay(20); // Just wait a bit if no swap
+                    }
+
+                    particles[j].color = '#fff'; // Reset color
+                    particles[j+1].color = '#fff';
+                }
+                particles[len - 1 - i].color = '#00ffcc'; // Locked color
+            }
+        }
+
+        async function insertionSort() {
+            const len = particles.length;
+            for (let i = 1; i < len; i++) {
+                if (!isSorting) return;
+                
+                let j = i - 1;
+                particles[i].color = '#ffcc00'; // Current selected
+                await delay(100);
+
+                while (j >= 0 && particles[j].value > particles[j+1].value) {
+                    if (!isSorting) return;
+                    await swap(j, j+1);
+                    j--;
+                }
+                particles[j+1].color = '#fff';
+            }
+        }
+
+        async function selectionSort() {
+            const len = particles.length;
+            for (let i = 0; i < len; i++) {
+                if (!isSorting) return;
+                
+                let minIdx = i;
+                particles[i].color = '#ffcc00'; // Current position
+
+                for (let j = i + 1; j < len; j++) {
+                    if (!isSorting) return;
+                    particles[j].color = '#ff0066'; // Scanning
+                    await delay(10);
+                    
+                    if (particles[j].value < particles[minIdx].value) {
+                        if(minIdx !== i) particles[minIdx].color = '#fff'; // Unmark old min
+                        minIdx = j;
+                        particles[minIdx].color = '#00ffcc'; // Found new min
+                    } else {
+                        particles[j].color = '#fff';
+                    }
+                }
+
+                if (minIdx !== i) await swap(i, minIdx);
+                particles[i].color = '#00ffcc'; // Sorted
+            }
+        }
+
+        // Merge Sort Wrapper to handle recursion in async way
+        async function mergeSortWrapper() {
+            await mergeSort(particles, 0, particles.length - 1);
+        }
+
+        async function mergeSort(arr, l, r) {
+            if (l >= r || !isSorting) return;
+            const m = l + Math.floor((r - l) / 2);
+            await mergeSort(arr, l, m);
+            await mergeSort(arr, m + 1, r);
+            await merge(arr, l, m, r);
+        }
+
+        async function merge(arr, l, m, r) {
+            if (!isSorting) return;
+            
+            // Highlight range
+            for(let k=l; k<=r; k++) arr[k].color = '#ffcc00';
+            await delay(50);
+
+            // We need to sort the visual array segments physically
+            // This is tricky to animate "in place" perfectly like a swap, 
+            // so we simulate the result of the merge step and animate heights.
+            
+            const n1 = m - l + 1;
+            const n2 = r - m;
+            
+            // Create temp arrays with just values
+            let L = [], R = [];
+            for (let i = 0; i < n1; i++) L.push(arr[l + i].value);
+            for (let j = 0; j < n2; j++) R.push(arr[m + 1 + j].value);
+
+            let i = 0, j = 0, k = l;
+
+            while (i < n1 && j < n2) {
+                if (!isSorting) return;
+                if (L[i] <= R[j]) {
+                    await updateHeight(arr[k], L[i]);
+                    i++;
+                } else {
+                    await updateHeight(arr[k], R[j]);
+                    j++;
+                }
+                k++;
+            }
+
+            while (i < n1) {
+                if (!isSorting) return;
+                await updateHeight(arr[k], L[i]);
+                i++; k++;
+            }
+            while (j < n2) {
+                if (!isSorting) return;
+                await updateHeight(arr[k], R[j]);
+                j++; k++;
+            }
+
+            // Reset color
+            for(let k=l; k<=r; k++) arr[k].color = '#fff';
+        }
+
+        // --- Animation Helpers for Sorting ---
+
+        function swap(i, j) {
+            return new Promise(resolve => {
+                // Swap data references
+                const temp = particles[i];
+                particles[i] = particles[j];
+                particles[j] = temp;
+
+                // Animate visual position swap
+                anime({
+                    targets: particles[i],
+                    x: particles[i].x, // Move to its new slot (which was j's x)
+                    duration: 100,
+                    easing: 'easeInOutQuad'
+                });
+                anime({
+                    targets: particles[j],
+                    x: particles[j].x, // Move to its new slot (which was i's x)
+                    duration: 100,
+                    easing: 'easeInOutQuad',
+                    complete: resolve
+                });
+
+                // We actually need to swap the X coordinates on the objects PERMANENTLY 
+                // so subsequent draws assume the new X. 
+                // But Anime.js targets property values.
+                // To simplify: We swap the objects in the array.
+                // Then we tell object at [i] to go to X_of_slot_i.
+                // Then we tell object at [j] to go to X_of_slot_j.
+                
+                const slotXi = particles[j].x; // Old pos of particle now at i
+                const slotXj = particles[i].x; // Old pos of particle now at j
+                
+                // Correct the coordinate data for next logic steps
+                // Actually, easier approach:
+                // We have a fixed grid of X positions.
+                // particles[k] should always be at startX + k*width eventually.
+                // So we just force them to animate to their index's X.
+            });
+        }
+
+        // Re-write swap to be robust:
+        // Swap objects in array, then animate everyone to their index * width
+        async function swap(i, j) {
+            // 1. Logical Swap
+            let temp = particles[i];
+            particles[i] = particles[j];
+            particles[j] = temp;
+
+            // 2. Calculate destinations
+            const destI = (canvasWidth * 0.1) + i * barWidth;
+            const destJ = (canvasWidth * 0.1) + j * barWidth;
+
+            // 3. Animate
+            const p1 = anime({
+                targets: particles[i],
+                x: destI,
+                easing: 'easeOutCubic',
+                duration: 60
+            }).finished;
+
+            const p2 = anime({
+                targets: particles[j],
+                x: destJ,
+                easing: 'easeOutCubic',
+                duration: 60
+            }).finished;
+
+            await Promise.all([p1, p2]);
+        }
+
+        async function updateHeight(particle, newValue) {
+            // Update logical value
+            particle.value = newValue;
+            const newHeight = newValue * (canvasHeight * 0.6);
+            
+            // Animate visual height
+            await anime({
+                targets: particle,
+                height: newHeight,
+                easing: 'easeOutQuad',
+                duration: 40
+            }).finished;
+        }
+
+
+        // ==========================================
+        // MAIN RENDER LOOP & SWITCHING
+        // ==========================================
+
+        function render() {
+            if (animationMode === 'morph') {
+                 ctx.fillStyle = 'rgba(5, 5, 5, 0.3)';
+                 ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+                 drawMorph();
+            } else if (animationMode === 'hero') {
+                 ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+                 ctx.fillStyle = '#050505'; 
+                 ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+                 drawHero();
+            } else if (animationMode === 'sorting') {
+                 ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+                 ctx.fillStyle = '#050505'; 
+                 ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+                 drawSorting();
+            }
+            requestAnimationFrame(render);
+        }
+
+        function switchMode(mode) {
+            if (mode === animationMode) return;
+            
+            // Update Buttons
+            document.querySelectorAll('.controls > button').forEach(b => b.classList.remove('active'));
+            document.getElementById(`btn-${mode}`).classList.add('active');
+
+            clearState();
+            animationMode = mode;
+
+            if (mode === 'morph') initMorphMode();
+            else if (mode === 'hero') initHeroMode();
+            else if (mode === 'sorting') initSortingMode();
+        }
+
+        // --- Initialization ---
+        resize();
+        initMorphMode();
+        render(); 
+
+    </script>
+</body>
+</html>
